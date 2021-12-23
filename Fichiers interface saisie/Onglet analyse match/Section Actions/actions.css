@@ -1,0 +1,147 @@
+.Titre_section {
+    
+    size: 30px;
+    text-decoration: underline;
+    text-decoration-color: #F9EB3C;;
+    text-underline-position: under;
+    color: #05602F;
+    width: 517px;
+    height:40px;
+    background-color: rgb(247, 247, 247);
+    margin: auto;
+    text-align: center;
+}
+
+#Contenu_section{
+    width: 517px;
+    height:536;
+    background-color: rgb(247, 247, 247);
+
+}
+
+#barre_slicer{
+width:330px;
+}
+
+#Titre_slider{
+padding-bottom: 5px;
+color: #666666;
+font-size: 18px;
+
+}
+#Liste_periodes{
+    height:20px;
+    margin-left: 10px;
+    color: #666666
+}
+#Choix_periode {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.boutton_attaque_defense {
+    width:140px;
+    height:30px;
+    text-align: center;
+    background-color: white;
+    border-radius: 10px;
+    color:#383338;
+}
+
+#Type_attaque {
+display: flex;
+flex-direction: row;
+justify-content: space-around;
+align-items:center;
+width: 310px;
+}
+
+#Type_attaque p {
+display: flex;
+align-items:center;
+justify-content: center;
+color: #383338;
+}
+
+.Boutton_type_attaque{
+    width:110px;
+    height:26.87px; 
+    border-radius: 20px;
+    border: 1px solid #383338 ;
+}
+
+#Titre_sanctions {
+    font-size: 18px;
+    color: #05602F;
+
+}
+
+#carton_jaune{
+    background-image: url(Carton\ Jaune.png);
+    background-size: 33px;
+    background-position: center;
+    width: 33px;
+    height: 33px;
+    border-radius: 33px;
+
+}
+
+#carton_rouge{
+    background-image: url(Carton\ Rouge.png);
+    background-size: 33px;
+    background-position: center;
+    width: 33px;
+    height: 33px;
+    border-radius: 33px;
+}
+
+/* Code CSS mise en forme du toggle switcher pour le type d'attaque */
+.onoffswitch {
+    position: relative; width: 40px;
+    -webkit-user-select:none; -moz-user-select:none; -ms-user-select: none;
+}
+.onoffswitch-checkbox {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+.onoffswitch-label {
+    display: block; overflow: hidden; cursor: pointer;
+    border: 2px solid #05602F; border-radius: 20px;
+}
+.onoffswitch-inner {
+    display: block; width: 200%; margin-left: -100%;
+    transition: margin 0.3s ease-in 0s;
+}
+.onoffswitch-inner:before, .onoffswitch-inner:after {
+    display: block; float: left; width: 50%; height: 22px; padding: 0; line-height: 22px;
+    font-size: 14px; color: white; font-family: Trebuchet, Arial, sans-serif; font-weight: bold;
+    box-sizing: border-box;
+}
+.onoffswitch-inner:before {
+    content: "";
+    padding-left: 10px;
+    background-color: #05602F; color: #FFFFFF;
+}
+.onoffswitch-inner:after {
+    content: "";
+    padding-right: 10px;
+    background-color: #05602F; color: #05602F;
+    text-align: right;
+}
+.onoffswitch-switch {
+    display: block; width: 17px; margin: 2.5px;
+    background: #FFFFFF;
+    position: absolute; top: 0; bottom: 0;
+    right: 14px;
+    border: 2px solid #05602F; border-radius: 20px;
+    transition: all 0.3s ease-in 0s; 
+}
+.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-inner {
+    margin-left: 0;
+}
+.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-switch {
+    right: 0px; 
+}

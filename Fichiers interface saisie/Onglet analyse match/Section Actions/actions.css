@@ -1,5 +1,32 @@
+@font-face {
+    font-family: 'Roboto';
+    src: url(Roboto/Roboto-Black.ttf);
+    src: url(Roboto/Roboto-BlackItalic.ttf);
+    src: url(Roboto/Roboto-Bold.ttf);
+    src: url(Roboto/Roboto-BoldItalic.ttf);
+    src: url(Roboto/Roboto-Italic.ttf);
+    src: url(Roboto/Roboto-Light.ttf);
+    src: url(Roboto/Roboto-LightItalic.ttf);
+    src: url(Roboto/Roboto-Medium.ttf);
+    src: url(Roboto/Roboto-MediumItalic.ttf);
+    src: url(Roboto/Roboto-Regular.ttf);
+    src: url(Roboto/Roboto-Thin.ttf);
+    src: url(Roboto/Roboto-ThinItalic.ttf);
+}
+
+#Contenu_section {
+    width: 517px;
+    height: 536px;
+    background-color: #DCDCDC;
+    margin:auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .Titre_section {
-    
+    font-family: Roboto, Arial, Helvetica, sans-serif;
+    font-weight: bold;
     size: 30px;
     text-decoration: underline;
     text-decoration-color: #F9EB3C;;
@@ -19,36 +46,56 @@
 
 }
 
-#barre_slicer{
-width:330px;
+#Choix_periode {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
 }
 
 #Titre_slider{
 padding-bottom: 5px;
 color: #666666;
 font-size: 18px;
+font-family: Roboto, Arial, Helvetica, sans-serif;
 
 }
 #Liste_periodes{
     height:20px;
+    font-family: Roboto, Arial, Helvetica, sans-serif;
     margin-left: 10px;
     color: #666666
 }
-#Choix_periode {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    align-items: center;
-}
+
 
 .boutton_attaque_defense {
+    font-family: Roboto, Arial, Helvetica, sans-serif;
+    font-size: 18px;
     width:140px;
     height:30px;
     text-align: center;
-    background-color: white;
+    vertical-align: middle;
     border-radius: 10px;
     color:#383338;
+    background-color: white;
+    border: solid #383338 1px;
+    text-decoration: none;     
 }
+.boutton_attaque_defense:hover{
+    font-family: Roboto, Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    width:140px;
+    height:30px;
+    text-align: center;
+    vertical-align: middle;
+    border-radius: 10px;
+    color:#383338;
+    background-color: white;
+    border: solid #383338 1px;
+    text-decoration: none;  
+    box-shadow: 1px 1px 2px #666666;
+}
+
 
 #Type_attaque {
 display: flex;
@@ -59,6 +106,8 @@ width: 310px;
 }
 
 #Type_attaque p {
+font-size: 14px;
+font-family: Roboto, Arial, Helvetica, sans-serif;
 display: flex;
 align-items:center;
 justify-content: center;
@@ -66,6 +115,7 @@ color: #383338;
 }
 
 .Boutton_type_attaque{
+    font-family: Roboto, Arial, Helvetica, sans-serif;
     width:110px;
     height:26.87px; 
     border-radius: 20px;
@@ -73,6 +123,7 @@ color: #383338;
 }
 
 #Titre_sanctions {
+    font-family: Roboto, Arial, Helvetica, sans-serif;
     font-size: 18px;
     color: #05602F;
 
@@ -96,6 +147,7 @@ color: #383338;
     height: 33px;
     border-radius: 33px;
 }
+
 
 /* Code CSS mise en forme du toggle switcher pour le type d'attaque */
 .onoffswitch {

@@ -3,7 +3,10 @@
     <head>
         <meta charset="utf-8" />
         <link rel="stylesheet" href="actions.css" />
+        <script src="https://code.iconify.design/2/2.1.0/iconify.min.js"></script>
+
         <title>Section saisie actions</title>
+
     </head>
     <body>
         <div id="Bloc_global">
@@ -25,7 +28,6 @@
                     </div>
                 </div>
                 
-
                 <div id="Attaque_Defense">
                     <button class="boutton_attaque_defense" type="button">Attaque</button>
                     <button class="boutton_attaque_defense" type="button">Défense</button>
@@ -47,12 +49,38 @@
                
                 <div id="sanctions">
                     <h2 id="Titre_sanctions">Sanctions</h2>
-                    <button id="carton_jaune"></button>
-                    <button id="carton_rouge"></button>
-                    <button id="2min"></button>
+                    <div id="Boutons_sanctions">
+                        <button id="carton_jaune" type="button"></button>
+                        <button id="carton_rouge" type="button"></button>
+                        <button id="Deux_min"> 2'</button>
+                    </div>
                 </div>
-                <div id="Boutons saisies"></div>
-                <div id="Validation"></div>
+                <div id="Boutons_saisies">
+                    <div id="boutons_ligne_1">
+                        <button class="boutton_fait_de_jeu" type="button">Fautes de zone</button>
+                        <button class="boutton_fait_de_jeu" type="button">Marché</button>
+                        <button class="boutton_fait_de_jeu" type="button">Reprise de drible</button>
+                        <button class="boutton_fait_de_jeu" type="button">Balle perdue</button>
+                        <button class="boutton_fait_de_jeu" type="button">Mauvaise relance</button>
+                    </div>
+                    <div id="boutons_ligne_2">
+                        <button class="boutton_fait_de_jeu" type="button">Passage en force</button>
+                        <button class="boutton_fait_de_jeu" type="button">Faute subie</button>
+                        <button class="boutton_fait_de_jeu" type="button">Tir contré</button>
+                    </div>
+                    <div id="boutons_ligne_3">
+                        <button class="boutton_fait_de_jeu" type="button">2' provoqué</button>
+                        <button class="boutton_fait_de_jeu" type="button">7m</button>
+                        <button class="boutton_fait_de_jeu" type="button">Duel gagné</button>
+                        <button class="boutton_fait_de_jeu" type="button">Relance</button>
+                    </div>
+                </div>
+                <div id="Validation">
+                    <button id="Validation_saisie" type="button">
+                        <span class="iconify" data-icon="el:ok-circle" style="color: black; font-size: 20px;"></span>
+                        <span>Valider</span>
+                    </button>
+                </div>
             </div>
             
         </div>

@@ -1,9 +1,10 @@
-<!DOCTYPE html>
+          <!DOCTYPE html>
 <html>
     <head>
         <meta charset="utf-8" />
         <link rel="stylesheet" href="actions.css" />
         <script src="https://code.iconify.design/2/2.1.0/iconify.min.js"></script>
+        
 
         <title>Section saisie actions</title>
 
@@ -29,21 +30,20 @@
                 </div>
                 
                 <div id="Attaque_Defense">
-                    <button class="boutton_attaque_defense" type="button">Attaque</button>
-                    <button class="boutton_attaque_defense" type="button">Défense</button>
+                    <button id="bouton_Attaque" class="boutton_attaque_defense"  type="button">Attaque</button>
+                    <button id="bouton_Defense" class="boutton_attaque_defense"  type="button">Défense</button>
                 </div>
     
                 <div id="Type_attaque">
-                    <p class="Boutton_type_attaque">Attaque Placée</p>
-                    <div class="onoffswitch">
+                    <p class="Boutton_type_attaque" id="bouton_Attaque_Placee">Attaque Placée</p>
+                    <div class="onoffswitch" id="onoffswitch">
                         <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch" tabindex="0" checked>
                         <label class="onoffswitch-label" for="myonoffswitch">
                             <span class="onoffswitch-inner"></span>
                             <span class="onoffswitch-switch"></span>
                         </label>
                     </div>
-    
-                    <p class="Boutton_type_attaque">Contre-attaque</p>
+                    <p class="Boutton_type_attaque" id="bouton_Contre_Attaque">Contre-attaque</p>
                     </div>
                 
                
@@ -86,7 +86,7 @@
         </div>
         
 
-        
+        <script src="actions.js"></script>
     </body>
 </html>
 

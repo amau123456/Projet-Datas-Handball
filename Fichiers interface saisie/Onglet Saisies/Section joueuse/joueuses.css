@@ -55,6 +55,26 @@
     margin-bottom: 5px;
 }
 
+.bouton_jou:hover {
+    font-family: Roboto, Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    width:80px;
+    height:80px;
+    text-align: center;
+    vertical-align: middle;
+    border-radius: 25px;
+    color:#383338;
+    background-color: #F9EB3C;
+    border: solid #383338 0px;
+    text-decoration: none;
+    margin-top: 5px;
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-bottom: 5px;
+    box-shadow: 1px 1px 2px #666666;
+
+}
+
 #Boutons_joueuses {
     margin-top: 15px;
     display:flex;
@@ -80,6 +100,26 @@
     text-decoration: none;
     margin-top: 5px;
     margin-bottom: 5px;
+}
+
+.bouton_gar:hover {
+    font-family: Roboto, Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    width:80px;
+    height:80px;
+    text-align: center;
+    vertical-align: middle;
+    border-radius: 25px;
+    color:#FFFFFF;
+    background-color: #383338;
+    border: solid #383338 0px;
+    text-decoration: none;
+    margin-top: 5px;
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-bottom: 5px;
+    box-shadow: 1px 1px 2px #666666;
+
 }
 
 #Boutons_gardiennes {

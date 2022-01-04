@@ -67,13 +67,14 @@
 
 }
 
-/* .bouton_gar {
+.bouton_gar {
+    display:flex;
+    flex-direction: column;
+    align-items: center;
     font-family: Roboto, Arial, Helvetica, sans-serif;
     font-size: 14px;
     width:80px;
     height:80px;
-    text-align: center;
-    vertical-align: middle;
     border-radius: 25px;
     color:#FFFFFF;
     background-color: #383338;
@@ -82,26 +83,9 @@
     margin-top: 5px;
     margin-bottom: 5px;
     
-} */
-
-.bouton_gar_1{
-    font-family: Roboto, Arial, Helvetica, sans-serif;
-    font-size: 14px;
-    width:80px;
-    height:80px;
-   
-    border-radius: 25px;
-    color:#FFFFFF;
-    background-color: #383338;
-    border: solid #383338 0px;
-    text-decoration: none;
-    margin-top: 5px;
-    margin-bottom: 5px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-
 }
+
+
 
 #Boutons_gardiennes {
     margin-top: 15px;

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+	<title>Ma cage clicable</title>
+	<meta charset = "utf-8">
+	<!--<link rel="stylesheet" href="css/bootstrap.css">
+	<link rel ="stylesheet" href = "css/style.css"> -->
+	<!--<script src="https://kit.fontawesome.com/a076d05399.js"></script>-->
+
+</head>
+
+<style>
+#cage img {
+    display: block;
+    margin-left: 50;
+    margin-right: auto }
+
+#zoneclicable {
+	border-radius : 30px;
+	background-color: : black;
+}
+
+#rectangle_clic {
+	background-color: black;
+	background-position:top;	
+}
+}
+</style>
+<body>
+	<div id="cage">
+		<img src="cage_hand.jpg" alt="cage" usemap="#exemple-map-1"/>
+	</div>
+	<div id ="rectangle_clic">
+		<map name="#exemple-map-1">
+  		<!--<area shape="circle" coords="200,250,25"
+   		 href="page-2.html" alt="exemple de cercle" />-->
+
+ 		 <area shape="rect" coords="100, 50, 200, 100" href="autrepage.html" alt="exemple de rectangle" id="zoneclicable"/>
+
+</map>
+	</div>
+
+</body>
+
+
+</html>

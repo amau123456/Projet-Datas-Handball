@@ -177,6 +177,22 @@ color: #383338;
 
 }
 
+#conteneur_carton_jaune {
+    width: 33.5px;
+    height: 33.5px;
+    border-radius: 33.5px;
+    border:solid 1px #ffffff;
+}
+
+#conteneur_carton_rouge {
+    width: 33.5px;
+    height: 33.5px;
+    border-radius: 33.5px;
+    border:solid 1px white;
+
+}
+
+
 #carton_rouge{
     background-image: url(Carton\ Rouge.png);
     background-size: 33px;
@@ -193,7 +209,7 @@ color: #383338;
     height: 33px;
     border-radius: 6px ;
     border:solid 1px #589474;
-    background-color: rgba(220, 220, 220, 0.012);
+    background-color: #dcdcdc03;
     
 
 }

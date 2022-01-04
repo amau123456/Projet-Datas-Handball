@@ -27,7 +27,7 @@ bouton_Attaque.addEventListener('click',function(){
 }
 );
 
-////Boutons type attaque (Attaque Placée ou Contre-attaque)
+//Boutons type attaque (Attaque Placée ou Contre-attaque)
 let attaque_Placee=true;
 let contre_Attaque=false;
 
@@ -59,3 +59,258 @@ bouton_Switch.addEventListener('change',function(e){
 }
 );
 
+//Boutons sanctions 
+let carton_jaune=false;
+let carton_rouge=false;
+let deux_min=false;
+
+let bouton_carton_jaune = document.getElementById("conteneur_carton_jaune");
+let bouton_carton_rouge = document.getElementById("conteneur_carton_rouge");
+let bouton_2min = document.getElementById("Deux_min");
+
+bouton_carton_jaune.addEventListener('click', function()
+{
+    if (carton_jaune==false) {
+        carton_jaune=true;
+        bouton_carton_jaune.style.borderColor="#f9eb3c";
+    }
+    else if (carton_jaune==true) {
+        carton_jaune=false;
+        bouton_carton_jaune.style.borderColor="#ffffff"    }
+
+});
+
+bouton_carton_rouge.addEventListener('click', function()
+{
+    if (carton_rouge==false) {
+        carton_rouge=true;
+        bouton_carton_rouge.style.borderColor="#f9eb3c";
+    }
+    else if (carton_rouge==true) {
+        carton_rouge=false;
+        bouton_carton_rouge.style.borderColor="#ffffff"    }
+
+});
+
+
+bouton_2min.addEventListener('click', function(){
+    if (deux_min==false) {
+        deux_min=true;
+        bouton_2min.style.backgroundColor="#f9eb3c";
+
+    }
+    else if (deux_min==true) {
+        deux_min=false;
+        bouton_2min.style.backgroundColor="#dcdcdc03";
+    }
+});
+
+//Boutons faits de jeu 
+let faute_zone=false;
+let marche=false;
+let reprise_drible=false;
+let balle_perdue=false;
+let mauvaise_relance=false;
+let passage_en_force=false;
+let faute_subie=false;
+let tir_contre=false;
+let deux_min_provoque=false;
+let sept_m=false;
+let duel_gagne=false;
+let relance=false;
+
+
+let bouton_faute_zone = document.getElementById("faute_zone");
+let bouton_marche = document.getElementById("marche");
+let bouton_reprise_drible=document.getElementById("reprise_drible");
+let bouton_balle_perdue=document.getElementById("balle_perdue");
+let bouton_mauvaise_relance=document.getElementById("mauvaise_relance");
+let bouton_passage_en_force=document.getElementById("passage_en_force");
+let bouton_faute_subie=document.getElementById("faute_subie");
+let bouton_tir_contre=document.getElementById("tir_contre");
+let bouton_deux_min_provoque=document.getElementById("deux_min_provoque");
+let bouton_sept_m=document.getElementById("sept_m");
+let bouton_duel_gagne=document.getElementById("duel_gagne");
+let bouton_relance=document.getElementById("relance");
+
+bouton_faute_zone.addEventListener('click', function()
+{
+    if (faute_zone==false) {
+        faute_zone=true;
+        bouton_faute_zone.style.backgroundColor="#f9eb3c";
+        bouton_faute_zone.style.color="#383338"
+    }
+    else if (faute_zone==true) {
+        faute_zone=false;
+        bouton_faute_zone.style.backgroundColor="#589474";
+        bouton_faute_zone.style.color="#FFFFFF";
+       }
+
+});
+
+bouton_marche.addEventListener('click', function()
+{
+    if (marche==false) {
+        marche=true;
+        bouton_marche.style.backgroundColor="#f9eb3c";
+        bouton_marche.style.color="#383338"
+    }
+    else if (marche==true) {
+        marche=false;
+        bouton_marche.style.backgroundColor="#589474";
+        bouton_marche.style.color="#FFFFFF";
+       }
+
+});
+
+bouton_reprise_drible.addEventListener('click', function()
+{
+    if (reprise_drible==false) {
+        reprise_drible=true;
+        bouton_reprise_drible.style.backgroundColor="#f9eb3c";
+        bouton_reprise_drible.style.color="#383338"
+    }
+    else if (reprise_drible==true) {
+        reprise_drible=false;
+        bouton_reprise_drible.style.backgroundColor="#589474";
+        bouton_reprise_drible.style.color="#FFFFFF";
+       }
+
+});
+
+bouton_balle_perdue.addEventListener('click', function()
+{
+    if (balle_perdue==false) {
+        balle_perdue=true;
+        bouton_balle_perdue.style.backgroundColor="#f9eb3c";
+        bouton_balle_perdue.style.color="#383338"
+    }
+    else if (balle_perdue==true) {
+        balle_perdue=false;
+        bouton_balle_perdue.style.backgroundColor="#589474";
+        bouton_balle_perdue.style.color="#FFFFFF";
+       }
+
+});
+
+bouton_mauvaise_relance.addEventListener('click', function()
+{
+    if (mauvaise_relance==false) {
+        mauvaise_relance=true;
+        bouton_mauvaise_relance.style.backgroundColor="#f9eb3c";
+        bouton_mauvaise_relance.style.color="#383338"
+    }
+    else if (mauvaise_relance==true) {
+        mauvaise_relance=false;
+        bouton_mauvaise_relance.style.backgroundColor="#589474";
+        bouton_mauvaise_relance.style.color="#FFFFFF";
+       }
+
+});
+
+bouton_passage_en_force.addEventListener('click', function()
+{
+    if (passage_en_force==false) {
+        passage_en_force=true;
+        bouton_passage_en_force.style.backgroundColor="#f9eb3c";
+        bouton_passage_en_force.style.color="#383338"
+    }
+    else if (passage_en_force==true) {
+        passage_en_force=false;
+        bouton_passage_en_force.style.backgroundColor="#589474";
+        bouton_passage_en_force.style.color="#FFFFFF";
+       }
+
+});
+
+bouton_faute_subie.addEventListener('click', function()
+{
+    if (faute_subie==false) {
+        faute_subie=true;
+        bouton_faute_subie.style.backgroundColor="#f9eb3c";
+        bouton_faute_subie.style.color="#383338"
+    }
+    else if (faute_subie==true) {
+        faute_subie=false;
+        bouton_faute_subie.style.backgroundColor="#589474";
+        bouton_faute_subie.style.color="#FFFFFF";
+       }
+
+});
+
+bouton_tir_contre.addEventListener('click', function()
+{
+    if (tir_contre==false) {
+        tir_contre=true;
+        bouton_tir_contre.style.backgroundColor="#f9eb3c";
+        bouton_tir_contre.style.color="#383338"
+    }
+    else if (tir_contre==true) {
+        tir_contre=false;
+        bouton_tir_contre.style.backgroundColor="#589474";
+        bouton_tir_contre.style.color="#FFFFFF";
+       }
+
+});
+
+bouton_deux_min_provoque.addEventListener('click', function()
+{
+    if (deux_min_provoque==false) {
+        deux_min_provoque=true;
+        bouton_deux_min_provoque.style.backgroundColor="#f9eb3c";
+        bouton_deux_min_provoque.style.color="#383338"
+    }
+    else if (deux_min_provoque==true) {
+        deux_min_provoque=false;
+        bouton_deux_min_provoque.style.backgroundColor="#589474";
+        bouton_deux_min_provoque.style.color="#FFFFFF";
+       }
+
+});
+
+bouton_sept_m.addEventListener('click', function()
+{
+    if (sept_m==false) {
+        sept_m=true;
+        bouton_sept_m.style.backgroundColor="#f9eb3c";
+        bouton_sept_m.style.color="#383338"
+    }
+    else if (sept_m==true) {
+        sept_m=false;
+        bouton_sept_m.style.backgroundColor="#589474";
+        bouton_sept_m.style.color="#FFFFFF";
+       }
+
+});
+
+
+bouton_duel_gagne.addEventListener('click', function()
+{
+    if (duel_gagne==false) {
+        duel_gagne=true;
+        bouton_duel_gagne.style.backgroundColor="#f9eb3c";
+        bouton_duel_gagne.style.color="#383338"
+    }
+    else if (duel_gagne==true) {
+        duel_gagne=false;
+        bouton_duel_gagne.style.backgroundColor="#589474";
+        bouton_duel_gagne.style.color="#FFFFFF";
+       }
+
+});
+
+
+bouton_relance.addEventListener('click', function()
+{
+    if (relance==false) {
+        relance=true;
+        bouton_relance.style.backgroundColor="#f9eb3c";
+        bouton_relance.style.color="#383338"
+    }
+    else if (relance==true) {
+        relance=false;
+        bouton_relance.style.backgroundColor="#589474";
+        bouton_relance.style.color="#FFFFFF";
+       }
+
+});

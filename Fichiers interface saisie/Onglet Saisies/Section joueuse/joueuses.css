@@ -1,0 +1,161 @@
+@font-face {
+    font-family: 'Roboto-Bold';
+    src: url(Roboto/Roboto-Bold.ttf);
+    font-family: 'Roboto-Italic';
+    src: url(Roboto/Roboto-Italic.ttf);
+    src: url(Roboto/Roboto-Regular.ttf);
+    font-family: 'Roboto-Medium';
+    src: url(Roboto/Roboto-Medium.ttf);
+    font-family: 'Roboto-Thin';
+    src: url(Roboto/Roboto-Thin.ttf);
+    font-family: 'Roboto-Regular';
+    src: url(Roboto/Roboto-Regular.ttf);
+}
+
+#Titre_section_action{
+    margin-bottom: 7px;
+}
+.Titre_section {
+    font-family: Roboto-Regular, Arial, Helvetica, sans-serif;
+    size: 30px;
+    text-decoration: underline;
+    text-decoration-color: #F9EB3C;;
+    text-underline-position: under;
+    color: #05602F;
+    width: 517px;
+    height:40px;
+    margin: auto;
+    text-align: center;
+}
+
+#Contenu_section {
+    width: 202px;
+    height: 640px;
+    border-radius: 8px;
+    background-color: rgba(220, 220, 220, 0.12);
+    margin:auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.bouton_jou {
+    font-family: Roboto, Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    width:80px;
+    height:80px;
+    text-align: center;
+    vertical-align: middle;
+    border-radius: 25px;
+    color:#383338;
+    background-color: #F9EB3C;
+    border: solid #383338 0px;
+    text-decoration: none;
+    margin-top: 5px;
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-bottom: 5px;
+}
+
+#Boutons_joueuses {
+    margin-top: 15px;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: 230px;
+    width: 202px; 
+
+}
+
+.bouton_gar {
+    font-family: Roboto, Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    width:80px;
+    height:80px;
+    text-align: center;
+    vertical-align: middle;
+    border-radius: 25px;
+    color:#FFFFFF;
+    background-color: #383338;
+    border: solid #383338 0px;
+    text-decoration: none;
+    margin-top: 5px;
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-bottom: 5px;
+}
+
+#Boutons_gardiennes {
+    margin-top: 15px;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: 230px;
+    width: 202px; 
+
+}
+
+#boutons_ligne_1 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+}
+#boutons_ligne_x{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+}
+
+.nom_joueuse{
+    font-family: Roboto, Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    color: #383338;
+    margin-bottom: 0px;
+    margin-top: 10px;
+}
+
+.nom_joueuse_long{
+    font-family: Roboto, Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    color: #383338;
+    margin-bottom: 0px;
+    margin-top: 2px;
+    margin-left: 0px;
+    margin-right: 0px;
+    text-align: center;
+}
+
+.numero_joueuse{
+    font-family: Roboto, Arial, Helvetica, sans-serif;
+    font-size: 35px;
+    color: #383338;
+    margin-top: 0px; 
+}
+
+.nom_gardienne{
+    font-family: Roboto, Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    color: #FFFFFF;
+    margin-bottom: 0px;
+    margin-top: 10px;
+}
+
+.nom_gardienne_long{
+    font-family: Roboto, Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    color: #FFFFFF;
+    margin-bottom: 0px;
+    margin-top: 2px;
+}
+
+.numero_gardienne{
+    font-family: Roboto, Arial, Helvetica, sans-serif;
+    font-size: 35px;
+    color: #FFFFFF;
+    margin-top: 0px; 
+}

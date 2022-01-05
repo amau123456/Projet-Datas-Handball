@@ -314,3 +314,15 @@ bouton_relance.addEventListener('click', function()
        }
 
 });
+
+//Test masquer le groupe des boutons actions au click sur défense
+bouton_Defense.addEventListener('click',function (){
+    document.getElementById("Boutons_saisies").style.display = 'none';
+    document.getElementById("Boutons_saisies_defense").style.display = 'flex';
+});
+
+bouton_Attaque.addEventListener('click',function(){
+    document.getElementById("Boutons_saisies").style.display = 'flex';
+    document.getElementById("Boutons_saisies_defense").style.display = 'none';
+    
+})

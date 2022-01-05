@@ -105,7 +105,7 @@ bouton_2min.addEventListener('click', function(){
     }
 });
 
-//Boutons faits de jeu 
+//Boutons faits de jeu - Attaque
 let faute_zone=false;
 let marche=false;
 let reprise_drible=false;
@@ -132,6 +132,8 @@ let bouton_deux_min_provoque=document.getElementById("deux_min_provoque");
 let bouton_sept_m=document.getElementById("sept_m");
 let bouton_duel_gagne=document.getElementById("duel_gagne");
 let bouton_relance=document.getElementById("relance");
+
+
 
 bouton_faute_zone.addEventListener('click', function()
 {
@@ -315,7 +317,241 @@ bouton_relance.addEventListener('click', function()
 
 });
 
-//Test masquer le groupe des boutons actions au click sur défense
+//Boutons faits de jeu - Défense
+let duel_perdu=false;
+let balle_recuperee=false;
+let interception=false;
+
+let bouton_faute_zone_d = document.getElementById("faute_zone_d");
+let bouton_marche_d = document.getElementById("marche_d");
+let bouton_reprise_drible_d=document.getElementById("reprise_drible_d");
+let bouton_balle_recuperee_d=document.getElementById("balle_recuperee_d");
+let bouton_mauvaise_relance_d=document.getElementById("mauvaise_relance_d");
+let bouton_passage_en_force_d=document.getElementById("passage_en_force_d");
+let bouton_faute_subie_d=document.getElementById("faute_subie_d");
+let bouton_tir_contre_d=document.getElementById("tir_contre_d");
+let bouton_interception_d=document.getElementById("interception_d");
+let bouton_deux_min_provoque_d=document.getElementById("deux_min_provoque_d");
+let bouton_sept_m_d=document.getElementById("sept_m_d");
+let bouton_duel_gagne_d=document.getElementById("duel_gagne_d");
+let bouton_duel_perdu_d=document.getElementById("duel_perdu_d");
+let bouton_relance_d=document.getElementById("relance_d");
+
+
+bouton_faute_zone_d.addEventListener('click', function()
+{
+    if (faute_zone==false) {
+        faute_zone=true;
+        bouton_faute_zone_d.style.backgroundColor="#f9eb3c";
+        bouton_faute_zone_d.style.color="#383338"
+    }
+    else if (faute_zone==true) {
+        faute_zone=false;
+        bouton_faute_zone_d.style.backgroundColor="#589474";
+        bouton_faute_zone_d.style.color="#FFFFFF";
+       }
+
+});
+
+bouton_marche_d.addEventListener('click', function()
+{
+    if (marche==false) {
+        marche=true;
+        bouton_marche_d.style.backgroundColor="#f9eb3c";
+        bouton_marche_d.style.color="#383338"
+    }
+    else if (marche==true) {
+        marche=false;
+        bouton_marche_d.style.backgroundColor="#589474";
+        bouton_marche_d.style.color="#FFFFFF";
+       }
+
+});
+
+bouton_reprise_drible_d.addEventListener('click', function()
+{
+    if (reprise_drible==false) {
+        reprise_drible=true;
+        bouton_reprise_drible_d.style.backgroundColor="#f9eb3c";
+        bouton_reprise_drible_d.style.color="#383338"
+    }
+    else if (reprise_drible==true) {
+        reprise_drible=false;
+        bouton_reprise_drible_d.style.backgroundColor="#589474";
+        bouton_reprise_drible_d.style.color="#FFFFFF";
+       }
+
+});
+
+bouton_balle_recuperee_d.addEventListener('click', function()
+{
+    if (balle_recuperee==false) {
+        balle_recuperee=true;
+        bouton_balle_recuperee_d.style.backgroundColor="#f9eb3c";
+        bouton_balle_recuperee_d.style.color="#383338"
+    }
+    else if (balle_recuperee==true) {
+        balle_recuperee=false;
+        bouton_balle_recuperee_d.style.backgroundColor="#589474";
+        bouton_balle_recuperee_d.style.color="#FFFFFF";
+       }
+
+});
+
+bouton_mauvaise_relance_d.addEventListener('click', function()
+{
+    if (mauvaise_relance==false) {
+        mauvaise_relance=true;
+        bouton_mauvaise_relance_d.style.backgroundColor="#f9eb3c";
+        bouton_mauvaise_relance_d.style.color="#383338"
+    }
+    else if (mauvaise_relance==true) {
+        mauvaise_relance=false;
+        bouton_mauvaise_relance_d.style.backgroundColor="#589474";
+        bouton_mauvaise_relance_d.style.color="#FFFFFF";
+       }
+
+});
+
+bouton_passage_en_force_d.addEventListener('click', function()
+{
+    if (passage_en_force==false) {
+        passage_en_force=true;
+        bouton_passage_en_force_d.style.backgroundColor="#f9eb3c";
+        bouton_passage_en_force_d.style.color="#383338"
+    }
+    else if (passage_en_force==true) {
+        passage_en_force=false;
+        bouton_passage_en_force_d.style.backgroundColor="#589474";
+        bouton_passage_en_force_d.style.color="#FFFFFF";
+       }
+
+});
+
+bouton_faute_subie_d.addEventListener('click', function()
+{
+    if (faute_subie==false) {
+        faute_subie=true;
+        bouton_faute_subie_d.style.backgroundColor="#f9eb3c";
+        bouton_faute_subie_d.style.color="#383338"
+    }
+    else if (faute_subie==true) {
+        faute_subie=false;
+        bouton_faute_subie_d.style.backgroundColor="#589474";
+        bouton_faute_subie_d.style.color="#FFFFFF";
+       }
+
+});
+
+bouton_tir_contre_d.addEventListener('click', function()
+{
+    if (tir_contre==false) {
+        tir_contre=true;
+        bouton_tir_contre_d.style.backgroundColor="#f9eb3c";
+        bouton_tir_contre_d.style.color="#383338"
+    }
+    else if (tir_contre==true) {
+        tir_contre=false;
+        bouton_tir_contre_d.style.backgroundColor="#589474";
+        bouton_tir_contre_d.style.color="#FFFFFF";
+       }
+
+});
+
+bouton_interception_d.addEventListener('click', function()
+{
+    if (interception==false) {
+        interception=true;
+        bouton_interception_d.style.backgroundColor="#f9eb3c";
+        bouton_interception_d.style.color="#383338"
+    }
+    else if (interception==true) {
+        interception=false;
+        bouton_interception_d.style.backgroundColor="#589474";
+        bouton_interception_d.style.color="#FFFFFF";
+       }
+
+});
+
+bouton_deux_min_provoque_d.addEventListener('click', function()
+{
+    if (deux_min_provoque==false) {
+        deux_min_provoque=true;
+        bouton_deux_min_provoque_d.style.backgroundColor="#f9eb3c";
+        bouton_deux_min_provoque_d.style.color="#383338"
+    }
+    else if (deux_min_provoque==true) {
+        deux_min_provoque=false;
+        bouton_deux_min_provoque_d.style.backgroundColor="#589474";
+        bouton_deux_min_provoque_d.style.color="#FFFFFF";
+       }
+
+});
+
+bouton_sept_m_d.addEventListener('click', function()
+{
+    if (sept_m==false) {
+        sept_m=true;
+        bouton_sept_m_d.style.backgroundColor="#f9eb3c";
+        bouton_sept_m_d.style.color="#383338"
+    }
+    else if (sept_m==true) {
+        sept_m=false;
+        bouton_sept_m_d.style.backgroundColor="#589474";
+        bouton_sept_m_d.style.color="#FFFFFF";
+       }
+
+});
+
+
+bouton_duel_gagne_d.addEventListener('click', function()
+{
+    if (duel_gagne==false) {
+        duel_gagne=true;
+        bouton_duel_gagne_d.style.backgroundColor="#f9eb3c";
+        bouton_duel_gagne_d.style.color="#383338"
+    }
+    else if (duel_gagne==true) {
+        duel_gagne=false;
+        bouton_duel_gagne_d.style.backgroundColor="#589474";
+        bouton_duel_gagne_d.style.color="#FFFFFF";
+       }
+
+});
+
+bouton_duel_perdu_d.addEventListener('click', function()
+{
+    if (duel_perdu==false) {
+        duel_perdu=true;
+        bouton_duel_perdu_d.style.backgroundColor="#f9eb3c";
+        bouton_duel_perdu_d.style.color="#383338"
+    }
+    else if (duel_perdu==true) {
+        duel_perdu=false;
+        bouton_duel_perdu_d.style.backgroundColor="#589474";
+        bouton_duel_perdu_d.style.color="#FFFFFF";
+       }
+
+});
+
+bouton_relance_d.addEventListener('click', function()
+{
+    if (relance==false) {
+        relance=true;
+        bouton_relance_d.style.backgroundColor="#f9eb3c";
+        bouton_relance_d.style.color="#383338"
+    }
+    else if (relance==true) {
+        relance=false;
+        bouton_relance_d.style.backgroundColor="#589474";
+        bouton_relance_d.style.color="#FFFFFF";
+       }
+
+});
+
+
+//Afficher les groupes de boutons de saisies différents (attaque/défense/gardiennes)
+
 bouton_Defense.addEventListener('click',function (){
     document.getElementById("Boutons_saisies").style.display = 'none';
     document.getElementById("Boutons_saisies_defense").style.display = 'flex';

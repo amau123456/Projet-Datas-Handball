@@ -213,12 +213,7 @@ color: #383338;
 
 }
 
-.boutton_fait_de_jeu {
-    width: 65px;
-    height: 65px;
-    border-radius: 65px;
-    border:none;
-}
+
 
 
 
@@ -268,8 +263,16 @@ color: #383338;
     background-color: #589474;
     color:#FFFFFF;
     font-size: 13px;
-
+    width: 65px;
+    height: 65px;
+    border-radius: 65px;
+    border:none;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
+
 
 .boutton_fait_de_jeu:hover {
     margin-left: 8px;
@@ -277,6 +280,33 @@ color: #383338;
     color:#FFFFFF;
     font-size: 13px;
     box-shadow: 1px 1px 2px #666666;
+    
+}
+
+#interception_d {
+    font-size: 11px;
+    width: 65px;
+    height: 65px;
+    border-radius: 65px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#interception:hover{
+    font-size: 11px;
+    width: 65px;
+    height: 65px;
+    border-radius: 65px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 1px 1px 2px #666666;
+}
+
+#relance_but {
+    display:none;
 }
 
 #Validation_saisie {

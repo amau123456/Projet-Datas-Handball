@@ -4,42 +4,54 @@
 <head>
 	<title>Ma cage clicable</title>
 	<meta charset = "utf-8">
-	<!--<link rel="stylesheet" href="css/bootstrap.css">
-	<link rel ="stylesheet" href = "css/style.css"> -->
-	<!--<script src="https://kit.fontawesome.com/a076d05399.js"></script>-->
-
 </head>
 
 <style>
-#cage img {
-    display: block;
-    margin-left: 50;
-    margin-right: auto }
 
-#zoneclicable {
-	border-radius : 60px;
-	background-color: black;
+#cagesvg {
+	position: relative;
+	width: 100%;
+	padding-bottom: 77%;
+	vertical-align: middle;
+	margin: 0;
+	overflow: hidden;
+}
+#cagesvg svg { 
+	display: inline-block;
+	position: absolute;
+	top: 100; left: 500;
 }
 
-#rectangle_clic {
-	background-color: black;
-	background-position:top;	
-}
-}
 </style>
 <body>
-	<div id="cage">
-		<img src="cage_hand.jpg" alt="cage" usemap="#exemple-map-1"/>
-	</div>
-	<div id ="rectangle_clic">
-		<map name="#exemple-map-1">
-  		<!--<area shape="circle" coords="200,250,25"
-   		 href="page-2.html" alt="exemple de cercle" />-->
- 		 <div id="zoneclicable"><area shape="rect" coords="100, 50, 200, 100" href="autrepage.html" alt="exemple de rectangle"/></div>
+	
+	
+	<figure id="cagesvg">
+		<svg id="svg" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="400" height="255" viewBox="0, 0, 400,250">
+		<image width="400" height="250" xlink:href="cage_hand.jpg">
+		</image>
 
-		</map>
-	</div>
+		<!--Ceux du haut-->
+		
+		<a xlink:href="autrepage.html"><!--Remplacer par le javascript bouton-->
+		<rect class="rect" x="75" y="58" fill="#000" opacity="0.3" width="77" height="52"  />
+		</a>
+		<rect class="rect" x="154" y="58" fill="#00" opacity="0.3" width="77" height="52"  />
+		<rect class="rect" x="233" y="58" fill="#00" opacity="0.3" width="77" height="52"  />
 
+		<!--Ceux du Milieu-->
+		<rect class="rect" x="75" y="112" fill="#00" opacity="0.3" width="77" height="52"  />
+		<rect class="rect" x="154" y="112" fill="#00" opacity="0.3" width="77" height="52"  />
+		<rect class="rect" x="233" y="112" fill="#00" opacity="0.3" width="77" height="52"  />
+
+		<!--Ceux du bas -->
+		<rect class="rect" x="75" y="166" fill="#00" opacity="0.3" width="77" height="52"  />
+		<rect class="rect" x="154" y="166" fill="#00" opacity="0.3" width="77" height="52"  />
+		<rect class="rect" x="233" y="166" fill="#00" opacity="0.3" width="77" height="52"  />
+
+	</svg>
+	</figure>
+	
 </body>
 
 

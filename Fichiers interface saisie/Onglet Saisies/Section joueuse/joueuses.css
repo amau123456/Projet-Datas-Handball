@@ -72,20 +72,11 @@
 }
 
 .bouton_gar {
-<<<<<<< HEAD
-    display:flex;
-    flex-direction: column;
-    align-items: center;
-=======
->>>>>>> 257a6b753ccffda79f37a0a07da913df99985d59
     font-family: Roboto, Arial, Helvetica, sans-serif;
     font-size: 14px;
     width:80px;
     height:80px;
-<<<<<<< HEAD
-=======
     text-align: center;
->>>>>>> 257a6b753ccffda79f37a0a07da913df99985d59
     border-radius: 25px;
     color:#FFFFFF;
     background-color: #383338;
@@ -99,11 +90,6 @@
     justify-content:space-between;
     
 }
-<<<<<<< HEAD
-
-
-=======
->>>>>>> 257a6b753ccffda79f37a0a07da913df99985d59
 
 #Boutons_gardiennes {
     margin-top: 15px;

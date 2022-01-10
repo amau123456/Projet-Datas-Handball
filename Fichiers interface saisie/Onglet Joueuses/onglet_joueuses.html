@@ -10,37 +10,67 @@
     </head>
     <body>
         <div id="Bloc_global">
-            <div id="Titre_section_joueuses">
-                <h1 class="Titre_section">Sélections joueuses</h1>
-            </div>
 
-            <div id="Titre_section_joueuses">
-                <h1>Menu</h1>
+            <div id="Menu">
                 <nav>
                     <ul>
-                        <li><a href="#">Joueuses</a></li>
-                        <li><a href="#">Saisie</a></li>
+                        <li><a href="#">Acceuil</a></li>
                         <li><a href="#">Match</a></li>
-                        <li><a href="#">Analyse</a></li>
+                        <li><a href="#">Equipe</a></li>
+                        <li><a href="#">Dashboard</a></li>
                     </ul>
                 </nav>
             </div>
 
-            <div id="Search"></div>
-            <label for="site-search">Choisissez une joueuse :</label>
-            <input type="search" id="site-search" name="q" aria-label="Search through site content">
-            <button>Search</button>
+            <div id="Bloc_2">
+                <div id="Search">
+                        <h1 class="Titre_section">Choisissez une joueuse :</h1>
+                    <label for="site-search">Recherche :</label>
+                    <input type="search" id="site-search" name="q" aria-label="Search through site content">
+                    <button class="button" type = 'submit'>Search</button>
+                </div>
+
+                <div id="formulaire_ajout_joueuse">
+                    <form action="/ma-page-de-traitement" method="post">
+                        <h1 class="Titre_section">Ajoutez une joueuse :</h1>
+                        <div>
+                            <label for="N° Joueuse">N° Joueuse :</label>
+                            <input type="int" name="N° Joueuse" id="N° Joueuse"  size="30" />
+                            <br />
+
+                            <label for="Nom">Nom :</label>
+                            <input type="text" name="Nom" id="Nom"  size="30" />
+                            <br />
+
+                            <label for="prenom">Prénom :</label>
+                            <input type="text" name="prenom" id="prenom"  size="30" />
+                            <br />
+
+                              
+                            <label for="Equipe"> Equipe :</label>
+                            <input type="text" name="Equipe" id="Equipe"  size="30" />
+                            <br />
+
+                            <label for="Main forte"> Main forte :</label>
+                            <input type="text" name="Main forte" id="Main forte"  size="30" />
+                            <br />
+
+                            <label for="Taille">Taille :</label>
+                            <input type="int" name="Taille" id="Taille"  size="30" />
+                            <br />
+
+                            <label for="Poids">Poids :</label>
+                            <input type="int" name="Poids" id="Poids"  size="30" />
+                            <br />
+                        </div>
+                        <button class="button">Ajouter</button>
+                    </form>
+                </div>
             </div>
-            
-            <div id="Titre_section_formulaire_joueuse">
-                <h1 class="Titre_section">Formulaire joueuses</h1>
+
+            <div id="Bloc_3">
+                <h1 class="Titre_section">Table joueuse :</h1>
             </div>
-            <div id="formulaire_ajout_joueuse">
-                <form action="/ma-page-de-traitement" method="post">
-                    <div>
-                        <label for="name">Nom :</label>
-                        <input type="text" id="name" name="user_name">
-                    </div>
-                    <button>Ajouter</button>
-                </form>
-            </div>
+        </div>    
+    </body>
+</html>           

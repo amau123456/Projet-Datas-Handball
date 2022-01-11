@@ -35,20 +35,3 @@
     background-color: #f7fafc;
     border-bottom: solid 5px #05602F;
 }
-
-.navbar{
-    border: solid black 3px;
-    background: white;
-}
-
-.navbar-expand-lg {
-    background-color: white;
-}
-
-.navbar-light{
-    background-color: white;
-}
-
-.bg-light{
-    background-color: white;
-}

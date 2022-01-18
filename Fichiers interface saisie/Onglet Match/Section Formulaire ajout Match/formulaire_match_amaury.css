@@ -25,6 +25,7 @@
     justify-content: space-around;
     align-items: center;
     border-width: 1px;
+   
     
 }
 
@@ -54,7 +55,7 @@
 
 #Section_champs_saisies {
     width:450px;
-    height:476px;
+    height:480px;
     display: flex;
     flex-direction: column;
     justify-content:space-between ;
@@ -64,7 +65,8 @@
 }
 
 input {
-    padding-left: 8px;
+    padding-left: 20px;
+    margin-bottom: 11px;
 }
 input::placeholder {
     color:#9C9C9C;
@@ -220,6 +222,7 @@ input, textarea {
     margin-right: auto; 
     box-shadow: 1px 1px 2px #666666;
 }
+
 
 
 

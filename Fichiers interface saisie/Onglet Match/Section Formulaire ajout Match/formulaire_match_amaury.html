@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <link rel="stylesheet" href="formulaire_match_amaury.css" />
+        <script src="https://code.iconify.design/2/2.1.0/iconify.min.js"></script>
+        
+        
+
+        <title>Section saisie actions</title>
+
+    </head>
+    <body>
+        <div id="Bloc_global">
+            <div id="Contenu_section">
+                <div id="Titre_section_formulaire_match">
+                    <span class="iconify" data-icon="openmoji:man-playing-handball" style="color: black; font-size: 135px;"></span>
+                    <h1 class="Titre_section">Feuille de Match</h1>
+                </div>
+                <div id="Formulaire_ajout_match">
+                    <form action="/ma-page-de-traitement" method="post">
+                        <div id="Section_champs_saisies">
+
+                            <div class="champ_saisie">
+                            <label class= 'info_club' for="club_adverse">Club adverse</label>
+                            <input type="text" name="club_adverse" id="club_adverse"  size="30" placeholder="Saisir nom club" />
+                            
+                            </div>
+                            <div class="champ_saisie">
+                            <label class= 'info_club' for="lieu_match">Lieu match</label>
+                            <input type="text" name="lieu_match" id="lieu_match"  size="30" placeholder="Saisir le lieu de la rencontre" />
+                            </div>
+
+                            <div class="champ_saisie">
+                            <label class= 'info_club' for="date_rencontre">Date de la rencontre :</label>
+                            <input type="date" name="date_rencontre" id="date_rencontre"  size="30" placeholder="Saisir date" />
+                            </div>            
+
+                            <div id="Domicile_exterieur">
+                                <p class="bouton_domicile_exterieur" id="bouton_domicile">Domicile</p>
+                                <div class="onoffswitch" id="onoffswitch">
+                                    <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch" tabindex="0" checked>
+                                    <label class="onoffswitch-label" for="myonoffswitch">
+                                        <span class="onoffswitch-inner"></span>
+                                        <span class="onoffswitch-switch"></span>
+                                    </label>
+                                </div>
+                                <p class="bouton_domicile_exterieur" id="bouton_exterieur">Exterieur</p>
+                            </div>
+                            <div class="champ_saisie">
+                            <label class= 'info_club' for="competition"> Compétition :</label>
+                            <input type="text" name="competition" id="competition"  size="30" placeholder="Saisir le championnat" />
+                            </div>   
+
+                        </div>
+                        
+                        <button class="bouton_valider"><span class="iconify" data-icon="el:ok-circle" style="color: #FFFFFF; font-size: 20px;"></span>Valider</button>
+                    
+                        
+                        <button class="bouton_analyse"><span class="iconify" data-icon="bi:play-btn" style="color: #383838; font-size: 24px;"></span>Analyse du match</button>
+                        
+                        
+                    </form>
+                </div>
+            </div>
+        </div>
+        <script src="https://code.iconify.design/2/2.1.0/iconify.min.js"></script>
+        <script src="formulaire_match_amaury.js"></script>
+
+    </body>
+</html>

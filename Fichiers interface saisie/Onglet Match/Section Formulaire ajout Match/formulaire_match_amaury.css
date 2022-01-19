@@ -137,7 +137,9 @@ input, textarea {
 }
 
 
-
+#selection_competition {
+    margin-top: 11px;
+}
 
 
 .bouton_valider {

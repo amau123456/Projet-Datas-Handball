@@ -8,7 +8,7 @@
     src: url(Roboto/Roboto-Medium.ttf);
     font-family: 'Roboto-Thin';
     src: url(Roboto/Roboto-Thin.ttf);
-    font-family: 'Roboto-Regular';
+    font-family: 'Roboto-Regular'; 
     src: url(Roboto/Roboto-Regular.ttf);
 }
 
@@ -53,7 +53,6 @@
 }
 
 input, textarea {
-    
     padding:3px;
     border:1px solid #666666;
     border-radius:5px;

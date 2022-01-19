@@ -30,7 +30,13 @@
     
 }
 
+#Contenu_section:nth-child(1){
+    position:absolute;
+    top:5px;
+}
+
 #Titre_section_formulaire_match{
+
     display: flex;
     flex-direction: row;
     justify-content: flex-end;

@@ -12,6 +12,10 @@
     src: url(Roboto/Roboto-Regular.ttf);
 }
 
+#Table_matchs{
+    display: block;
+}
+
 table {
 	border-collapse: collapse;
 	width: 815px;

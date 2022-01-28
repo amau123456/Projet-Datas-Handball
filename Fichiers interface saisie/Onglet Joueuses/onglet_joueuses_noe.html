@@ -1,0 +1,76 @@
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <link rel="stylesheet" href="joueuses_css.css" />
+        <script src="https://code.iconify.design/2/2.1.0/iconify.min.js"></script>
+        
+
+        <title>Section saisie joueuses</title>
+
+    </head>
+    <body>
+        <div id="Bloc_global">
+
+            <div id="Menu">
+                <nav>
+                    <ul>
+                        <li><a href="#">Acceuil</a></li>
+                        <li><a href="#">Match</a></li>
+                        <li><a href="#">Equipe</a></li>
+                        <li><a href="#">Dashboard</a></li>
+                    </ul>
+                </nav>
+            </div>
+
+            <div id="Bloc_2">
+                <div id="Search">
+                        <h1 class="Titre_section">Choisissez une joueuse :</h1>
+                    <label for="site-search">Recherche :</label>
+                    <input type="search" id="site-search" name="q" aria-label="Search through site content">
+                    <button class="button" type = 'submit'>Search</button>
+                </div>
+
+                <div id="formulaire_ajout_joueuse">
+                    <form action="/ma-page-de-traitement" method="post">
+                        <h1 class="Titre_section">Ajoutez une joueuse :</h1>
+                        <div>
+                            <label for="N° Joueuse">N° Joueuse :</label>
+                            <input type="int" name="N° Joueuse" id="N° Joueuse"  size="30" />
+                            <br />
+
+                            <label for="Nom">Nom :</label>
+                            <input type="text" name="Nom" id="Nom"  size="30" />
+                            <br />
+
+                            <label for="prenom">Prénom :</label>
+                            <input type="text" name="prenom" id="prenom"  size="30" />
+                            <br />
+
+                              
+                            <label for="Equipe"> Equipe :</label>
+                            <input type="text" name="Equipe" id="Equipe"  size="30" />
+                            <br />
+
+                            <label for="Main forte"> Main forte :</label>
+                            <input type="text" name="Main forte" id="Main forte"  size="30" />
+                            <br />
+
+                            <label for="Taille">Taille :</label>
+                            <input type="int" name="Taille" id="Taille"  size="30" />
+                            <br />
+
+                            <label for="Poids">Poids :</label>
+                            <input type="int" name="Poids" id="Poids"  size="30" />
+                            <br />
+                        </div>
+                        <button class="button">Ajouter</button>
+                    </form>
+                </div>
+            </div>
+
+            <div id="Bloc_3">
+                <h1 class="Titre_section">Table joueuse :</h1>
+            </div>
+        </div>    
+    </body>
+</html>           

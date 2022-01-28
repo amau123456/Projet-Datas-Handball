@@ -1,76 +1,150 @@
 <html>
     <head>
         <meta charset="utf-8" />
-        <link rel="stylesheet" href="joueuses_css.css" />
-        <script src="https://code.iconify.design/2/2.1.0/iconify.min.js"></script>
         
+        <script src="https://code.iconify.design/2/2.1.0/iconify.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" href="onglet_joueuses.css" />
 
-        <title>Section saisie joueuses</title>
+        <title>Mon équipe</title>
 
     </head>
+    
     <body>
-        <div id="Bloc_global">
-
-            <div id="Menu">
-                <nav>
-                    <ul>
-                        <li><a href="#">Acceuil</a></li>
-                        <li><a href="#">Match</a></li>
-                        <li><a href="#">Equipe</a></li>
-                        <li><a href="#">Dashboard</a></li>
-                    </ul>
+        <div id="Bloc_gauche">
+            <header>
+                <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                    <a class="navbar-brand" href="#">
+                        <img src="logo.png" alt="x_x" style="height: 74px;">
+                    </a>
+                
+                    <!-- Bouton affiché uniquement sur mobile pour dérouler -->
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                    </button>
+                
+                    <!-- Les éléments de la navbar -->
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav">
+                        <li class="nav-item ">
+                            <a class="nav-link" href="navbar.html">Accueil <span class="sr-only">(actuel)</span></a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link" href="joueuses.html">Mon équipe</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="saisie.html">Saisir un match</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="dashboard.html">Résultats</a>
+                        </li>
+                        </ul>
+                    </div>
                 </nav>
+            </header>
+            <div id="Table_joueuses">
+                <table id="Table_Match">
+                    <thead>
+                        <tr class="table-ligne">
+                            <th class="table-head"><span id="logo_hand" class="iconify" data-icon="openmoji:man-playing-handball" style="color: #383338;"></span></th>
+                            <th class="table-head">N° Joueuse</th>
+                            <th class="table-head">Nom</th>
+                            <th class="table-head">Prénom</th>
+                            <th class="table-head">Équipe</th>
+                            <th class="table-head">Poste</th>
+                            <th class="table-head"><span id="poubelle" class="iconify" data-icon="fluent:delete-20-filled" style="color: #383338; font-size: 20px;"></span></th>
+                        </tr>
+                    </thead>
+        
+                    <tbody>
+                        <tr class="ligne-impair">
+                            <td class="table-data"><input id="checkbox_selection" type="checkbox" class="delete_checkbox"/>
+                            </td>
+                            <td class="table-data">22</td>
+                            <td class="table-data">Plais</td>
+                            <td class="table-data">Mathilde</td>
+                            <td class="table-data">HBPC</td>
+                            <td class="table-data">Pivot</td>
+                            <td class="icones_sur_ligne"><span class="iconify" data-icon="ci:edit" style="color: #383338; font-size: 20px;"></span>
+                            <span class="iconify" data-icon="fluent:delete-20-filled" style="color: #383338; font-size: 20px;"></span></td>
+                        </tr>
+                        <tr class="ligne-pair">
+                            <td class="table-data"><input id="checkbox_selection" type="checkbox" class="delete_checkbox"/>
+                            </td>
+                            <td class="table-data">9</td>
+                            <td class="table-data">Masse</td>
+                            <td class="table-data">Elyne</td>
+                            <td class="table-data">HBPC</td>
+                            <td class="table-data">Pivot</td>
+                            <td class="icones_sur_ligne"><span class="iconify" data-icon="ci:edit" style="color: #383338; font-size: 20px;"></span>
+                                <span class="iconify" data-icon="fluent:delete-20-filled" style="color: #383338; font-size: 20px;"></span></td>
+                        </tr>
+                        <tr class="ligne-impair">
+                            <td class="table-data"><input id="checkbox_selection" type="checkbox" class="delete_checkbox"/>
+                            </td>
+                            <td class="table-data">6</td>
+                            <td class="table-data">Garcia</td>
+                            <td class="table-data">Louane</td>
+                            <td class="table-data">HBPC</td>
+                            <td class="table-data">Ailière Droit</td>
+                            <td class="icones_sur_ligne"><span class="iconify" data-icon="ci:edit" style="color: #383338; font-size: 20px;"></span>
+                            <span class="iconify" data-icon="fluent:delete-20-filled" style="color: #383338; font-size: 20px;"></span></td>
+                        </tr>
+        
+        
+                    </tbody>
+                
+                </table>
             </div>
-
-            <div id="Bloc_2">
-                <div id="Search">
-                        <h1 class="Titre_section">Choisissez une joueuse :</h1>
-                    <label for="site-search">Recherche :</label>
-                    <input type="search" id="site-search" name="q" aria-label="Search through site content">
-                    <button class="button" type = 'submit'>Search</button>
+        </div>
+       <!--  <div id="Bloc_droit">
+            <div id="Contenu_section">
+                <div id="Titre_section_formulaire_match">
+                    <span class="iconify" data-icon="openmoji:man-playing-handball" style="color: black; font-size: 135px;"></span>
+                    <h1 class="Titre_section">Feuille de Match</h1>
                 </div>
-
-                <div id="formulaire_ajout_joueuse">
+                <div id="Formulaire_ajout_match">
                     <form action="/ma-page-de-traitement" method="post">
-                        <h1 class="Titre_section">Ajoutez une joueuse :</h1>
-                        <div>
-                            <label for="N° Joueuse">N° Joueuse :</label>
-                            <input type="int" name="N° Joueuse" id="N° Joueuse"  size="30" />
-                            <br />
+                        <div id="Section_champs_saisies">
+                            <div class="champ_saisie">
+                            <label class= 'info_club' for="num_joueuse">N° Joueuse :</label>
+                            <input class="form-control" type="text" name="num_joueuse" id="num_joueuse"  size="30" placeholder="Saisir le N° Joueuse" />
+                            
+                            </div>
+                            <div class="champ_saisie">
+                            <label class= 'info_club' for="nom">Nom :</label>
+                            <input class="form-control" type="text" name="nom" id="nom"  size="30" placeholder="Saisir le nom de la joueuse" />
+                            </div>
 
-                            <label for="Nom">Nom :</label>
-                            <input type="text" name="Nom" id="Nom"  size="30" />
-                            <br />
+                            <div class="champ_saisie">
+                            <label class= 'info_club' for="prenom">Prénom :</label>
+                            <input class="form-control" type="text" name="prenom" id="prenom"  size="30" placeholder="Saisir le prénom de la joueuse" />
+                            </div>            
 
-                            <label for="prenom">Prénom :</label>
-                            <input type="text" name="prenom" id="prenom"  size="30" />
-                            <br />
-
-                              
-                            <label for="Equipe"> Equipe :</label>
-                            <input type="text" name="Equipe" id="Equipe"  size="30" />
-                            <br />
-
-                            <label for="Main forte"> Main forte :</label>
-                            <input type="text" name="Main forte" id="Main forte"  size="30" />
-                            <br />
-
-                            <label for="Taille">Taille :</label>
-                            <input type="int" name="Taille" id="Taille"  size="30" />
-                            <br />
-
-                            <label for="Poids">Poids :</label>
-                            <input type="int" name="Poids" id="Poids"  size="30" />
-                            <br />
+                            <div class="champ_saisie">
+                                <label class= 'info_club' for="equipe">Équipe :</label>
+                                <input class="form-control" type="text" name="equipe" id="equipe"  size="30" placeholder="Saisir l'équipe de la joueuse" />
+                            </div> 
+                            <div class="champ_saisie">
+                                <label class= 'info_club' for="poste">Poste :</label>
+                                <select class="form-control" aria-label="Poste Joueuse">
+                                    <option selected>Poste de la joueuse</option>
+                                    <option value="1">Pivot</option>
+                                    <option value="2">Aillière Droit<option>
+                                    <option value="3">Aillière Gauche</option>
+                                  </select>
+                            </div>
+                            
+                            <button class="bouton_valider"><span class="iconify" data-icon="el:ok-circle" style="color: #FFFFFF; font-size: 20px;"></span>Valider</button>
+                    
+                        
+                        <button class="bouton_analyse"><span class="iconify" data-icon="bi:play-btn" style="color: #383838; font-size: 24px;"></span>Analyse du match</button>
                         </div>
-                        <button class="button">Ajouter</button>
                     </form>
                 </div>
             </div>
 
-            <div id="Bloc_3">
-                <h1 class="Titre_section">Table joueuse :</h1>
-            </div>
-        </div>    
+        </div> -->
+            
     </body>
 </html>           

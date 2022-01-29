@@ -49,8 +49,9 @@ body {
 
 /* Mise en page Tableau Match-----------------------------------*/
 
-#Table_matchs{
+#Table_joueuses{
     display: block;
+    margin-top: 15px;
 }
 
 table {
@@ -84,7 +85,7 @@ thead, th:nth-child(2) {
 }
 
 thead, th:nth-child(3) {
-    width:27%;
+    width:20%;
     
 }
 thead, th:nth-child(4) {
@@ -95,7 +96,7 @@ thead, th:nth-child(6) {
     width:17%;
     
 }thead, th:nth-child(7) {
-    width:7%;
+    width:11%;
     
 }
 
@@ -133,13 +134,14 @@ td,th {
 .icones_sur_ligne {
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
-
+    
 }
 
-
+/* Mise en page Formulaire ajout joueuse-----------------------------------*/
 #Contenu_section {
+    position:relative;
     width: 600px;
     border-radius: 2px;
     background-color: rgba(5,96,47, 0.06);
@@ -173,8 +175,14 @@ td,th {
 }
 
 
+#Fleche_jaune {
+    position:absolute;
+    width: 28px;
+    height: 38px;
+    left:-28px;
+    top:50%;
 
-/* Mise en page Formulaire ajout joueuse-----------------------------------*/
+}
 
 #Bloc_droit {
     width:550px;

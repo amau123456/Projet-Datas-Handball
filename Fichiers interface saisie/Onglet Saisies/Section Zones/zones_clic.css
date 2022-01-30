@@ -16,7 +16,7 @@
     font-family: Roboto-Regular, Arial, Helvetica, sans-serif;
     size: 30px;
     text-decoration: underline;
-    text-decoration-color: #F9EB3C;;
+    text-decoration-color: #F9EB3C;
     text-underline-position: under;
     color: #05602F;
     width: 517px;
@@ -26,8 +26,8 @@
 }
 
 #Contenu_section {
-    width: 450px;
-    height: 500px;
+    width: 517px;
+    height: 536px;
     border-radius: 8px;
     background-color: rgba(220, 220, 220, 0.12);
     margin:auto;
@@ -42,7 +42,7 @@
     align-items: center;
     justify-content: space-between;
     /*width : 250px;*/
-    margin-top: 20px;
+    margin-top: 10px;
 }
 
 .marque_rate{
@@ -52,6 +52,11 @@
 }
 
 .bouton_but{
+    margin-left: 5px;
+    margin-right: 5px;
+    height: 40px;
+    width: 40px;
+    border-radius: 20px;
     border: 0px;
     background-color: rgba(220, 220, 220, 0);
 }

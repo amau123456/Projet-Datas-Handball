@@ -2,12 +2,12 @@
 <html>
     <head>
         <meta charset="utf-8" />
-        <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.css">
         <link rel="stylesheet" href="Onglet_Match.css" />
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-        <script src="/chosen/chosen.jquery.js"></script>
-        <link href="/chosen/chosen.css" rel="stylesheet"/>
+        <script src="chosen/chosen.jquery.js"></script>
+        <link rel="stylesheet" href="chosen/chosen.css"/>
         <title>Onglet Match</title>
     </head>
     <body>
@@ -83,19 +83,19 @@
                         <div id="Section_champs_saisies">
                             <div class="champ_saisie">
                             <label class= 'info_club' for="club_adverse">Club adverse</label>
-                            <input type="form-control" name="club_adverse" id="club_adverse"  size="30" placeholder="Saisir nom club" />
+                            <input class="form-control" name="club_adverse" id="club_adverse"  size="30" placeholder="Saisir nom club" />
                             
                             </div>
                             <div class="champ_saisie">
                             <label class= 'info_club' for="lieu_match">Lieu match :</label>
-                            <input type="form-control" name="lieu_match" id="lieu_match"  size="30" placeholder="Saisir le lieu de la rencontre" />
+                            <input class="form-control" name="lieu_match" id="lieu_match"  size="30" placeholder="Saisir le lieu de la rencontre" />
                             </div>
 
                             <div class="champ_saisie">
                             <label class= 'info_club' for="date_rencontre">Date de la rencontre :</label>
                             <input type="date" name="date_rencontre" id="date_rencontre"  size="30" placeholder="Saisir date" />
-                            </div>            
-
+                            </div>
+                            
                             <div id="Domicile_exterieur">
                                 <p class="bouton_domicile_exterieur" id="bouton_domicile">Domicile</p>
                                 <div class="onoffswitch" id="myonoffswitch">
@@ -138,7 +138,7 @@
                              
                             <div class="champ_saisie" id="selection_competition">
                             <label class= 'info_club' for="competition"> Compétition :</label>
-                            <input type="form-control" name="competition" id="competition"  size="30" placeholder="Saisir le championnat" />
+                            <input class="form-control" name="competition" id="competition"  size="30" placeholder="Saisir le championnat" />
                             </div>   
 
                         </div>

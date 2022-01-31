@@ -216,3 +216,7 @@ bouton_Switch.addEventListener('change',function(e){
     }
 }
 );
+
+
+$('.datepicker').datepicker();
+

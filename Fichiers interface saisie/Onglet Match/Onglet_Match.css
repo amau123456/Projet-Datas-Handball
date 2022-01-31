@@ -10,7 +10,7 @@
     src: url(Roboto/Roboto-Thin.ttf);
     font-family: 'Roboto-Regular';
     src: url(Roboto/Roboto-Regular.ttf);
-
+    
 }
 
 /* Mise en page globale
@@ -138,6 +138,8 @@ td,th {
 --------------------------------------------------------------------------------
  */
 
+ 
+
 #Contenu_section {
     width: 600px;
     border-radius: 2px;
@@ -185,11 +187,10 @@ td,th {
     display: flex;
     flex-direction: column;
     justify-content:space-around ;
-    align-items: flex-start;
+    align-items: center;
     margin-bottom: 45px; 
     margin-top: 20px ;
     position: relative;
-
 }
 
 
@@ -224,7 +225,7 @@ input, textarea {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    color:#383838;
+    border: 1px solid #ced4da;
 
 }
 

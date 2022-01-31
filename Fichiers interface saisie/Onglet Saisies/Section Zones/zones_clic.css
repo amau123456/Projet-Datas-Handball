@@ -61,6 +61,12 @@
     background-color: rgba(220, 220, 220, 0);
 }
 
+#up_down{
+    color: #05602F;
+    height: 19px;
+    width: 19px;
+}
+
 #poly_clic{
     margin-top: 0px;
 }
@@ -74,4 +80,14 @@
 #rectangle_clic {
 	margin-top: 3px;
     margin-left: 13px;
+}
+
+#delimitation {
+    stroke: black;
+    stroke-width: 2px;
+    stroke-dasharray: 3;
+}
+
+a:hover path{
+    fill-opacity: 0.1;
 }

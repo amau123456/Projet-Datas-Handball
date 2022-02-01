@@ -3,12 +3,11 @@
     <head>
         <meta charset="utf-8" />
         <link rel="stylesheet" href="actions.css" />
-        <script src="https://code.iconify.design/2/2.1.0/iconify.min.js"></script>
-        <link rel="stylesheet" src="bootstrap.min.css"/>
-    
+        <script type="text/javascript" src="https://code.iconify.design/2/2.1.0/iconify.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="bootstrap.min.css"/>
         <title>Section saisie actions</title>
-
     </head>
+    
     <body>
         <div id="Bloc_global">
             <div id="Titre_section_action">
@@ -36,13 +35,13 @@
     
                 <div id="Type_attaque">
                     <p class="Boutton_type_attaque" id="bouton_Attaque_Placee">Attaque Placée</p>
-                    <div class="onoffswitch" id="onoffswitch">
-                        <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch" tabindex="0" checked>
-                        <label class="onoffswitch-label" for="myonoffswitch">
-                            <span class="onoffswitch-inner"></span>
-                            <span class="onoffswitch-switch"></span>
+                    <div class="onoffswitch" id="myonoffswitch">
+                        <label class="switch">
+                          <input type="checkbox">
+                          <span class="slider round"></span>
                         </label>
-                    </div>
+                      </div>
+                    
                     <p class="Boutton_type_attaque" id="bouton_Contre_Attaque">Contre-attaque</p>
                 </div>
                 
@@ -111,9 +110,9 @@
             </div>
             
         </div>
+        <script type="text/javascript" src="actions.js"></script>
         
 
-        <script src="actions.js"></script>
     </body>
 </html>
 

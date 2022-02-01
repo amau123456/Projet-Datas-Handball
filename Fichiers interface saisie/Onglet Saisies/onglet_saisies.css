@@ -1,3 +1,47 @@
+
+/* Mise en page globale------------------------------
+ */
+
+ #Bloc_interface {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+ }
+ #Saisies {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: flex-end;
+    
+ }
+
+/* Mise en page de la navbar------------------------------
+ */
+ .navbar-brand{
+    margin-top: 0px;
+    margin-bottom: 0px;
+
+}
+
+.navbar-expand-lg{
+    height : 84px;
+}
+
+.nav-item{
+    width: 158px;
+    height: 84px;
+    font-size: 18px;
+    text-align: center;
+    padding: 18px 0;
+    background-color: white;
+}
+
+.nav-item:nth-child(3) {
+    background-color: #f7fafc;
+    border-bottom: solid 5px #05602F;
+}
+/* Mise en page section sélection joueuses------------------------------
+ */
 @font-face {
     font-family: 'Roboto-Bold';
     src: url(Roboto/Roboto-Bold.ttf);
@@ -12,8 +56,178 @@
     src: url(Roboto/Roboto-Regular.ttf);
 }
 
+#Titre_section_joueuses{
+    margin-bottom: 7px;
+}
+.Titre_section {
+    font-family: Roboto-Regular, Arial, Helvetica, sans-serif;
+    size: 30px;
+    text-decoration: underline;
+    text-decoration-color: #F9EB3C;;
+    text-underline-position: under;
+    color: #05602F;
+    width: 517px;
+    height:40px;
+    margin: auto;
+    text-align: center;
+}
 
-#Contenu_section {
+#Contenu_section_joueuses {
+    width: 202px;
+    height: 640px;
+    border-radius: 8px;
+    background-color: rgba(220, 220, 220, 0.12);
+    margin:auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.bouton_jou {
+    font-family: Roboto, Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    width:80px;
+    height:80px;
+    text-align: center;
+    vertical-align: middle;
+    border-radius: 25px;
+    color:#383338;
+    background-color: #F9EB3C;
+    border: solid #383338 0px;
+    text-decoration: none;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+#Boutons_joueuses {
+    margin-top: 15px;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: 230px;
+    width: 202px; 
+
+}
+
+.bouton_gar {
+    font-family: Roboto, Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    width:80px;
+    height:80px;
+    text-align: center;
+    border-radius: 25px;
+    color:#FFFFFF;
+    background-color: #383338;
+    border: solid #383338 0px;
+    text-decoration: none;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    display:flex;
+    flex-direction:column;
+    align-items: center;
+    justify-content:space-between;
+    
+}
+
+#Boutons_gardiennes {
+    margin-top: 15px;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: 230px;
+    width: 202px; 
+
+}
+
+#boutons_ligne_1_jou {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width : 182px;
+
+
+}
+#boutons_ligne_x_jou{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width : 182px;
+
+}
+
+.nom_joueuse{
+    font-family: Roboto, Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    margin-bottom: 0px;
+    margin-top: 10px;
+}
+
+.numero_joueuse{
+    font-family: Roboto, Arial, Helvetica, sans-serif;
+    font-size: 35px;
+    margin-top: 0px; 
+}
+
+.nom_gardienne{
+    font-family: Roboto, Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    margin-bottom: 0px;
+    margin-top: 10px;
+}
+
+.numero_gardienne{
+    font-family: Roboto, Arial, Helvetica, sans-serif;
+    font-size: 35px;
+    margin-top: 0px; 
+}
+
+.bouton_jou:hover {
+    font-family: Roboto, Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    width:80px;
+    height:80px;
+    text-align: center;
+    vertical-align: middle;
+    border-radius: 25px;
+    color:#383338;
+    background-color: #F9EB3C;
+    border: solid #383338 0px;
+    text-decoration: none;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    box-shadow: 1px 1px 2px #666666;
+}
+
+.bouton_gar:hover {
+    font-family: Roboto, Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    width:80px;
+    height:80px;
+    text-align: center;
+    vertical-align: middle;
+    border-radius: 25px;
+    color:#FFFFFF;
+    background-color: #383338;
+    border: solid #383338 0px;
+    text-decoration: none;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    box-shadow: 1px 1px 2px #666666;
+}
+
+
+/* Mise en page de la section actions------------------------------
+ */
+ #Contenu_section {
     width: 517px;
     height: 536px;
     border-radius: 8px;
@@ -27,13 +241,13 @@
 
     
 #Titre_section_action{
-    margin-bottom: 7px;
+    margin-bottom: 15px;
 }
 .Titre_section {
     font-family: Roboto-Regular, Arial, Helvetica, sans-serif;
     size: 30px;
     text-decoration: underline;
-    text-decoration-color: #F9EB3C;;
+    text-decoration-color: #F9EB3C;
     text-underline-position: under;
     color: #05602F;
     width: 517px;
@@ -242,18 +456,21 @@ color: #383338;
     flex-direction: row;
     align-items: center;
     justify-content: center;
+    width:auto;
 
 }
 #boutons_ligne_2{
     display: flex;
     flex-direction: row;
     align-items: center;
+    width:auto;
 
 }
 #boutons_ligne_3{
     display: flex;
     flex-direction: row;
     align-items: center;
+    width:auto;
 
 }
 .boutton_fait_de_jeu {
@@ -407,3 +624,73 @@ color: #383338;
   .slider.round:before {
     border-radius: 50%;
   }
+
+/* Mise en page de la section zones------------------------------
+ */
+
+  #Contenu_section_zones {
+    width: 470px;
+    height: 536px;
+    border-radius: 8px;
+    background-color: rgba(220, 220, 220, 0.12);
+    margin:auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#but_marque {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    /*width : 250px;*/
+    margin-top: 10px;
+}
+
+.marque_rate{
+    font-family: Roboto-Regular, Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    color: #05602F;
+}
+
+.bouton_but{
+    margin-left: 5px;
+    margin-right: 5px;
+    height: 40px;
+    width: 40px;
+    border-radius: 20px;
+    border: 0px;
+    background-color: rgba(220, 220, 220, 0);
+}
+
+#up_down{
+    color: #05602F;
+    height: 19px;
+    width: 19px;
+}
+
+#poly_clic{
+    margin-top: 0px;
+}
+
+#cage img {
+	/*padding: 200px;*/
+    display: block;
+    /*margin-left: 200;*/
+    margin-right: auto }
+
+#rectangle_clic {
+	margin-top: 3px;
+    margin-left: 13px;
+}
+
+#delimitation {
+    stroke: black;
+    stroke-width: 2px;
+    stroke-dasharray: 3;
+}
+
+a:hover path{
+    fill-opacity: 0.1;
+}

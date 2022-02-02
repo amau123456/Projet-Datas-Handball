@@ -16,12 +16,11 @@
 body {
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    
 
 }
 
 /* Mise en page Tableau NavBar-----------------------------------*/
-
 .navbar-brand{
     margin-top: 0px;
     margin-bottom: 0px;
@@ -30,6 +29,10 @@ body {
 
 .navbar-expand-lg{
     height : 84px;
+}
+
+.navbar-nav{
+    background-color: white;
 }
 
 .nav-item{
@@ -154,11 +157,11 @@ td,th {
     align-items: center;
     border-width: 1px;
 
+
 }
 
 #Contenu_section:nth-child(1){
     position:absolute;
-    top:5px;
 }
 
 #Titre_section_formulaire_match{
@@ -179,7 +182,7 @@ td,th {
     position:absolute;
     width: 28px;
     height: 38px;
-    left:-28px;
+    left:-25px;
     top:50%;
 
 }

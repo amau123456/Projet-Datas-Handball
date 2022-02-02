@@ -1,13 +1,9 @@
 <html>
     <head>
         <meta charset="utf-8" />
-        
-       
         <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
         <link rel="stylesheet" href="onglet_joueuses.css" />
-
         <title>Mon équipe</title>
-
     </head>
     
     <body>
@@ -17,31 +13,32 @@
                     <a class="navbar-brand" href="#">
                         <img src="logo.png" alt="x_x" style="height: 74px;">
                     </a>
-                
+                   
                     <!-- Bouton affiché uniquement sur mobile pour dérouler -->
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
+                      <span class="navbar-toggler-icon"></span>
                     </button>
-                
+                   
                     <!-- Les éléments de la navbar -->
                     <div class="collapse navbar-collapse" id="navbarNav">
                         <ul class="navbar-nav">
-                        <li class="nav-item ">
-                            <a class="nav-link" href="../Onglet Match/Onglet_Match.html">Accueil <span class="sr-only">(actuel)</span></a>
-                        </li>
-                        <li class="nav-item active">
+                          <li class="nav-item active">
+                            <a class="nav-link" href="../Onglet Match/Onglet_Match.html"">Accueil <span class="sr-only">(actuel)</span></a>
+                          </li>
+                          <li class="nav-item">
                             <a class="nav-link" href="../Onglet Joueuses/onglet_joueuses.html">Mon équipe</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="../Onglet Match/Onglet_Match.html">Saisir un match</a>
-                        </li>
-                        <li class="nav-item">
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link" href="../Onglet Saisies/onglet_saisies.html">Saisie Vidéo</a>
+                          </li>
+                          <li class="nav-item">
                             <a class="nav-link" href="">Résultats</a>
-                        </li>
+                          </li>
                         </ul>
-                    </div>
-                </nav>
+                      </div>
+                  </nav>
             </header>
+
             <div id="Table_joueuses">
                 <table id="Table_Match">
                     <thead>
@@ -102,7 +99,7 @@
                 <img id="Fleche_jaune" src="Flèche Jaune.png"/>
                 <div id="Titre_section_formulaire_match">
                     <span class="iconify" data-icon="openmoji:man-playing-handball" style="color: black; font-size: 135px;"></span>
-                    <h1 class="Titre_section">Feuille de Match</h1>
+                    <h1 class="Titre_section">Fiche Joueuse</h1>
                 </div>
                 <div id="Formulaire_ajout_match">
                     <form action="/ma-page-de-traitement" method="post">

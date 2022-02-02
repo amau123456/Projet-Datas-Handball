@@ -15,6 +15,12 @@
     
  }
 
+ #Bloc_droit {
+     display: flex;
+     flex-direction: column;
+     justify-content: space-between;
+ }
+
 /* Mise en page de la navbar------------------------------
  */
  .navbar-brand{
@@ -59,18 +65,7 @@
 #Titre_section_joueuses{
     margin-bottom: 7px;
 }
-.Titre_section {
-    font-family: Roboto-Regular, Arial, Helvetica, sans-serif;
-    size: 30px;
-    text-decoration: underline;
-    text-decoration-color: #F9EB3C;;
-    text-underline-position: under;
-    color: #05602F;
-    width: 517px;
-    height:40px;
-    margin: auto;
-    text-align: center;
-}
+
 
 #Contenu_section_joueuses {
     width: 202px;
@@ -241,22 +236,8 @@
 
     
 #Titre_section_action{
-    margin-bottom: 15px;
+    margin-bottom: 10px;
 }
-.Titre_section {
-    font-family: Roboto-Regular, Arial, Helvetica, sans-serif;
-    size: 30px;
-    text-decoration: underline;
-    text-decoration-color: #F9EB3C;
-    text-underline-position: under;
-    color: #05602F;
-    width: 517px;
-    height:40px;
-    margin: auto;
-    text-align: center;
-}
-
-
 
 #Choix_periode {
     display: flex;
@@ -425,9 +406,6 @@ color: #383338;
     
 
 }
-
-
-
 
 
 #Boutons_saisies {
@@ -627,8 +605,11 @@ color: #383338;
 
 /* Mise en page de la section zones------------------------------
  */
+ #Titre_section_zones {
+     margin-bottom: 10px;
+ }
 
-  #Contenu_section_zones {
+#Contenu_section_zones {
     width: 470px;
     height: 536px;
     border-radius: 8px;
@@ -636,6 +617,7 @@ color: #383338;
     margin:auto;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     align-items: center;
 }
 
@@ -693,4 +675,131 @@ color: #383338;
 
 a:hover path{
     fill-opacity: 0.1;
+}
+
+
+/* Mise en page de la historique -----------------------------------------------------
+ */
+
+#section_Historique {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+#Titre_section_historique{
+    margin-bottom: 12px;
+    
+}
+.Titre_section {
+    font-family: Roboto-Regular, Arial, Helvetica, sans-serif;
+    font-size: 30px;
+    text-decoration: underline;
+    text-decoration-color: #F9EB3C;;
+    text-underline-position: under;
+    color: #05602F;
+    width: 200px;
+    height:40px;
+    margin: auto;
+    text-align:start;
+    padding-left: 10px;
+    text-align: center;
+    
+}
+
+/* Mise en forme tableau historique */
+#section_Historique{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 10px;
+    
+}
+#Titre_section_historique h1 {
+    width:250px;
+   text-align: left;
+}
+table {
+    width: 940px;
+    border-collapse: collapse;
+    table-layout: fixed;
+  }  
+
+#en-tete_tableau {
+    border-bottom: solid 1px #E5E5E5;
+    font-size: 14px;
+    font-family: Roboto-Regular, Arial, Helvetica, sans-serif;
+    color: #383338; 
+}
+#en-tete_tableau,th {
+    padding-bottom: 3px;
+    text-align: center;
+    padding-left: 5px;
+}
+#en-tete_tableau, th:nth-child(1) {
+    width: 13%;
+}  
+#en-tete_tableau, th:nth-child(2) {
+    width: 13%;
+}
+#en-tete_tableau, th:nth-child(3) {
+    width: 13%;
+}
+#en-tete_tableau, th:nth-child(4) {
+    width: 7%;
+}
+#en-tete_tableau, th:nth-child(5) {
+    width: 7%;
+
+}
+#en-tete_tableau, th:nth-child(6) {
+    width: 7%;
+}
+#en-tete_tableau, th:nth-child(7) {
+    width: 10%;
+}
+#en-tete_tableau, th:nth-child(8) {
+    width: 10%;
+}
+#en-tete_tableau, th:nth-child(9) {
+    width: 10%;
+}
+
+/* Ligne de test */
+#Ligne_test {
+    height: 32px;
+}
+#Ligne_test,td {
+    font-size: 13px;
+    font-family: Roboto-Regular, Arial, Helvetica, sans-serif;
+    color: #383338; 
+    text-align: center;
+}
+
+#Ligne_test, td:nth-child(1){
+    width: 13%;
+}
+#Ligne_test, td:nth-child(2){
+    width: 13%;
+}
+#Ligne_test, td:nth-child(3){
+    width: 13%;
+}
+#Ligne_test, td:nth-child(4){
+    width: 7%;
+}
+#Ligne_test, td:nth-child(5){
+    width: 7%;
+}
+#Ligne_test, td:nth-child(6){
+    width: 7%;
+}
+#Ligne_test, td:nth-child(7){
+    width: 10%;
+}
+#Ligne_test, td:nth-child(8){
+    width: 10%;
+}
+#Ligne_test, td:nth-child(9){
+    width: 10%;
 }

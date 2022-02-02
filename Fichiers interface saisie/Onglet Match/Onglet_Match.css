@@ -30,7 +30,7 @@ header {
 --------------------------------------------------------------------------------
  */
  
-.navbar-brand{
+ .navbar-brand{
     margin-top: 0px;
     margin-bottom: 0px;
 
@@ -38,6 +38,10 @@ header {
 
 .navbar-expand-lg{
     height : 84px;
+}
+
+.navbar-nav{
+    background-color: white;
 }
 
 .nav-item{

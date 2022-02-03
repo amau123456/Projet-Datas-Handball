@@ -568,7 +568,7 @@ bouton_Attaque.addEventListener('click',function(){
 // Boutons joueuses 
 
 let joueuse_1 = false;
-/*let joueuse_2 = false;
+let joueuse_2 = false;
 let joueuse_3 = false;
 let joueuse_4 = false;
 let joueuse_5 = false;
@@ -578,13 +578,13 @@ let joueuse_8 = false;
 let joueuse_9 = false;
 let joueuse_10 = false;
 let joueuse_11 = false;
-let joueuse_12 = false;*/
+let joueuse_12 = false;
 let gardienne_1 = false;
 let gardienne_2 = false;
 
 
 let bouton_joueuse_1 = document.getElementById("joueuse_1");
-/*let bouton_joueuse_2 = document.getElementById("joueuse_2");
+let bouton_joueuse_2 = document.getElementById("joueuse_2");
 let bouton_joueuse_3 = document.getElementById("joueuse_3");
 let bouton_joueuse_4 = document.getElementById("joueuse_4");
 let bouton_joueuse_5 = document.getElementById("joueuse_5");
@@ -594,15 +594,85 @@ let bouton_joueuse_8 = document.getElementById("joueuse_8");
 let bouton_joueuse_9 = document.getElementById("joueuse_9");
 let bouton_joueuse_10 = document.getElementById("joueuse_10");
 let bouton_joueuse_11 = document.getElementById("joueuse_11");
-let bouton_joueuse_12 = document.getElementById("joueuse_12");*/
+let bouton_joueuse_12 = document.getElementById("joueuse_12");
 let bouton_gardienne_1 = document.getElementById("gardienne_1");
+let bouton_gardienne_2 = document.getElementById("gardienne_2");
+
+
+//Boutons joueuses 
 
 bouton_joueuse_1.addEventListener('click', function() {
     if (joueuse_1==false) {
         joueuse_1=true;
         bouton_joueuse_1.style.backgroundColor="#f9eb3c";
-        bouton_joueuse_1.style.color="#383338";
-        bouton_joueuse_1.style.border="2px solid #383338";
+        bouton_joueuse_1.style.color="#05602F";
+        bouton_joueuse_1.style.border="2px solid #05602F";
+
+         bouton_joueuse_2.style.backgroundColor="#f9eb3c";
+        bouton_joueuse_2.style.color="#383338";
+        bouton_joueuse_2.style.border="none";
+        joueuse_2=false;
+
+        bouton_joueuse_3.style.backgroundColor="#f9eb3c";
+        bouton_joueuse_3.style.color="#383338";
+        bouton_joueuse_3.style.border="none";
+        joueuse_3=false; 
+
+        bouton_joueuse_4.style.backgroundColor="#f9eb3c";
+        bouton_joueuse_4.style.color="#383338";
+        bouton_joueuse_4.style.border="none";
+        joueuse_4=false;
+
+        bouton_joueuse_5.style.backgroundColor="#f9eb3c";
+        bouton_joueuse_5.style.color="#383338";
+        bouton_joueuse_5.style.border="none";
+        joueuse_5=false;
+
+        bouton_joueuse_6.style.backgroundColor="#f9eb3c";
+        bouton_joueuse_6.style.color="#383338";
+        bouton_joueuse_6.style.border="none";
+        joueuse_6=false;
+
+        bouton_joueuse_7.style.backgroundColor="#f9eb3c";
+        bouton_joueuse_7.style.color="#383338";
+        bouton_joueuse_7.style.border="none";
+        joueuse_7=false;
+
+        bouton_joueuse_8.style.backgroundColor="#f9eb3c";
+        bouton_joueuse_8.style.color="#383338";
+        bouton_joueuse_8.style.border="none";
+        joueuse_8=false;
+
+        bouton_joueuse_9.style.backgroundColor="#f9eb3c";
+        bouton_joueuse_9.style.color="#383338";
+        bouton_joueuse_9.style.border="none";
+        joueuse_9=false;
+
+        bouton_joueuse_10.style.backgroundColor="#f9eb3c";
+        bouton_joueuse_10.style.color="#383338";
+        bouton_joueuse_10.style.border="none";
+        joueuse_10=false;
+
+        bouton_joueuse_11.style.backgroundColor="#f9eb3c";
+        bouton_joueuse_11.style.color="#383338";
+        bouton_joueuse_11.style.border="none";
+        joueuse_11=false;
+
+        bouton_joueuse_12.style.backgroundColor="#f9eb3c";
+        bouton_joueuse_12.style.color="#383338";
+        bouton_joueuse_12.style.border="none";
+        joueuse_12=false;
+
+        bouton_gardienne_1.style.backgroundColor="#383338";
+        bouton_gardienne_1.style.color="#FFFFFF";
+        bouton_gardienne_1.style.border="none";
+        gardienne_1=false;
+
+        bouton_gardienne_2.style.backgroundColor="#383338";
+        bouton_gardienne_2.style.color="#FFFFFF";
+        bouton_gardienne_2.style.border="none";
+        gardienne_2=false;
+
     }
     else if (joueuse_1==true) {
         joueuse_1=false;
@@ -614,12 +684,1002 @@ bouton_joueuse_1.addEventListener('click', function() {
 
 });   
 
+bouton_joueuse_2.addEventListener('click', function() {
+    if (joueuse_2==false) {
+        joueuse_2=true;
+        bouton_joueuse_2.style.backgroundColor="#f9eb3c";
+        bouton_joueuse_2.style.color="#05602F";
+        bouton_joueuse_2.style.border="2px solid #05602F";
+
+        bouton_joueuse_1.style.backgroundColor="#f9eb3c";
+        bouton_joueuse_1.style.color="#383338";
+        bouton_joueuse_1.style.border="none";
+        joueuse_1=false;
+
+        bouton_joueuse_3.style.backgroundColor="#f9eb3c";
+        bouton_joueuse_3.style.color="#383338";
+        bouton_joueuse_3.style.border="none";
+        joueuse_3=false;
+
+        bouton_joueuse_4.style.backgroundColor="#f9eb3c";
+        bouton_joueuse_4.style.color="#383338";
+        bouton_joueuse_4.style.border="none";
+        joueuse_4=false;
+
+        bouton_joueuse_5.style.backgroundColor="#f9eb3c";
+        bouton_joueuse_5.style.color="#383338";
+        bouton_joueuse_5.style.border="none";
+        joueuse_5=false;
+
+        bouton_joueuse_6.style.backgroundColor="#f9eb3c";
+        bouton_joueuse_6.style.color="#383338";
+        bouton_joueuse_6.style.border="none";
+        joueuse_6=false;
+
+        bouton_joueuse_7.style.backgroundColor="#f9eb3c";
+        bouton_joueuse_7.style.color="#383338";
+        bouton_joueuse_7.style.border="none";
+        joueuse_7=false;
+
+        bouton_joueuse_8.style.backgroundColor="#f9eb3c";
+        bouton_joueuse_8.style.color="#383338";
+        bouton_joueuse_8.style.border="none";
+        joueuse_8=false;
+
+        bouton_joueuse_9.style.backgroundColor="#f9eb3c";
+        bouton_joueuse_9.style.color="#383338";
+        bouton_joueuse_9.style.border="none";
+        joueuse_9=false;
+
+        bouton_joueuse_10.style.backgroundColor="#f9eb3c";
+        bouton_joueuse_10.style.color="#383338";
+        bouton_joueuse_10.style.border="none";
+        joueuse_10=false;
+
+        bouton_joueuse_11.style.backgroundColor="#f9eb3c";
+        bouton_joueuse_11.style.color="#383338";
+        bouton_joueuse_11.style.border="none";
+        joueuse_11=false;
+
+        bouton_joueuse_12.style.backgroundColor="#f9eb3c";
+        bouton_joueuse_12.style.color="#383338";
+        bouton_joueuse_12.style.border="none";
+        joueuse_12=false;
+
+        bouton_gardienne_1.style.backgroundColor="#383338";
+        bouton_gardienne_1.style.color="#FFFFFF";
+        bouton_gardienne_1.style.border="none";
+        gardienne_1=false;
+
+        bouton_gardienne_2.style.backgroundColor="#383338";
+        bouton_gardienne_2.style.color="#FFFFFF";
+        bouton_gardienne_2.style.border="none";
+        gardienne_2=false;
+
+    }
+    else if (joueuse_2==true) {
+        joueuse_2=false;
+        bouton_joueuse_2.style.backgroundColor="#f9eb3c";
+        bouton_joueuse_2.style.color="#383338";
+        bouton_joueuse_2.style.border="none";
+        
+       }
+
+});    
+
+bouton_joueuse_3.addEventListener('click', function() {
+    if (joueuse_3==false) {
+        joueuse_3=true;
+        bouton_joueuse_3.style.backgroundColor="#f9eb3c";
+        bouton_joueuse_3.style.color="#05602F";
+        bouton_joueuse_3.style.border="2px solid #05602F";
+
+        bouton_joueuse_2.style.backgroundColor="#f9eb3c";
+        bouton_joueuse_2.style.color="#383338";
+        bouton_joueuse_2.style.border="none";
+        joueuse_2=false;
+
+        bouton_joueuse_1.style.backgroundColor="#f9eb3c";
+        bouton_joueuse_1.style.color="#383338";
+        bouton_joueuse_1.style.border="none";
+        joueuse_1=false;
+
+        bouton_joueuse_4.style.backgroundColor="#f9eb3c";
+        bouton_joueuse_4.style.color="#383338";
+        bouton_joueuse_4.style.border="none";
+        joueuse_4=false;
+
+        bouton_joueuse_5.style.backgroundColor="#f9eb3c";
+        bouton_joueuse_5.style.color="#383338";
+        bouton_joueuse_5.style.border="none";
+        joueuse_5=false;
+
+        bouton_joueuse_6.style.backgroundColor="#f9eb3c";
+        bouton_joueuse_6.style.color="#383338";
+        bouton_joueuse_6.style.border="none";
+        joueuse_6=false;
+
+        bouton_joueuse_7.style.backgroundColor="#f9eb3c";
+        bouton_joueuse_7.style.color="#383338";
+        bouton_joueuse_7.style.border="none";
+        joueuse_7=false;
+
+        bouton_joueuse_8.style.backgroundColor="#f9eb3c";
+        bouton_joueuse_8.style.color="#383338";
+        bouton_joueuse_8.style.border="none";
+        joueuse_8=false;
+
+        bouton_joueuse_9.style.backgroundColor="#f9eb3c";
+        bouton_joueuse_9.style.color="#383338";
+        bouton_joueuse_9.style.border="none";
+        joueuse_9=false;
+
+        bouton_joueuse_10.style.backgroundColor="#f9eb3c";
+        bouton_joueuse_10.style.color="#383338";
+        bouton_joueuse_10.style.border="none";
+        joueuse_10=false;
+
+        bouton_joueuse_11.style.backgroundColor="#f9eb3c";
+        bouton_joueuse_11.style.color="#383338";
+        bouton_joueuse_11.style.border="none";
+        joueuse_11=false;
+
+        bouton_joueuse_12.style.backgroundColor="#f9eb3c";
+        bouton_joueuse_12.style.color="#383338";
+        bouton_joueuse_12.style.border="none";
+        joueuse_12=false;
+
+        bouton_gardienne_1.style.backgroundColor="#383338";
+        bouton_gardienne_1.style.color="#FFFFFF";
+        bouton_gardienne_1.style.border="none";
+        gardienne_1=false;
+
+        bouton_gardienne_2.style.backgroundColor="#383338";
+        bouton_gardienne_2.style.color="#FFFFFF";
+        bouton_gardienne_2.style.border="none";
+        gardienne_2=false;
+
+
+
+    }
+    else if (joueuse_3==true) {
+        joueuse_3=false;
+        bouton_joueuse_3.style.backgroundColor="#f9eb3c";
+        bouton_joueuse_3.style.color="#383338";
+        bouton_joueuse_3.style.border="none";
+        
+       }
+
+});  
+
+bouton_joueuse_4.addEventListener('click', function() {
+    if (joueuse_4==false) {
+        joueuse_4=true;
+        bouton_joueuse_4.style.backgroundColor="#f9eb3c";
+        bouton_joueuse_4.style.color="#05602F";
+        bouton_joueuse_4.style.border="2px solid #05602F";
+
+        bouton_joueuse_2.style.backgroundColor="#f9eb3c";
+        bouton_joueuse_2.style.color="#383338";
+        bouton_joueuse_2.style.border="none";
+        joueuse_2=false;
+
+        bouton_joueuse_1.style.backgroundColor="#f9eb3c";
+        bouton_joueuse_1.style.color="#383338";
+        bouton_joueuse_1.style.border="none";
+        joueuse_1=false;
+
+        bouton_joueuse_3.style.backgroundColor="#f9eb3c";
+        bouton_joueuse_3.style.color="#383338";
+        bouton_joueuse_3.style.border="none";
+        joueuse_3=false;
+
+        bouton_joueuse_5.style.backgroundColor="#f9eb3c";
+        bouton_joueuse_5.style.color="#383338";
+        bouton_joueuse_5.style.border="none";
+        joueuse_5=false;
+
+        bouton_joueuse_6.style.backgroundColor="#f9eb3c";
+        bouton_joueuse_6.style.color="#383338";
+        bouton_joueuse_6.style.border="none";
+        joueuse_6=false;
+
+        bouton_joueuse_7.style.backgroundColor="#f9eb3c";
+        bouton_joueuse_7.style.color="#383338";
+        bouton_joueuse_7.style.border="none";
+        joueuse_7=false;
+
+        bouton_joueuse_8.style.backgroundColor="#f9eb3c";
+        bouton_joueuse_8.style.color="#383338";
+        bouton_joueuse_8.style.border="none";
+        joueuse_8=false;
+
+        bouton_joueuse_9.style.backgroundColor="#f9eb3c";
+        bouton_joueuse_9.style.color="#383338";
+        bouton_joueuse_9.style.border="none";
+        joueuse_9=false;
+
+        bouton_joueuse_10.style.backgroundColor="#f9eb3c";
+        bouton_joueuse_10.style.color="#383338";
+        bouton_joueuse_10.style.border="none";
+        joueuse_10=false;
+
+        bouton_joueuse_11.style.backgroundColor="#f9eb3c";
+        bouton_joueuse_11.style.color="#383338";
+        bouton_joueuse_11.style.border="none";
+        joueuse_11=false;
+
+        bouton_joueuse_12.style.backgroundColor="#f9eb3c";
+        bouton_joueuse_12.style.color="#383338";
+        bouton_joueuse_12.style.border="none";
+        joueuse_12=false;
+
+        bouton_gardienne_1.style.backgroundColor="#383338";
+        bouton_gardienne_1.style.color="#FFFFFF";
+        bouton_gardienne_1.style.border="none";
+        gardienne_1=false;
+
+        bouton_gardienne_2.style.backgroundColor="#383338";
+        bouton_gardienne_2.style.color="#FFFFFF";
+        bouton_gardienne_2.style.border="none";
+        gardienne_2=false;
+
+
+    }
+    else if (joueuse_4==true) {
+        joueuse_4=false;
+        bouton_joueuse_4.style.backgroundColor="#f9eb3c";
+        bouton_joueuse_4.style.color="#383338";
+        bouton_joueuse_4.style.border="none";
+        
+       }
+
+});  
+
+bouton_joueuse_5.addEventListener('click', function() {
+    if (joueuse_5==false) {
+        joueuse_5=true;
+        bouton_joueuse_5.style.backgroundColor="#f9eb3c";
+        bouton_joueuse_5.style.color="#05602F";
+        bouton_joueuse_5.style.border="2px solid #05602F";
+
+        bouton_joueuse_2.style.backgroundColor="#f9eb3c";
+        bouton_joueuse_2.style.color="#383338";
+        bouton_joueuse_2.style.border="none";
+        joueuse_2=false;
+
+        bouton_joueuse_1.style.backgroundColor="#f9eb3c";
+        bouton_joueuse_1.style.color="#383338";
+        bouton_joueuse_1.style.border="none";
+        joueuse_1=false;
+
+        bouton_joueuse_4.style.backgroundColor="#f9eb3c";
+        bouton_joueuse_4.style.color="#383338";
+        bouton_joueuse_4.style.border="none";
+        joueuse_4=false;
+
+        bouton_joueuse_3.style.backgroundColor="#f9eb3c";
+        bouton_joueuse_3.style.color="#383338";
+        bouton_joueuse_3.style.border="none";
+        joueuse_3=false;
+
+        bouton_joueuse_6.style.backgroundColor="#f9eb3c";
+        bouton_joueuse_6.style.color="#383338";
+        bouton_joueuse_6.style.border="none";
+        joueuse_6=false;
+
+        bouton_joueuse_7.style.backgroundColor="#f9eb3c";
+        bouton_joueuse_7.style.color="#383338";
+        bouton_joueuse_7.style.border="none";
+        joueuse_7=false;
+
+        bouton_joueuse_8.style.backgroundColor="#f9eb3c";
+        bouton_joueuse_8.style.color="#383338";
+        bouton_joueuse_8.style.border="none";
+        joueuse_8=false;
+
+        bouton_joueuse_9.style.backgroundColor="#f9eb3c";
+        bouton_joueuse_9.style.color="#383338";
+        bouton_joueuse_9.style.border="none";
+        joueuse_9=false;
+
+        bouton_joueuse_10.style.backgroundColor="#f9eb3c";
+        bouton_joueuse_10.style.color="#383338";
+        bouton_joueuse_10.style.border="none";
+        joueuse_10=false;
+
+        bouton_joueuse_11.style.backgroundColor="#f9eb3c";
+        bouton_joueuse_11.style.color="#383338";
+        bouton_joueuse_11.style.border="none";
+        joueuse_11=false;
+
+        bouton_joueuse_12.style.backgroundColor="#f9eb3c";
+        bouton_joueuse_12.style.color="#383338";
+        bouton_joueuse_12.style.border="none";
+        joueuse_12=false;
+
+        bouton_gardienne_1.style.backgroundColor="#383338";
+        bouton_gardienne_1.style.color="#FFFFFF";
+        bouton_gardienne_1.style.border="none";
+        gardienne_1=false;
+
+        bouton_gardienne_2.style.backgroundColor="#383338";
+        bouton_gardienne_2.style.color="#FFFFFF";
+        bouton_gardienne_2.style.border="none";
+        gardienne_2=false;
+
+
+    }
+    else if (joueuse_5==true) {
+        joueuse_5=false;
+        bouton_joueuse_5.style.backgroundColor="#f9eb3c";
+        bouton_joueuse_5.style.color="#383338";
+        bouton_joueuse_5.style.border="none";
+        
+       }
+
+});  
+
+bouton_joueuse_6.addEventListener('click', function() {
+    if (joueuse_6==false) {
+        joueuse_6=true;
+        bouton_joueuse_6.style.backgroundColor="#f9eb3c";
+        bouton_joueuse_6.style.color="#05602F";
+        bouton_joueuse_6.style.border="2px solid #05602F";
+
+        bouton_joueuse_2.style.backgroundColor="#f9eb3c";
+        bouton_joueuse_2.style.color="#383338";
+        bouton_joueuse_2.style.border="none";
+        joueuse_2=false;
+
+        bouton_joueuse_1.style.backgroundColor="#f9eb3c";
+        bouton_joueuse_1.style.color="#383338";
+        bouton_joueuse_1.style.border="none";
+        joueuse_1=false;
+
+        bouton_joueuse_4.style.backgroundColor="#f9eb3c";
+        bouton_joueuse_4.style.color="#383338";
+        bouton_joueuse_4.style.border="none";
+        joueuse_4=false;
+
+        bouton_joueuse_5.style.backgroundColor="#f9eb3c";
+        bouton_joueuse_5.style.color="#383338";
+        bouton_joueuse_5.style.border="none";
+        joueuse_5=false;
+
+        bouton_joueuse_3.style.backgroundColor="#f9eb3c";
+        bouton_joueuse_3.style.color="#383338";
+        bouton_joueuse_3.style.border="none";
+        joueuse_3=false;
+
+        bouton_joueuse_7.style.backgroundColor="#f9eb3c";
+        bouton_joueuse_7.style.color="#383338";
+        bouton_joueuse_7.style.border="none";
+        joueuse_7=false;
+
+        bouton_joueuse_8.style.backgroundColor="#f9eb3c";
+        bouton_joueuse_8.style.color="#383338";
+        bouton_joueuse_8.style.border="none";
+        joueuse_8=false;
+
+        bouton_joueuse_9.style.backgroundColor="#f9eb3c";
+        bouton_joueuse_9.style.color="#383338";
+        bouton_joueuse_9.style.border="none";
+        joueuse_9=false;
+
+        bouton_joueuse_10.style.backgroundColor="#f9eb3c";
+        bouton_joueuse_10.style.color="#383338";
+        bouton_joueuse_10.style.border="none";
+        joueuse_10=false;
+
+        bouton_joueuse_11.style.backgroundColor="#f9eb3c";
+        bouton_joueuse_11.style.color="#383338";
+        bouton_joueuse_11.style.border="none";
+        joueuse_11=false;
+
+        bouton_joueuse_12.style.backgroundColor="#f9eb3c";
+        bouton_joueuse_12.style.color="#383338";
+        bouton_joueuse_12.style.border="none";
+        joueuse_12=false;
+
+        bouton_gardienne_1.style.backgroundColor="#383338";
+        bouton_gardienne_1.style.color="#FFFFFF";
+        bouton_gardienne_1.style.border="none";
+        gardienne_1=false;
+
+        bouton_gardienne_2.style.backgroundColor="#383338";
+        bouton_gardienne_2.style.color="#FFFFFF";
+        bouton_gardienne_2.style.border="none";
+        gardienne_2=false;
+
+
+    }
+    else if (joueuse_6==true) {
+        joueuse_6=false;
+        bouton_joueuse_6.style.backgroundColor="#f9eb3c";
+        bouton_joueuse_6.style.color="#383338";
+        bouton_joueuse_6.style.border="none";
+        
+       }
+
+});  
+
+bouton_joueuse_7.addEventListener('click', function() {
+    if (joueuse_7==false) {
+        joueuse_7=true;
+        bouton_joueuse_7.style.backgroundColor="#f9eb3c";
+        bouton_joueuse_7.style.color="#05602F";
+        bouton_joueuse_7.style.border="2px solid #05602F";
+
+        bouton_joueuse_2.style.backgroundColor="#f9eb3c";
+        bouton_joueuse_2.style.color="#383338";
+        bouton_joueuse_2.style.border="none";
+        joueuse_2=false;
+
+        bouton_joueuse_1.style.backgroundColor="#f9eb3c";
+        bouton_joueuse_1.style.color="#383338";
+        bouton_joueuse_1.style.border="none";
+        joueuse_1=false;
+
+        bouton_joueuse_4.style.backgroundColor="#f9eb3c";
+        bouton_joueuse_4.style.color="#383338";
+        bouton_joueuse_4.style.border="none";
+        joueuse_4=false;
+
+        bouton_joueuse_5.style.backgroundColor="#f9eb3c";
+        bouton_joueuse_5.style.color="#383338";
+        bouton_joueuse_5.style.border="none";
+        joueuse_5=false;
+
+        bouton_joueuse_6.style.backgroundColor="#f9eb3c";
+        bouton_joueuse_6.style.color="#383338";
+        bouton_joueuse_6.style.border="none";
+        joueuse_6=false;
+
+        bouton_joueuse_3.style.backgroundColor="#f9eb3c";
+        bouton_joueuse_3.style.color="#383338";
+        bouton_joueuse_3.style.border="none";
+        joueuse_3=false;
+
+        bouton_joueuse_8.style.backgroundColor="#f9eb3c";
+        bouton_joueuse_8.style.color="#383338";
+        bouton_joueuse_8.style.border="none";
+        joueuse_8=false;
+
+        bouton_joueuse_9.style.backgroundColor="#f9eb3c";
+        bouton_joueuse_9.style.color="#383338";
+        bouton_joueuse_9.style.border="none";
+        joueuse_9=false;
+
+        bouton_joueuse_10.style.backgroundColor="#f9eb3c";
+        bouton_joueuse_10.style.color="#383338";
+        bouton_joueuse_10.style.border="none";
+        joueuse_10=false;
+
+        bouton_joueuse_11.style.backgroundColor="#f9eb3c";
+        bouton_joueuse_11.style.color="#383338";
+        bouton_joueuse_11.style.border="none";
+        joueuse_11=false;
+
+        bouton_joueuse_12.style.backgroundColor="#f9eb3c";
+        bouton_joueuse_12.style.color="#383338";
+        bouton_joueuse_12.style.border="none";
+        joueuse_12=false;
+
+        bouton_gardienne_1.style.backgroundColor="#383338";
+        bouton_gardienne_1.style.color="#FFFFFF";
+        bouton_gardienne_1.style.border="none";
+        gardienne_1=false;
+
+        bouton_gardienne_2.style.backgroundColor="#383338";
+        bouton_gardienne_2.style.color="#FFFFFF";
+        bouton_gardienne_2.style.border="none";
+        gardienne_2=false;
+
+    }
+    else if (joueuse_7==true) {
+        joueuse_7=false;
+        bouton_joueuse_7.style.backgroundColor="#f9eb3c";
+        bouton_joueuse_7.style.color="#383338";
+        bouton_joueuse_7.style.border="none";
+        
+       }
+
+});  
+
+bouton_joueuse_8.addEventListener('click', function() {
+    if (joueuse_8==false) {
+        joueuse_8=true;
+        bouton_joueuse_8.style.backgroundColor="#f9eb3c";
+        bouton_joueuse_8.style.color="#05602F";
+        bouton_joueuse_8.style.border="2px solid #05602F";
+
+        bouton_joueuse_2.style.backgroundColor="#f9eb3c";
+        bouton_joueuse_2.style.color="#383338";
+        bouton_joueuse_2.style.border="none";
+        joueuse_2=false;
+
+        bouton_joueuse_1.style.backgroundColor="#f9eb3c";
+        bouton_joueuse_1.style.color="#383338";
+        bouton_joueuse_1.style.border="none";
+        joueuse_1=false;
+
+        bouton_joueuse_4.style.backgroundColor="#f9eb3c";
+        bouton_joueuse_4.style.color="#383338";
+        bouton_joueuse_4.style.border="none";
+        joueuse_4=false;
+
+        bouton_joueuse_5.style.backgroundColor="#f9eb3c";
+        bouton_joueuse_5.style.color="#383338";
+        bouton_joueuse_5.style.border="none";
+        joueuse_5=false;
+
+        bouton_joueuse_6.style.backgroundColor="#f9eb3c";
+        bouton_joueuse_6.style.color="#383338";
+        bouton_joueuse_6.style.border="none";
+        joueuse_6=false;
+
+        bouton_joueuse_7.style.backgroundColor="#f9eb3c";
+        bouton_joueuse_7.style.color="#383338";
+        bouton_joueuse_7.style.border="none";
+        joueuse_8=false;
+
+        bouton_joueuse_3.style.backgroundColor="#f9eb3c";
+        bouton_joueuse_3.style.color="#383338";
+        bouton_joueuse_3.style.border="none";
+        joueuse_3=false;
+
+        bouton_joueuse_9.style.backgroundColor="#f9eb3c";
+        bouton_joueuse_9.style.color="#383338";
+        bouton_joueuse_9.style.border="none";
+        joueuse_9=false;
+
+        bouton_joueuse_10.style.backgroundColor="#f9eb3c";
+        bouton_joueuse_10.style.color="#383338";
+        bouton_joueuse_10.style.border="none";
+        joueuse_10=false;
+
+        bouton_joueuse_11.style.backgroundColor="#f9eb3c";
+        bouton_joueuse_11.style.color="#383338";
+        bouton_joueuse_11.style.border="none";
+        joueuse_11=false;
+
+        bouton_joueuse_12.style.backgroundColor="#f9eb3c";
+        bouton_joueuse_12.style.color="#383338";
+        bouton_joueuse_12.style.border="none";
+        joueuse_12=false;
+
+        bouton_gardienne_1.style.backgroundColor="#383338";
+        bouton_gardienne_1.style.color="#FFFFFF";
+        bouton_gardienne_1.style.border="none";
+        gardienne_1=false;
+
+        bouton_gardienne_2.style.backgroundColor="#383338";
+        bouton_gardienne_2.style.color="#FFFFFF";
+        bouton_gardienne_2.style.border="none";
+        gardienne_2=false;
+
+
+    }
+    else if (joueuse_8==true) {
+        joueuse_8=false;
+        bouton_joueuse_8.style.backgroundColor="#f9eb3c";
+        bouton_joueuse_8.style.color="#383338";
+        bouton_joueuse_8.style.border="none";
+        
+       }
+
+});  
+
+bouton_joueuse_9.addEventListener('click', function() {
+    if (joueuse_9==false) {
+        joueuse_9=true;
+        bouton_joueuse_9.style.backgroundColor="#f9eb3c";
+        bouton_joueuse_9.style.color="#05602F";
+        bouton_joueuse_9.style.border="2px solid #05602F";
+
+        bouton_joueuse_2.style.backgroundColor="#f9eb3c";
+        bouton_joueuse_2.style.color="#383338";
+        bouton_joueuse_2.style.border="none";
+        joueuse_2=false;
+
+        bouton_joueuse_1.style.backgroundColor="#f9eb3c";
+        bouton_joueuse_1.style.color="#383338";
+        bouton_joueuse_1.style.border="none";
+        joueuse_1=false;
+
+        bouton_joueuse_4.style.backgroundColor="#f9eb3c";
+        bouton_joueuse_4.style.color="#383338";
+        bouton_joueuse_4.style.border="none";
+        joueuse_4=false;
+
+        bouton_joueuse_5.style.backgroundColor="#f9eb3c";
+        bouton_joueuse_5.style.color="#383338";
+        bouton_joueuse_5.style.border="none";
+        joueuse_5=false;
+
+        bouton_joueuse_6.style.backgroundColor="#f9eb3c";
+        bouton_joueuse_6.style.color="#383338";
+        bouton_joueuse_6.style.border="none";
+        joueuse_6=false;
+
+        bouton_joueuse_7.style.backgroundColor="#f9eb3c";
+        bouton_joueuse_7.style.color="#383338";
+        bouton_joueuse_7.style.border="none";
+        joueuse_8=false;
+
+        bouton_joueuse_8.style.backgroundColor="#f9eb3c";
+        bouton_joueuse_8.style.color="#383338";
+        bouton_joueuse_8.style.border="none";
+        joueuse_8=false;
+
+        bouton_joueuse_3.style.backgroundColor="#f9eb3c";
+        bouton_joueuse_3.style.color="#383338";
+        bouton_joueuse_3.style.border="none";
+        joueuse_3=false;
+
+        bouton_joueuse_10.style.backgroundColor="#f9eb3c";
+        bouton_joueuse_10.style.color="#383338";
+        bouton_joueuse_10.style.border="none";
+        joueuse_10=false;
+
+        bouton_joueuse_11.style.backgroundColor="#f9eb3c";
+        bouton_joueuse_11.style.color="#383338";
+        bouton_joueuse_11.style.border="none";
+        joueuse_11=false;
+
+        bouton_joueuse_12.style.backgroundColor="#f9eb3c";
+        bouton_joueuse_12.style.color="#383338";
+        bouton_joueuse_12.style.border="none";
+        joueuse_12=false;
+
+        bouton_gardienne_1.style.backgroundColor="#383338";
+        bouton_gardienne_1.style.color="#FFFFFF";
+        bouton_gardienne_1.style.border="none";
+        gardienne_1=false;
+
+        bouton_gardienne_2.style.backgroundColor="#383338";
+        bouton_gardienne_2.style.color="#FFFFFF";
+        bouton_gardienne_2.style.border="none";
+        gardienne_2=false;
+
+    }
+    else if (joueuse_9==true) {
+        joueuse_9=false;
+        bouton_joueuse_9.style.backgroundColor="#f9eb3c";
+        bouton_joueuse_9.style.color="#383338";
+        bouton_joueuse_9.style.border="none";
+        
+       }
+
+});  
+
+bouton_joueuse_10.addEventListener('click', function() {
+    if (joueuse_10==false) {
+        joueuse_10=true;
+        bouton_joueuse_10.style.backgroundColor="#f9eb3c";
+        bouton_joueuse_10.style.color="#05602F";
+        bouton_joueuse_10.style.border="2px solid #05602F";
+
+        bouton_joueuse_2.style.backgroundColor="#f9eb3c";
+        bouton_joueuse_2.style.color="#383338";
+        bouton_joueuse_2.style.border="none";
+        joueuse_2=false;
+
+        bouton_joueuse_1.style.backgroundColor="#f9eb3c";
+        bouton_joueuse_1.style.color="#383338";
+        bouton_joueuse_1.style.border="none";
+        joueuse_1=false;
+
+        bouton_joueuse_4.style.backgroundColor="#f9eb3c";
+        bouton_joueuse_4.style.color="#383338";
+        bouton_joueuse_4.style.border="none";
+        joueuse_4=false;
+
+        bouton_joueuse_5.style.backgroundColor="#f9eb3c";
+        bouton_joueuse_5.style.color="#383338";
+        bouton_joueuse_5.style.border="none";
+        joueuse_5=false;
+
+        bouton_joueuse_6.style.backgroundColor="#f9eb3c";
+        bouton_joueuse_6.style.color="#383338";
+        bouton_joueuse_6.style.border="none";
+        joueuse_6=false;
+
+        bouton_joueuse_7.style.backgroundColor="#f9eb3c";
+        bouton_joueuse_7.style.color="#383338";
+        bouton_joueuse_7.style.border="none";
+        joueuse_8=false;
+
+        bouton_joueuse_8.style.backgroundColor="#f9eb3c";
+        bouton_joueuse_8.style.color="#383338";
+        bouton_joueuse_8.style.border="none";
+        joueuse_8=false;
+
+        bouton_joueuse_9.style.backgroundColor="#f9eb3c";
+        bouton_joueuse_9.style.color="#383338";
+        bouton_joueuse_9.style.border="none";
+        joueuse_9=false;
+
+        bouton_joueuse_3.style.backgroundColor="#f9eb3c";
+        bouton_joueuse_3.style.color="#383338";
+        bouton_joueuse_3.style.border="none";
+        joueuse_3=false;
+
+        bouton_joueuse_11.style.backgroundColor="#f9eb3c";
+        bouton_joueuse_11.style.color="#383338";
+        bouton_joueuse_11.style.border="none";
+        joueuse_11=false;
+
+        bouton_joueuse_12.style.backgroundColor="#f9eb3c";
+        bouton_joueuse_12.style.color="#383338";
+        bouton_joueuse_12.style.border="none";
+        joueuse_12=false;
+
+        bouton_gardienne_1.style.backgroundColor="#383338";
+        bouton_gardienne_1.style.color="#FFFFFF";
+        bouton_gardienne_1.style.border="none";
+        gardienne_1=false;
+
+        bouton_gardienne_2.style.backgroundColor="#383338";
+        bouton_gardienne_2.style.color="#FFFFFF";
+        bouton_gardienne_2.style.border="none";
+        gardienne_2=false;
+
+
+    }
+    else if (joueuse_10==true) {
+        joueuse_10=false;
+        bouton_joueuse_10.style.backgroundColor="#f9eb3c";
+        bouton_joueuse_10.style.color="#383338";
+        bouton_joueuse_10.style.border="none";
+        
+       }
+
+});  
+
+bouton_joueuse_11.addEventListener('click', function() {
+    if (joueuse_11==false) {
+        joueuse_11=true;
+        bouton_joueuse_11.style.backgroundColor="#f9eb3c";
+        bouton_joueuse_11.style.color="#05602F";
+        bouton_joueuse_11.style.border="2px solid #05602F";
+
+        bouton_joueuse_2.style.backgroundColor="#f9eb3c";
+        bouton_joueuse_2.style.color="#383338";
+        bouton_joueuse_2.style.border="none";
+        joueuse_2=false;
+
+        bouton_joueuse_1.style.backgroundColor="#f9eb3c";
+        bouton_joueuse_1.style.color="#383338";
+        bouton_joueuse_1.style.border="none";
+        joueuse_1=false;
+
+        bouton_joueuse_4.style.backgroundColor="#f9eb3c";
+        bouton_joueuse_4.style.color="#383338";
+        bouton_joueuse_4.style.border="none";
+        joueuse_4=false;
+
+        bouton_joueuse_5.style.backgroundColor="#f9eb3c";
+        bouton_joueuse_5.style.color="#383338";
+        bouton_joueuse_5.style.border="none";
+        joueuse_5=false;
+
+        bouton_joueuse_6.style.backgroundColor="#f9eb3c";
+        bouton_joueuse_6.style.color="#383338";
+        bouton_joueuse_6.style.border="none";
+        joueuse_6=false;
+
+        bouton_joueuse_7.style.backgroundColor="#f9eb3c";
+        bouton_joueuse_7.style.color="#383338";
+        bouton_joueuse_7.style.border="none";
+        joueuse_8=false;
+
+        bouton_joueuse_8.style.backgroundColor="#f9eb3c";
+        bouton_joueuse_8.style.color="#383338";
+        bouton_joueuse_8.style.border="none";
+        joueuse_8=false;
+
+        bouton_joueuse_9.style.backgroundColor="#f9eb3c";
+        bouton_joueuse_9.style.color="#383338";
+        bouton_joueuse_9.style.border="none";
+        joueuse_9=false;
+
+        bouton_joueuse_10.style.backgroundColor="#f9eb3c";
+        bouton_joueuse_10.style.color="#383338";
+        bouton_joueuse_10.style.border="none";
+        joueuse_10=false;
+
+        bouton_joueuse_3.style.backgroundColor="#f9eb3c";
+        bouton_joueuse_3.style.color="#383338";
+        bouton_joueuse_3.style.border="none";
+        joueuse_3=false;
+
+        bouton_joueuse_12.style.backgroundColor="#f9eb3c";
+        bouton_joueuse_12.style.color="#383338";
+        bouton_joueuse_12.style.border="none";
+        joueuse_12=false;
+
+        bouton_gardienne_1.style.backgroundColor="#383338";
+        bouton_gardienne_1.style.color="#FFFFFF";
+        bouton_gardienne_1.style.border="none";
+        gardienne_1=false;
+
+        bouton_gardienne_2.style.backgroundColor="#383338";
+        bouton_gardienne_2.style.color="#FFFFFF";
+        bouton_gardienne_2.style.border="none";
+        gardienne_2=false;
+
+
+    }
+    else if (joueuse_11==true) {
+        joueuse_11=false;
+        bouton_joueuse_11.style.backgroundColor="#f9eb3c";
+        bouton_joueuse_11.style.color="#383338";
+        bouton_joueuse_11.style.border="none";
+        
+       }
+
+});  
+
+bouton_joueuse_12.addEventListener('click', function() {
+    if (joueuse_12==false) {
+        joueuse_12=true;
+        bouton_joueuse_12.style.backgroundColor="#f9eb3c";
+        bouton_joueuse_12.style.color="#05602F";
+        bouton_joueuse_12.style.border="2px solid #05602F";
+
+        bouton_joueuse_2.style.backgroundColor="#f9eb3c";
+        bouton_joueuse_2.style.color="#383338";
+        bouton_joueuse_2.style.border="none";
+        joueuse_2=false;
+
+        bouton_joueuse_1.style.backgroundColor="#f9eb3c";
+        bouton_joueuse_1.style.color="#383338";
+        bouton_joueuse_1.style.border="none";
+        joueuse_1=false;
+
+        bouton_joueuse_4.style.backgroundColor="#f9eb3c";
+        bouton_joueuse_4.style.color="#383338";
+        bouton_joueuse_4.style.border="none";
+        joueuse_4=false;
+
+        bouton_joueuse_5.style.backgroundColor="#f9eb3c";
+        bouton_joueuse_5.style.color="#383338";
+        bouton_joueuse_5.style.border="none";
+        joueuse_5=false;
+
+        bouton_joueuse_6.style.backgroundColor="#f9eb3c";
+        bouton_joueuse_6.style.color="#383338";
+        bouton_joueuse_6.style.border="none";
+        joueuse_6=false;
+
+        bouton_joueuse_7.style.backgroundColor="#f9eb3c";
+        bouton_joueuse_7.style.color="#383338";
+        bouton_joueuse_7.style.border="none";
+        joueuse_8=false;
+
+        bouton_joueuse_8.style.backgroundColor="#f9eb3c";
+        bouton_joueuse_8.style.color="#383338";
+        bouton_joueuse_8.style.border="none";
+        joueuse_8=false;
+
+        bouton_joueuse_9.style.backgroundColor="#f9eb3c";
+        bouton_joueuse_9.style.color="#383338";
+        bouton_joueuse_9.style.border="none";
+        joueuse_9=false;
+
+        bouton_joueuse_10.style.backgroundColor="#f9eb3c";
+        bouton_joueuse_10.style.color="#383338";
+        bouton_joueuse_10.style.border="none";
+        joueuse_10=false;
+
+        bouton_joueuse_11.style.backgroundColor="#f9eb3c";
+        bouton_joueuse_11.style.color="#383338";
+        bouton_joueuse_11.style.border="none";
+        joueuse_11=false;
+
+        bouton_joueuse_3.style.backgroundColor="#f9eb3c";
+        bouton_joueuse_3.style.color="#383338";
+        bouton_joueuse_3.style.border="none";
+        joueuse_3=false;
+
+        bouton_gardienne_1.style.backgroundColor="#383338";
+        bouton_gardienne_1.style.color="#FFFFFF";
+        bouton_gardienne_1.style.border="none";
+        gardienne_1=false;
+
+        bouton_gardienne_2.style.backgroundColor="#383338";
+        bouton_gardienne_2.style.color="#FFFFFF";
+        bouton_gardienne_2.style.border="none";
+        gardienne_2=false;
+
+
+    }
+    else if (joueuse_12==true) {
+        joueuse_12=false;
+        bouton_joueuse_12.style.backgroundColor="#f9eb3c";
+        bouton_joueuse_12.style.color="#383338";
+        bouton_joueuse_12.style.border="none";
+        
+       }
+
+});  
+
+//Boutons gardiennes 
+
 bouton_gardienne_1.addEventListener('click', function() {
     if (gardienne_1==false) {
         gardienne_1=true;
         bouton_gardienne_1.style.backgroundColor="#383338";
         bouton_gardienne_1.style.color="#f9eb3c";
         bouton_gardienne_1.style.border="2px solid #f9eb3c";
+
+        bouton_gardienne_2.style.backgroundColor="#383338";
+        bouton_gardienne_2.style.color="#FFFFFF";
+        bouton_gardienne_2.style.border="none";
+        gardienne_2=false;
+
+        joueuse_7=false;
+        bouton_joueuse_7.style.backgroundColor="#f9eb3cf9eb3c";
+        bouton_joueuse_7.style.color="#383338";
+        bouton_joueuse_7.style.border="none";
+
+        bouton_joueuse_2.style.backgroundColor="#f9eb3c";
+        bouton_joueuse_2.style.color="#383338";
+        bouton_joueuse_2.style.border="none";
+        joueuse_2=false;
+
+        bouton_joueuse_1.style.backgroundColor="#f9eb3c";
+        bouton_joueuse_1.style.color="#383338";
+        bouton_joueuse_1.style.border="none";
+        joueuse_1=false;
+
+        bouton_joueuse_4.style.backgroundColor="#f9eb3c";
+        bouton_joueuse_4.style.color="#383338";
+        bouton_joueuse_4.style.border="none";
+        joueuse_4=false;
+
+        bouton_joueuse_5.style.backgroundColor="#f9eb3c";
+        bouton_joueuse_5.style.color="#383338";
+        bouton_joueuse_5.style.border="none";
+        joueuse_5=false;
+
+        bouton_joueuse_6.style.backgroundColor="#f9eb3c";
+        bouton_joueuse_6.style.color="#383338";
+        bouton_joueuse_6.style.border="none";
+        joueuse_6=false;
+
+        bouton_joueuse_3.style.backgroundColor="#f9eb3c";
+        bouton_joueuse_3.style.color="#383338";
+        bouton_joueuse_3.style.border="none";
+        joueuse_3=false;
+
+        bouton_joueuse_8.style.backgroundColor="#f9eb3c";
+        bouton_joueuse_8.style.color="#383338";
+        bouton_joueuse_8.style.border="none";
+        joueuse_8=false;
+
+        bouton_joueuse_9.style.backgroundColor="#f9eb3c";
+        bouton_joueuse_9.style.color="#383338";
+        bouton_joueuse_9.style.border="none";
+        joueuse_9=false;
+
+        bouton_joueuse_10.style.backgroundColor="#f9eb3c";
+        bouton_joueuse_10.style.color="#383338";
+        bouton_joueuse_10.style.border="none";
+        joueuse_10=false;
+
+        bouton_joueuse_11.style.backgroundColor="#f9eb3c";
+        bouton_joueuse_11.style.color="#383338";
+        bouton_joueuse_11.style.border="none";
+        joueuse_11=false;
+
+        bouton_joueuse_12.style.backgroundColor="#f9eb3c";
+        bouton_joueuse_12.style.color="#383338";
+        bouton_joueuse_12.style.border="none";
+        joueuse_12=false;
+
     }
     else if (gardienne_1==true) {
         gardienne_1=false;
@@ -630,6 +1690,91 @@ bouton_gardienne_1.addEventListener('click', function() {
        }
 
 });  
+
+
+bouton_gardienne_2.addEventListener('click', function() {
+    if (gardienne_2==false) {
+        gardienne_2=true;
+        bouton_gardienne_2.style.backgroundColor="#383338";
+        bouton_gardienne_2.style.color="#f9eb3c";
+        bouton_gardienne_2.style.border="2px solid #f9eb3c";
+
+        bouton_gardienne_1.style.backgroundColor="#383338";
+        bouton_gardienne_1.style.color="#FFFFFF";
+        bouton_gardienne_1.style.border="none";
+        gardienne_1=false;
+
+        joueuse_7=false;
+        bouton_joueuse_7.style.backgroundColor="#f9eb3cf9eb3c";
+        bouton_joueuse_7.style.color="#383338";
+        bouton_joueuse_7.style.border="none";
+
+        bouton_joueuse_2.style.backgroundColor="#f9eb3c";
+        bouton_joueuse_2.style.color="#383338";
+        bouton_joueuse_2.style.border="none";
+        joueuse_2=false;
+
+        bouton_joueuse_1.style.backgroundColor="#f9eb3c";
+        bouton_joueuse_1.style.color="#383338";
+        bouton_joueuse_1.style.border="none";
+        joueuse_1=false;
+
+        bouton_joueuse_4.style.backgroundColor="#f9eb3c";
+        bouton_joueuse_4.style.color="#383338";
+        bouton_joueuse_4.style.border="none";
+        joueuse_4=false;
+
+        bouton_joueuse_5.style.backgroundColor="#f9eb3c";
+        bouton_joueuse_5.style.color="#383338";
+        bouton_joueuse_5.style.border="none";
+        joueuse_5=false;
+
+        bouton_joueuse_6.style.backgroundColor="#f9eb3c";
+        bouton_joueuse_6.style.color="#383338";
+        bouton_joueuse_6.style.border="none";
+        joueuse_6=false;
+
+        bouton_joueuse_3.style.backgroundColor="#f9eb3c";
+        bouton_joueuse_3.style.color="#383338";
+        bouton_joueuse_3.style.border="none";
+        joueuse_3=false;
+
+        bouton_joueuse_8.style.backgroundColor="#f9eb3c";
+        bouton_joueuse_8.style.color="#383338";
+        bouton_joueuse_8.style.border="none";
+        joueuse_8=false;
+
+        bouton_joueuse_9.style.backgroundColor="#f9eb3c";
+        bouton_joueuse_9.style.color="#383338";
+        bouton_joueuse_9.style.border="none";
+        joueuse_9=false;
+
+        bouton_joueuse_10.style.backgroundColor="#f9eb3c";
+        bouton_joueuse_10.style.color="#383338";
+        bouton_joueuse_10.style.border="none";
+        joueuse_10=false;
+
+        bouton_joueuse_11.style.backgroundColor="#f9eb3c";
+        bouton_joueuse_11.style.color="#383338";
+        bouton_joueuse_11.style.border="none";
+        joueuse_11=false;
+
+        bouton_joueuse_12.style.backgroundColor="#f9eb3c";
+        bouton_joueuse_12.style.color="#383338";
+        bouton_joueuse_12.style.border="none";
+        joueuse_12=false;
+
+    }
+    else if (gardienne_2==true) {
+        gardienne_2=false;
+        bouton_gardienne_2.style.backgroundColor="#383338";
+        bouton_gardienne_2.style.color="#FFFFFF";
+        bouton_gardienne_2.style.border="none";
+        
+       }
+
+});  
+
 
 //Code JS section zones -----------------------
 let up = false;

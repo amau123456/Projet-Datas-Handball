@@ -1828,7 +1828,7 @@ bouton_but1.addEventListener('click', function() {
         bouton_but1.style.fillOpacity="0.3"
     }
     else if (but1==true) {
-        but2=false;
+        but1=false;
         bouton_but1.style.fillOpacity="0"
        }
 });

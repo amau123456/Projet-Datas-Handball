@@ -72,11 +72,13 @@ bouton_carton_jaune.addEventListener('click', function()
 {
     if (carton_jaune==false) {
         carton_jaune=true;
-        bouton_carton_jaune.style.borderColor="#f9eb3c";
+        bouton_carton_jaune.style.borderColor="#f9eb3c"
+        bouton_carton_jaune.style.borderWidth="1.5px";
+        
     }
     else if (carton_jaune==true) {
         carton_jaune=false;
-        bouton_carton_jaune.style.borderColor="#ffffff"    }
+        bouton_carton_jaune.style.borderColor="rgba(220, 220, 220, 0.12)"    }
 
 });
 
@@ -85,10 +87,11 @@ bouton_carton_rouge.addEventListener('click', function()
     if (carton_rouge==false) {
         carton_rouge=true;
         bouton_carton_rouge.style.borderColor="#f9eb3c";
+        bouton_carton_jaune.style.borderWidth="1.5px";
     }
     else if (carton_rouge==true) {
         carton_rouge=false;
-        bouton_carton_rouge.style.borderColor="#ffffff"    }
+        bouton_carton_rouge.style.borderColor="rgba(220, 220, 220, 0.12)"    }
 
 });
 

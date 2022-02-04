@@ -6,7 +6,7 @@
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    margin-top: 10px;
+    margin-top:2px;
  }
  #Saisies {
     display: flex;
@@ -64,7 +64,7 @@
 }
 
 #Titre_section_joueuses{
-    margin-bottom: 7px;
+    margin-bottom: 5px;
 }
 
 
@@ -225,7 +225,7 @@
  */
  #Contenu_section {
     width: 517px;
-    height: 536px;
+    height: 517px;
     border-radius: 8px;
     background-color: rgba(220, 220, 220, 0.12);
     margin:auto;
@@ -237,18 +237,18 @@
 
     
 #Titre_section_action{
-    margin-bottom: 10px;
+    margin-bottom: 5px;
 }
 
 #Choix_periode {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    align-items: center;
+    align-items: baseline;
+    margin-top: 7px;
 }
 
 #Titre_slider{
-padding-bottom: 5px;
 color: #666666;
 font-size: 18px;
 font-family: Roboto, Arial, Helvetica, sans-serif;
@@ -360,42 +360,27 @@ color: #383338;
     width: 120px;
     
 }
-
-#carton_jaune{
-    background-image: url(Carton\ Jaune.png);
+#conteneur_carton_rouge{
+    background-image: url(Carton\ Rouge_wbg.png);
     background-size: 33px;
     background-position: center;
     width: 33px;
     height: 33px;
     border-radius: 33px;
-    border:none;
-
+    border:solid 1.8px rgba(220, 220, 220, 0.12);
 }
 
-#conteneur_carton_jaune {
-    width: 33.5px;
-    height: 33.5px;
-    border-radius: 33.5px;
-    border:solid 1px #ffffff;
-}
-
-#conteneur_carton_rouge {
-    width: 33.5px;
-    height: 33.5px;
-    border-radius: 33.5px;
-    border:solid 1px white;
-
-}
-
-#carton_rouge{
-    background-image: url(Carton\ Rouge.png);
+#conteneur_carton_jaune{
+    background-image: url(Carton\ Jaune_wbg.png); 
     background-size: 33px;
-    background-position: center left 0.5px;
+    background-position: center; 
     width: 33px;
     height: 33px;
     border-radius: 33px;
-    border:none;
+    border:solid 1px rgba(220, 220, 220, 0.12);
 }
+
+
 
 #Deux_min {
     width: 33px;
@@ -404,8 +389,6 @@ color: #383338;
     border-radius: 6px ;
     border:solid 1px #589474;
     background-color: #dcdcdc03;
-    
-
 }
 
 
@@ -505,7 +488,7 @@ color: #383338;
 }
 
 #Validation_saisie {
-    margin-top: 20px;
+    margin-top: 15px;
     margin-bottom: 10px;
     border:none;
     width: 100px;
@@ -522,7 +505,7 @@ color: #383338;
 
 }
 #Validation_saisie:hover{
-    margin-top: 20px;
+    margin-top: 15px;
     margin-bottom: 10px;
     border:none;
     width: 100px;
@@ -612,7 +595,7 @@ color: #383338;
 
 #Contenu_section_zones {
     width: 470px;
-    height: 536px;
+    height: 517px;
     border-radius: 8px;
     background-color: rgba(220, 220, 220, 0.12);
     margin:auto;
@@ -625,7 +608,7 @@ color: #383338;
 #but_marque {
     display: flex;
     flex-direction: row;
-    align-items: center;
+    align-items: baseline;
     justify-content: space-between;
     /*width : 250px;*/
     margin-top: 10px;
@@ -689,7 +672,7 @@ a:hover path{
 }
 
 #Titre_section_historique{
-    margin-bottom: 12px;
+    margin-bottom: 5px;
     
 }
 .Titre_section {

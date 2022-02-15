@@ -1,0 +1,789 @@
+
+/* Mise en page globale------------------------------
+ */
+
+ #Bloc_interface {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top:2px;
+ }
+ #Saisies {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: flex-end;
+    
+ }
+
+ #Bloc_droit {
+     display: flex;
+     flex-direction: column;
+     justify-content: space-between;
+ }
+
+/* Mise en page de la navbar------------------------------
+ */
+ .navbar-brand{
+    margin-top: 0px;
+    margin-bottom: 0px;
+
+}
+
+.navbar-expand-lg{
+    height : 84px;
+}
+
+.nav-item{
+    width: 158px;
+    height: 84px;
+    font-size: 18px;
+    text-align: center;
+    padding: 18px 0;
+    background-color: white;
+}
+
+.nav-item:nth-child(3) {
+    background-color: #f7fafc;
+    border-bottom: solid 5px #05602F;
+}
+/* Mise en page section sélection joueuses------------------------------
+ */
+@font-face {
+    font-family: 'Roboto-Bold';
+    src: url(Roboto/Roboto-Bold.ttf);
+    font-family: 'Roboto-Italic';
+    src: url(Roboto/Roboto-Italic.ttf);
+    src: url(Roboto/Roboto-Regular.ttf);
+    font-family: 'Roboto-Medium';
+    src: url(Roboto/Roboto-Medium.ttf);
+    font-family: 'Roboto-Thin';
+    src: url(Roboto/Roboto-Thin.ttf);
+    font-family: 'Roboto-Regular';
+    src: url(Roboto/Roboto-Regular.ttf);
+}
+
+#Titre_section_joueuses{
+    margin-bottom: 5px;
+}
+
+
+#Contenu_section_joueuses {
+    width: 202px;
+    height: 640px;
+    border-radius: 8px;
+    background-color: rgba(220, 220, 220, 0.12);
+    margin:auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.bouton_jou {
+    font-family: Roboto, Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    width:80px;
+    height:80px;
+    text-align: center;
+    vertical-align: middle;
+    border-radius: 25px;
+    color:#383338;
+    background-color: #F9EB3C;
+    border: solid #383338 0px;
+    text-decoration: none;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+#Boutons_joueuses {
+    margin-top: 15px;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: 230px;
+    width: 202px; 
+
+}
+
+.bouton_gar {
+    font-family: Roboto, Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    width:80px;
+    height:80px;
+    text-align: center;
+    border-radius: 25px;
+    color:#FFFFFF;
+    background-color: #383338;
+    border: solid #383338 0px;
+    text-decoration: none;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    display:flex;
+    flex-direction:column;
+    align-items: center;
+    justify-content:space-between;
+    
+}
+
+#Boutons_gardiennes {
+    margin-top: 15px;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: 230px;
+    width: 202px; 
+
+}
+
+#boutons_ligne_1_jou {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width : 182px;
+
+
+}
+#boutons_ligne_x_jou{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width : 182px;
+
+}
+
+.nom_joueuse{
+    font-family: Roboto, Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    margin-bottom: 0px;
+    margin-top: 10px;
+}
+
+.numero_joueuse{
+    font-family: Roboto, Arial, Helvetica, sans-serif;
+    font-size: 35px;
+    margin-top: 0px; 
+}
+
+.nom_gardienne{
+    font-family: Roboto, Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    margin-bottom: 0px;
+    margin-top: 10px;
+}
+
+.numero_gardienne{
+    font-family: Roboto, Arial, Helvetica, sans-serif;
+    font-size: 35px;
+    margin-top: 0px; 
+}
+
+.bouton_jou:hover {
+    font-family: Roboto, Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    width:80px;
+    height:80px;
+    text-align: center;
+    vertical-align: middle;
+    border-radius: 25px;
+    color:#383338;
+    background-color: #F9EB3C;
+    border: solid #383338 0px;
+    text-decoration: none;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    box-shadow: 1px 1px 2px #666666;
+}
+
+.bouton_gar:hover {
+    font-family: Roboto, Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    width:80px;
+    height:80px;
+    text-align: center;
+    vertical-align: middle;
+    border-radius: 25px;
+    color:#FFFFFF;
+    background-color: #383338;
+    border: solid #383338 0px;
+    text-decoration: none;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    box-shadow: 1px 1px 2px #666666;
+}
+
+
+/* Mise en page de la section actions------------------------------
+ */
+ #Contenu_section {
+    width: 517px;
+    height: 517px;
+    border-radius: 8px;
+    background-color: rgba(220, 220, 220, 0.12);
+    margin:auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+    
+#Titre_section_action{
+    margin-bottom: 5px;
+}
+
+#Choix_periode {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: baseline;
+    margin-top: 7px;
+}
+
+#Titre_slider{
+color: #666666;
+font-size: 18px;
+font-family: Roboto, Arial, Helvetica, sans-serif;
+
+}
+#Liste_periodes{
+    height:20px;
+    font-family: Roboto, Arial, Helvetica, sans-serif;
+    margin-left: 10px;
+    color: #666666
+}
+
+
+.boutton_attaque_defense {
+    font-family: Roboto, Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    width:140px;
+    height:30px;
+    text-align: center;
+    vertical-align: middle;
+    border-radius: 10px;
+    color:#383338;
+    background-color: #FBFBFB;
+    border: solid #383338 1px;
+    text-decoration: none;     
+}
+
+.boutton_attaque_defense:hover{
+    font-family: Roboto, Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    width:140px;
+    height:30px;
+    text-align: center;
+    vertical-align: middle;
+    border-radius: 10px;
+    color:#383338;
+    background-color: #FBFBFB;
+    border: solid #383338 1px;
+    text-decoration: none;  
+    box-shadow: 1px 1px 2px #666666;
+}
+
+#bouton_Attaque {
+    font-family: Roboto, Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    width:140px;
+    height:30px;
+    text-align: center;
+    vertical-align: middle;
+    border-radius: 10px;
+    color:#383338;
+    background-color: #f9eb3c;
+    border: solid #383338 1px;
+    text-decoration: none; 
+    
+}
+
+#Type_attaque {
+display: flex;
+flex-direction: row;
+justify-content: space-around;
+width: 285px;
+}
+
+#Type_attaque p {
+font-size: 14px;
+font-family: Roboto, Arial, Helvetica, sans-serif;
+display: flex;
+align-items:center;
+justify-content: center;
+color: #383338;
+}
+
+.Boutton_type_attaque{
+    font-family: Roboto, Arial, Helvetica, sans-serif;
+    width:110px;
+    height:26.87px; 
+    border-radius: 20px;
+    border: 1px solid #383338 ;
+}
+
+#bouton_Attaque_Placee{
+    font-family: Roboto, Arial, Helvetica, sans-serif;
+    width:110px;
+    height:26.87px; 
+    border-radius: 20px;
+    border: 1px solid #383338 ;
+    background-color: #f9eb3c;
+}
+
+#Titre_sanctions {
+    font-family: Roboto, Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    color: #05602F;
+
+}
+
+#sanctions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#Boutons_sanctions {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    width: 120px;
+    
+}
+#conteneur_carton_rouge{
+    background-image: url(Carton\ Rouge_wbg.png);
+    background-size: 33px;
+    background-position: center;
+    width: 33px;
+    height: 33px;
+    border-radius: 33px;
+    border:solid 1.8px rgba(220, 220, 220, 0.12);
+}
+
+#conteneur_carton_jaune{
+    background-image: url(Carton\ Jaune_wbg.png); 
+    background-size: 33px;
+    background-position: center; 
+    width: 33px;
+    height: 33px;
+    border-radius: 33px;
+    border:solid 1px rgba(220, 220, 220, 0.12);
+}
+
+
+
+#Deux_min {
+    width: 33px;
+    color:#05602F;
+    height: 33px;
+    border-radius: 6px ;
+    border:solid 1px #589474;
+    background-color: #dcdcdc03;
+}
+
+
+#Boutons_saisies {
+    margin-top: 15px;
+    display:flex;
+    flex-direction: column;
+    align-items:center;
+    justify-content: space-between;
+    height: 230px;
+    width: 476px;
+
+}
+
+#Boutons_saisies_defense {
+    display:none;
+    margin-top: 15px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: 230px;
+    width: 476px;
+}
+
+#boutons_ligne_1 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width:auto;
+
+}
+#boutons_ligne_2{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width:auto;
+
+}
+#boutons_ligne_3{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width:auto;
+
+}
+.boutton_fait_de_jeu {
+    margin-left: 8px;
+    font-family: Roboto-Regular, Arial, Helvetica, sans-serif;
+    background-color: #589474;
+    color:#FFFFFF;
+    font-size: 13px;
+    width: 65px;
+    height: 65px;
+    border-radius: 65px;
+    border:none;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.boutton_fait_de_jeu:hover {
+    margin-left: 8px;
+    background-color: #589474;
+    color:#FFFFFF;
+    font-size: 13px;
+    box-shadow: 1px 1px 2px #666666;
+    
+}
+
+#interception_d {
+    font-size: 11px;
+    width: 65px;
+    height: 65px;
+    border-radius: 65px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#interception:hover{
+    font-size: 11px;
+    width: 65px;
+    height: 65px;
+    border-radius: 65px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 1px 1px 2px #666666;
+}
+
+#relance_but {
+    display:none;
+}
+
+#Validation_saisie {
+    margin-top: 15px;
+    margin-bottom: 10px;
+    border:none;
+    width: 100px;
+    height: 40px;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    background-color: #F9EB3C;
+
+    font-family: Roboto-Regular, Arial, Helvetica, sans-serif;
+    font-size: 14px;
+
+}
+#Validation_saisie:hover{
+    margin-top: 15px;
+    margin-bottom: 10px;
+    border:none;
+    width: 100px;
+    height: 40px;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    background-color: #F9EB3C;
+
+    font-family: Roboto-Regular, Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    box-shadow: 1px 1px 2px #666666;
+
+
+}
+
+
+/* Code CSS mise en forme du toggle switcher pour le type d'attaque */
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 52px;
+    height: 24px;
+  }
+  
+  .switch input { 
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #05602F;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 17px;
+    width: 17px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  input:checked + .slider {
+    background-color: #05602F;
+  }
+  
+  input:focus + .slider {
+    box-shadow: 0 0 1px #05602F;
+  }
+  
+  input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+  }
+  
+  /* Rounded sliders */
+  .slider.round {
+    border-radius: 34px;
+  }
+  
+  .slider.round:before {
+    border-radius: 50%;
+  }
+
+/* Mise en page de la section zones------------------------------
+ */
+ #Titre_section_zones {
+     margin-bottom: 10px;
+ }
+
+#Contenu_section_zones {
+    width: 470px;
+    height: 517px;
+    border-radius: 8px;
+    background-color: rgba(220, 220, 220, 0.12);
+    margin:auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#but_marque {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    justify-content: space-between;
+    /*width : 250px;*/
+    margin-top: 10px;
+}
+
+.marque_rate{
+    font-family: Roboto-Regular, Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    color: #05602F;
+}
+
+.bouton_but{
+    margin-left: 5px;
+    margin-right: 5px;
+    height: 40px;
+    width: 40px;
+    border-radius: 20px;
+    border: 0px;
+    background-color: rgba(220, 220, 220, 0);
+}
+
+#up_down{
+    color: #05602F;
+    height: 19px;
+    width: 19px;
+}
+
+#poly_clic{
+    margin-top: 0px;
+}
+
+#cage img {
+	/*padding: 200px;*/
+    display: block;
+    /*margin-left: 200;*/
+    margin-right: auto }
+
+#rectangle_clic {
+	margin-top: 3px;
+    margin-left: 13px;
+}
+
+#delimitation {
+    stroke: black;
+    stroke-width: 2px;
+    stroke-dasharray: 3;
+}
+
+a:hover path{
+    fill-opacity: 0.1;
+}
+
+
+/* Mise en page de la historique -----------------------------------------------------
+ */
+
+#section_Historique {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+#Titre_section_historique{
+    margin-bottom: 5px;
+    
+}
+.Titre_section {
+    font-family: Roboto-Regular, Arial, Helvetica, sans-serif;
+    font-size: 30px;
+    text-decoration: underline;
+    text-decoration-color: #F9EB3C;;
+    text-underline-position: under;
+    color: #05602F;
+    width: 200px;
+    height:40px;
+    margin: auto;
+    text-align:start;
+    padding-left: 10px;
+    text-align: center;
+    
+}
+
+/* Mise en forme tableau historique */
+#section_Historique{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 10px;
+    
+}
+#Titre_section_historique h1 {
+    width:250px;
+   text-align: left;
+}
+table {
+    width: 940px;
+    border-collapse: collapse;
+    table-layout: fixed;
+  }  
+
+#en-tete_tableau {
+    border-bottom: solid 1px #E5E5E5;
+    font-size: 14px;
+    font-family: Roboto-Regular, Arial, Helvetica, sans-serif;
+    color: #383338; 
+}
+#en-tete_tableau,th {
+    padding-bottom: 3px;
+    text-align: center;
+    padding-left: 5px;
+}
+#en-tete_tableau, th:nth-child(1) {
+    width: 13%;
+}  
+#en-tete_tableau, th:nth-child(2) {
+    width: 13%;
+}
+#en-tete_tableau, th:nth-child(3) {
+    width: 13%;
+}
+#en-tete_tableau, th:nth-child(4) {
+    width: 7%;
+}
+#en-tete_tableau, th:nth-child(5) {
+    width: 7%;
+
+}
+#en-tete_tableau, th:nth-child(6) {
+    width: 7%;
+}
+#en-tete_tableau, th:nth-child(7) {
+    width: 10%;
+}
+#en-tete_tableau, th:nth-child(8) {
+    width: 10%;
+}
+#en-tete_tableau, th:nth-child(9) {
+    width: 10%;
+}
+
+/* Ligne de test */
+#Ligne_test {
+    height: 32px;
+}
+#Ligne_test,td {
+    font-size: 13px;
+    font-family: Roboto-Regular, Arial, Helvetica, sans-serif;
+    color: #383338; 
+    text-align: center;
+}
+
+#Ligne_test, td:nth-child(1){
+    width: 13%;
+}
+#Ligne_test, td:nth-child(2){
+    width: 13%;
+}
+#Ligne_test, td:nth-child(3){
+    width: 13%;
+}
+#Ligne_test, td:nth-child(4){
+    width: 7%;
+}
+#Ligne_test, td:nth-child(5){
+    width: 7%;
+}
+#Ligne_test, td:nth-child(6){
+    width: 7%;
+}
+#Ligne_test, td:nth-child(7){
+    width: 10%;
+}
+#Ligne_test, td:nth-child(8){
+    width: 10%;
+}
+#Ligne_test, td:nth-child(9){
+    width: 10%;
+}

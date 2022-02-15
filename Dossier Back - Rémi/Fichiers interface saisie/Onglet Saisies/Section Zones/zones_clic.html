@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+	<title>Zones cliquables</title>
+	<meta charset = "utf-8">
+
+    <link rel="stylesheet" href="zones_clic.css">
+	<script src="https://code.iconify.design/2/2.1.0/iconify.min.js"></script>
+
+</head>
+
+<body>
+	<div id="Bloc_global">
+		<div id="Titre_section_zones">
+			<h1 class="Titre_section">Zones</h1>
+		</div>
+		<div id="Contenu_section_zones">
+			<div id = "but_marque">
+				<button id=marque class="bouton_but" type="button">
+					<!--<img src="up.png" alt="oui" height="19"/>-->
+					<span class="iconify" id="up_down" data-icon="ic:round-thumb-up-off-alt"></span>
+				</button>
+					<h1 class="marque_rate">But marqué ?</h1>
+				<button id=rate class="bouton_but" type="button">
+					<!--<img src="down.png" alt="non" height="19"/>-->
+					<span class="iconify" id="up_down" data-icon="ic:round-thumb-down"></span>
+				</button>
+
+			</div>
+			<div id ="rectangle_clic">
+				<svg width="350" height="221">
+					<image xlink:href="cage_hand.jpg" x="0" y="0" alt="cage" height="256px"/>
+
+					<a href="#">
+						<path id="zb1" d="M 45 60 L 125 60 L 125 113 L 45 113 L 45 60 Z" fill="#383338" fill-opacity="0"/>
+					</a>
+					<a href="#">
+						<path d="M 125 60 L 205 60 L 205 113 L 125 113 L 125 60 Z" fill="#383338" fill-opacity="0"/>
+					</a>
+					<a href="#">
+						<path d="M 205 60 L 284 60 L 284 113 L 205 113 L 205 60 Z" fill="#383338" fill-opacity="0"/>
+					</a>
+					<a href="#">
+						<path d="M 45 113 L 125 113 L 125 166 L 45 166 L 45 113 Z" fill="#383338" fill-opacity="0"/>
+					</a>
+					<a href="#">
+						<path d="M 125 113 L 205 113 L 205 166 L 125 166 L 125 113 Z" fill="#383338" fill-opacity="0"/>
+					</a>
+					<a href="#">
+						<path d="M 205 113 L 284 113 L 284 166 L 205 166 L 205 113 Z" fill="#383338" fill-opacity="0"/>
+					</a>
+					<a href="#">
+						<path d="M 45 166 L 125 166 L 125 220 L 45 220 L 45 166 Z" fill="#383338" fill-opacity="0"/>
+					</a>
+					<a href="#">
+						<path d="M 125 166 L 205 166 L 205 220 L 125 220 L 125 166 Z" fill="#383338" fill-opacity="0"/>
+					</a>
+					<a href="#">
+						<path d="M 205 166 L 284 166 L 284 220 L 205 220 L 205 166 Z" fill="#383338" fill-opacity="0"/>
+					</a>
+					<a id="delimitation" href="zones/zone10.html">
+						<path d="M 125 60 L 125 220 
+								 M 205 60 L 205 220 
+								 M 45 113 L 284 113
+								 M 45 166 L 284 166 Z" fill="none"/>
+					</a>
+					
+				</svg>
+				
+			</div>
+			
+			<div id ="poly_clic">
+
+				<svg width="370" height="221">
+					<image xlink:href="terrain.png" x="0" y="0" alt="terrain" height="203px"/>
+
+					<a href="#">
+						<path id="zb1" d="M 1 1 L 47 1 Q 45, 35 72, 74 L 35 115 Q 9, 80 1, 57 Z" fill="#383338" fill-opacity="0"/>
+					</a>
+					<a href="#">
+						<path d="M 72 74 Q 105, 108 145, 112 L 134 167 Q 70, 152 35, 115 Z" fill="#383338" fill-opacity="0"/>
+					</a>
+					<a href="#">
+						<path d="M 145 112 L 134 167 L 235 167 L 224 112 Z" fill="#383338" fill-opacity="0"/>
+					</a>
+					<a href="#">
+						<path d="M 297 74 Q 264, 108 224, 112 L 235 167 Q 299, 152 334, 115 Z" fill="#383338" fill-opacity="0"/>
+					</a>
+					<a href="#">
+						<path d="M 369 1 L 324 1 Q 324, 35 297, 74 L 334 115 Q 360, 80 369, 57 Z" fill="#383338" fill-opacity="0"/>
+					</a>
+					<a href="#">
+						<path d="M 35 115 Q 9, 80 1, 57 L 1 154 Z" fill="#383338" fill-opacity="0"/>
+					</a>
+					<a href="#">
+						<path d="M 134 167 Q 70, 152 35, 115 L 1 154 L 1 202 L 127 202 Z" fill="#383338" fill-opacity="0"/>
+					</a>
+					<a href="#">
+						<path d="M 134 167 L 235 167 L 242 202 L 127 202 Z" fill="#383338" fill-opacity="0"/>
+					</a>
+					<a href="#">
+						<path d="M 235 167 Q 299, 154 334, 115 L 369 154 L 369 202 L 242 202 Z" fill="#383338" fill-opacity="0"/>
+					</a>
+					<a href="#">
+						<path d="M 334 115 Q 360, 80 369, 57 L 369 154 Z" fill="#383338" fill-opacity="0"/>
+					</a>
+
+					<a id="delimitation" href="zones/zone10.html">
+						<path d="M 72 74 L 1 154 
+								 M 145 112 L 127 202 
+								 M 224 112 L 242 202
+								 M 297 74 L 369 154 Z" fill="none"/>
+					</a>
+				</svg>
+			</div>
+		</div>
+	</div>
+
+	<script src="zones_clic.js"></script>
+
+</body>

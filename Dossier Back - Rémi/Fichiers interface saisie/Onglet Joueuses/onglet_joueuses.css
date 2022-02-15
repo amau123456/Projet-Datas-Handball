@@ -1,0 +1,424 @@
+@font-face {
+    font-family: 'Roboto-Bold';
+    src: url(Roboto/Roboto-Bold.ttf);
+    font-family: 'Roboto-Italic';
+    src: url(Roboto/Roboto-Italic.ttf);
+    src: url(Roboto/Roboto-Regular.ttf);
+    font-family: 'Roboto-Medium';
+    src: url(Roboto/Roboto-Medium.ttf);
+    font-family: 'Roboto-Thin';
+    src: url(Roboto/Roboto-Thin.ttf);
+    font-family: 'Roboto-Regular';
+    src: url(Roboto/Roboto-Regular.ttf);
+}
+
+/* Mise en page Global-----------------------------------*/
+body {
+    display: flex;
+    flex-direction: row;
+    
+
+}
+
+/* Mise en page Tableau NavBar-----------------------------------*/
+.navbar-brand{
+    margin-top: 0px;
+    margin-bottom: 0px;
+
+}
+
+.navbar-expand-lg{
+    height : 84px;
+}
+
+.navbar-nav{
+    background-color: white;
+}
+
+.nav-item{
+    width: 158px;
+    height: 84px;
+    font-size: 18px;
+    text-align: center;
+    padding: 18px 0;
+    background-color: white;
+}
+
+.nav-item:nth-child(2) {
+    background-color: #f7fafc;
+    border-bottom: solid 5px #05602F;
+}
+
+
+/* Mise en page Tableau Match-----------------------------------*/
+
+#Table_joueuses{
+    display: block;
+    margin-top: 15px;
+}
+
+table {
+	border-collapse: collapse;
+	width: 800px;
+	word-wrap: break-word;
+    
+}
+
+thead {
+	background-color: #ffffff;
+	color: #ffffff;
+    border-bottom: solid 1px #E5E5E5;
+}
+thead, th {
+    height: 35px;;
+}
+tbody, td {
+    height:40px;
+
+}
+
+thead, th:nth-child(1) {
+    width:5%;
+    
+}
+
+thead, th:nth-child(2) {
+    width:12%;
+    
+}
+
+thead, th:nth-child(3) {
+    width:20%;
+    
+}
+thead, th:nth-child(4) {
+    width:17%;
+    
+}
+thead, th:nth-child(6) {
+    width:17%;
+    
+}thead, th:nth-child(7) {
+    width:11%;
+    
+}
+
+
+td,th {
+    font-family: Roboto-Regular, Arial, Helvetica, sans-serif;
+    color:#383338;
+	text-align: center;
+	padding-left: 0.2em;
+	overflow:auto ;
+}
+
+
+.ligne-impair {
+    background-color: #FEFFF7;
+    padding-top: 3px;
+	width: 100%;
+}
+
+#poubelle {
+	position:relative;
+	top: 2.5px;
+}
+#checkbox_selection{
+	border-radius: 5px;
+	width: 24px;
+	height: 24px;
+}
+
+#logo_hand {
+    width: 40px;
+    height:40px;
+}
+
+.icones_sur_ligne {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+
+/* Mise en page Formulaire ajout joueuse-----------------------------------*/
+#Contenu_section {
+    position:relative;
+    width: 600px;
+    border-radius: 2px;
+    background-color: rgba(5,96,47, 0.06);
+    margin:auto;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    border-width: 1px;
+
+
+}
+
+#Contenu_section:nth-child(1){
+    position:absolute;
+}
+
+#Titre_section_formulaire_match{
+
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.iconify:nth-child(1) {
+    position: relative;
+    left: 0px;
+}
+
+
+#Fleche_jaune {
+    position:absolute;
+    width: 28px;
+    height: 38px;
+    left:-25px;
+    top:50%;
+
+}
+
+#Bloc_droit {
+    width:550px;
+}
+
+.Titre_section {
+    position:relative;
+    right:18px;
+    font-family: Roboto-Regular, Arial, Helvetica, sans-serif;
+    font-size: 30px;
+    text-decoration: underline;
+    text-decoration-color: #F9EB3C;;
+    text-underline-position: under;
+    color: #05602F;   
+    text-align: center;
+}
+
+#Section_champs_saisies {
+    width: 100%;
+    height:550px;
+    display: flex;
+    flex-direction: column;
+    justify-content:space-around ;
+    align-items: center;
+    margin-bottom: 45px; 
+    margin-top: 20px ;
+
+}
+
+#Section_champs_saisies label {
+    margin-right: 11px;
+    text-align: center;
+    width:100px;
+    color:#383838;
+    font-family: Roboto-Regular, Arial, Helvetica, sans-serif;
+
+}
+
+
+.champ_saisie {
+    width: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.champ_saisie:nth-child(5) {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: baseline;
+}
+
+.champ_saisie input{
+    display:flex;
+    flex-direction:column;
+    align-items: center;
+    margin-top: 5px;
+    width:auto;
+}
+.champ_saisie select{
+    
+    margin-top: 5px;
+    margin-bottom: 25px;
+}
+
+input, textarea {
+    border-radius:8px;
+    width:368px;
+    height:56px; 
+    font-size: 16px;
+    padding-left: 15px;
+    margin-bottom: 11px;
+}
+
+.info_club{
+    color: #666666;
+    font-size: 16px;
+    font-family: Roboto-Regular, Arial, Helvetica, sans-serif;
+}
+
+#date_rencontre {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color:#383838;
+
+}
+
+#Domicile_exterieur {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items:center;
+    width: 310px;
+}
+
+
+
+.bouton_valider {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    border:none;
+    width: 140px;
+    height: 50px;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background-color: #05602F;
+    font-family: Roboto-Regular, Arial, Helvetica, sans-serif;
+    color: #FFFF;
+    font-size: 14px;
+    padding-left: 0px;
+    margin-left: auto;
+    margin-right: auto    
+
+}
+.iconify {
+    margin-right: 15px;
+}
+
+.bouton_valider:hover{
+    margin-top: 20px;
+    margin-bottom: 10px;
+    border:none;
+    width: 140px;
+    height: 50px;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background-color: #05602F;
+    font-family: Roboto-Regular, Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    padding-left: 0px;
+    box-shadow: 1px 1px 2px #666666;
+
+}
+.bouton_analyse {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border:none;
+    width: 170px;
+    height: 50px;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background-color: #F9EB3C;
+    font-family: Roboto-Regular, Arial, Helvetica, sans-serif;
+    color: #383838;
+    font-size: 14px;
+    margin-left: auto;
+    margin-right: auto; 
+
+}
+.bouton_analyse:hover{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border:none;
+    width: 170px;
+    height: 50px;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background-color: #F9EB3C;
+    font-family: Roboto-Regular, Arial, Helvetica, sans-serif;
+    color: #383838;
+    font-size: 14px;
+    margin-left: auto;
+    margin-right: auto; 
+    box-shadow: 1px 1px 2px #666666;
+}
+
+
+
+
+
+
+/* Code CSS mise en forme du toggle switcher pour le type d'attaque */
+.onoffswitch {
+    position: relative; width: 40px;
+    transform: rotate(180deg);
+    -webkit-user-select:none; -moz-user-select:none; -ms-user-select: none;
+}
+.onoffswitch-checkbox {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+.onoffswitch-label {
+    display: block; overflow: hidden; cursor: pointer;
+    border: 2px solid #05602F; border-radius: 20px;
+}
+.onoffswitch-inner {
+    display: block; width: 200%; margin-left: -100%;
+    transition: margin 0.3s ease-in 0s;
+}
+.onoffswitch-inner:before, .onoffswitch-inner:after {
+    display: block; float: left; width: 50%; height: 22px; padding: 0; line-height: 22px;
+    font-size: 14px; color: white; font-family: Trebuchet, Arial, sans-serif; font-weight: bold;
+    box-sizing: border-box;
+}
+.onoffswitch-inner:before {
+    content: "";
+    padding-left: 10px;
+    background-color: #05602F; color: #FFFFFF;
+}
+.onoffswitch-inner:after {
+    content: "";
+    padding-right: 10px;
+    background-color: #05602F; color: #05602f;
+    text-align: right;
+}
+.onoffswitch-switch {
+    display: block; width: 17px; margin: 2.5px;
+    background: #FFFFFF;
+    position: absolute; top: 0; bottom: 0;
+    right: 14px;
+    border: 2px solid #05602F; border-radius: 20px;
+    transition: all 0.3s ease-in 0s; 
+}
+.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-inner {
+    margin-left: 0;
+}
+.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-switch {
+    right: 0px; 
+}

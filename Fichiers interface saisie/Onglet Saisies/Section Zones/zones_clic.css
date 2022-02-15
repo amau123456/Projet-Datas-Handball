@@ -88,6 +88,15 @@
     stroke-dasharray: 3;
 }
 
-a:hover path{
+.zt:hover{
     fill-opacity: 0.1;
+}
+
+.zb:hover {
+    fill-opacity: 0.1;
+}
+
+#text7M {
+    font-family: Roboto-Regular, Arial, Helvetica, sans-serif;
+    font-size: 16px;
 }

@@ -1,0 +1,124 @@
+@font-face {
+    font-family: 'Roboto-Bold';
+    src: url(Roboto/Roboto-Bold.ttf);
+    font-family: 'Roboto-Italic';
+    src: url(Roboto/Roboto-Italic.ttf);
+    src: url(Roboto/Roboto-Regular.ttf);
+    font-family: 'Roboto-Medium';
+    src: url(Roboto/Roboto-Medium.ttf);
+    font-family: 'Roboto-Thin';
+    src: url(Roboto/Roboto-Thin.ttf);
+    font-family: 'Roboto-Regular';
+    src: url(Roboto/Roboto-Regular.ttf);
+}
+
+#section_Historique {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+#Titre_section_historique{
+    margin-bottom: 24px;
+    
+}
+  .Titre_section {
+    font-family: Roboto-Regular, Arial, Helvetica, sans-serif;
+    size: 30px;
+    text-decoration: underline;
+    text-decoration-color: #F9EB3C;;
+    text-underline-position: under;
+    color: #05602F;
+    width: 517px;
+    height:40px;
+    margin: auto;
+    text-align:start;
+    padding-left: 10px;
+    
+}
+
+/* Mise en forme tableau historique */
+table {
+    width: 940px;
+    border-collapse: collapse;
+    table-layout: fixed;
+  }  
+
+#en-tete_tableau {
+    border-bottom: solid 1px #E5E5E5;
+    font-size: 12px;
+    font-family: Roboto-Regular, Arial, Helvetica, sans-serif;
+    color: #383338; 
+}
+#en-tete_tableau,th {
+    padding-bottom: 3px;
+    text-align: center;
+    padding-left: 5px;
+}
+#en-tete_tableau, th:nth-child(1) {
+    width: 13%;
+}  
+#en-tete_tableau, th:nth-child(2) {
+    width: 13%;
+}
+#en-tete_tableau, th:nth-child(3) {
+    width: 13%;
+}
+#en-tete_tableau, th:nth-child(4) {
+    width: 7%;
+}
+#en-tete_tableau, th:nth-child(5) {
+    width: 7%;
+
+}
+#en-tete_tableau, th:nth-child(6) {
+    width: 7%;
+}
+#en-tete_tableau, th:nth-child(7) {
+    width: 10%;
+}
+#en-tete_tableau, th:nth-child(8) {
+    width: 10%;
+}
+#en-tete_tableau, th:nth-child(9) {
+    width: 10%;
+}
+
+/* Ligne de test */
+#Ligne_test {
+    height: 32px;
+}
+#Ligne_test,td {
+    font-size: 11px;
+    font-family: Roboto-Regular, Arial, Helvetica, sans-serif;
+    color: #383338; 
+    text-align: center;
+}
+
+#Ligne_test, td:nth-child(1){
+    width: 13%;
+}
+#Ligne_test, td:nth-child(2){
+    width: 13%;
+}
+#Ligne_test, td:nth-child(3){
+    width: 13%;
+}
+#Ligne_test, td:nth-child(4){
+    width: 7%;
+}
+#Ligne_test, td:nth-child(5){
+    width: 7%;
+}
+#Ligne_test, td:nth-child(6){
+    width: 7%;
+}
+#Ligne_test, td:nth-child(7){
+    width: 10%;
+}
+#Ligne_test, td:nth-child(8){
+    width: 10%;
+}
+#Ligne_test, td:nth-child(9){
+    width: 10%;
+}

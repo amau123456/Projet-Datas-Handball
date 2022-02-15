@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <link rel="stylesheet" href="formulaire_match.css" />
+        <script src="https://code.iconify.design/2/2.1.0/iconify.min.js"></script>
+        
+
+        <title>Section saisie actions</title>
+
+    </head>
+    <body>
+        <div id="Bloc_global">
+            <div id="Contenu_section">
+                <div id="Titre_section_action">
+                    <h1 class="Titre_section">Feuille de Match</h1>
+                </div>
+                <div id="Formulaire_ajout_match">
+                    <form action="/ma-page-de-traitement" method="post">
+                            <label class= 'info_club' for="club_adverse">Club adverse</label>
+                            <input type="text" name="club_adverse" id="club_adverse"  size="30" />
+                            <br/>
+                            <br/>
+                            <label class= 'info_club' for="lieu_match">Lieu match</label>
+                            <input type="text" name="lieu_match" id="lieu_match"  size="30" />
+                            <br/>
+                            <br/>
+                            <label class= 'info_club' for="date_rencontre">Date de la rencontre :</label>
+                            <input type="date" name="date_rencontre" id="date_rencontre"  size="30" />
+                            <br/>
+                            <br/>
+                            <label class= 'info_club' for="domicile">Domicile</label>                           
+                            <input type="radio" name="dom_ext" value="domicile" id="domicile" /> 
+                            <br/>
+                            <label class= 'info_club' for="exterieur">Extérieur</label>
+                            <input type="radio" name="dom_ext" value="exterieur" id="exterieur" /> 
+                            <br/>
+                            <br/>
+                            <label class= 'info_club' for="competition"> Compétition :</label>
+                            <input type="text" name="competition" id="competition"  size="30" />
+                            <br/>
+                            <br/>
+                        <button class="button_1">Valider</button>
+                        <br/>
+                        <button class="button_2">Analyse du match</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

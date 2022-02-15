@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+        <script src="/chosen/chosen.jquery.js"></script>
+        <link href="/chosen/chosen.css" rel="stylesheet"/>
+        <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css"/>
+        <link rel="stylesheet" href="formulaire_joueuse.css" />
+        
+        
+        <title>Section saisie actions</title>
+
+    </head>
+    <body>
+        <div id="Bloc_global">
+            <div id="Contenu_section">
+                <div id="Titre_section_formulaire_match">
+                    <span class="iconify" data-icon="openmoji:man-playing-handball" style="color: black; font-size: 135px;"></span>
+                    <h1 class="Titre_section">Feuille de Match</h1>
+                </div>
+                <div id="Formulaire_ajout_match">
+                    <form action="/ma-page-de-traitement" method="post">
+                        <div id="Section_champs_saisies">
+                            <div class="champ_saisie">
+                            <label class= 'info_club' for="num_joueuse">N° Joueuse :</label>
+                            <input class="form-control" type="text" name="num_joueuse" id="num_joueuse"  size="30" placeholder="Saisir le N° Joueuse" />
+                            
+                            </div>
+                            <div class="champ_saisie">
+                            <label class= 'info_club' for="nom">Nom :</label>
+                            <input class="form-control" type="text" name="nom" id="nom"  size="30" placeholder="Saisir le nom de la joueuse" />
+                            </div>
+
+                            <div class="champ_saisie">
+                            <label class= 'info_club' for="prenom">Prénom :</label>
+                            <input class="form-control" type="text" name="prenom" id="prenom"  size="30" placeholder="Saisir le prénom de la joueuse" />
+                            </div>            
+
+                            <div class="champ_saisie">
+                                <label class= 'info_club' for="equipe">Équipe :</label>
+                                <input class="form-control" type="text" name="equipe" id="equipe"  size="30" placeholder="Saisir l'équipe de la joueuse" />
+                            </div> 
+                            <div class="champ_saisie">
+                                <label class= 'info_club' for="poste">Poste :</label>
+                                <select class="form-control" aria-label="Poste Joueuse">
+                                    <option selected>Poste de la joueuse</option>
+                                    <option value="1">Pivot</option>
+                                    <option value="2">Aillière Droit<option>
+                                    <option value="3">Aillière Gauche</option>
+                                    
+                                  </select>
+                            </div>
+                            
+                            <button class="bouton_valider"><span class="iconify" data-icon="el:ok-circle" style="color: #FFFFFF; font-size: 20px;"></span>Valider</button>
+                    
+                        
+                        <button class="bouton_analyse"><span class="iconify" data-icon="bi:play-btn" style="color: #383838; font-size: 24px;"></span>Analyse du match</button>
+                        </div>
+                        
+                        
+                        
+                        
+                    </form>
+                </div>
+            </div>
+        </div>
+        <script type="text/javascript">
+            $(".chosen-select").chosen({
+              no_results_text: "Oops, nothing found!"
+            });
+            </script>
+
+        <script src="formulaire_joueuse.js"></script>
+        
+        <script src="https://code.iconify.design/2/2.1.0/iconify.min.js"></script>
+
+
+    </body>
+</html>

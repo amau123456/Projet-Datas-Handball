@@ -727,12 +727,14 @@ bouton_septM.addEventListener('click', function() {
         bouton_terrain9.style.fillOpacity="0";
         bouton_terrain10.style.fillOpacity="0";
         bouton_septM.style.fill="#F9EB3C";
-        text_septM.style.color="#383338"
+        bouton_septM.style.stroke="#383338";
+        text_septM.style.color="#383338";
         zoneterrain = 77
     }
     else if (septM==true) {
         septM=false;
-        bouton_septM.style.fill="#589474"
+        bouton_septM.style.fill="#589474";
         text_septM.style.color="#FFFFFF"
+        bouton_septM.style.stroke="none"
        }
 });

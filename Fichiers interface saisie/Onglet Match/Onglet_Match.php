@@ -10,13 +10,13 @@
         <link rel="stylesheet" href="chosen/chosen.css"/>
         <title>Onglet Match</title>
     </head>
-    
-    
+
+
     <?php
             $host = 'localhost';
-            $dbname = 'hbpc';
-            $user = 'root';
-            $password = 'remi1998';
+            $dbname = 'Projet_Handball';
+            $user = 'amau';
+            $password = '291298';
             $pair = 'ligne-pair';
             
 
@@ -36,16 +36,11 @@
         <?php 
             $req = $pdo ->prepare ("SELECT * FROM matchs");
             $req->execute()
-
-            
         ?>
 
-    
-    
-    
     <body>
         <div id="Bloc_gauche">
-            <header style>
+            <header>
               <nav class="navbar navbar-expand-lg navbar-light bg-light">
                 <a class="navbar-brand" href="#">
                     <img src="logo.png" alt="x_x" style="height: 74px;">
@@ -73,7 +68,7 @@
                       </li>
                     </ul>
                   </div>
-            </nav>
+              </nav>
             </header>
         
             <div id="Table_matchs">
@@ -88,42 +83,43 @@
                         <th class="table-head"><span id="poubelle"class="iconify" data-icon="fluent:delete-20-filled" style="color: #383338; font-size: 20px;"></span></th>
                     </tr>
                 </thead>
-                
-
+    
                 <tbody>
-                        <?php while($row = $req->fetch(PDO::FETCH_ASSOC)) : ?>
-                            
-                                    <tr class=<?php echo($pair)?>>
-                                        <td class="table-data"><input id="checkbox_selection" type="checkbox" class="delete_checkbox"/>
-                                        <td class="table-data"><?php echo htmlspecialchars($row['id_match']); ?></td>
-                                        <td class="table-data"><?php echo htmlspecialchars($row['Club_adverse']); ?></td>
-                                        <td class="table-data"><?php echo htmlspecialchars($row['Date']); ?></td>
-                                        <td class="table-data"><?php echo htmlspecialchars($row['Domicile']); ?></td>
-                                        <td class="icones_sur_ligne"><a href ="suppression_match.php?id_match=<?php echo $row['id_match']?>"><span class="iconify" data-icon="ci:edit" style="color: #383338; font-size: 20px;"></span>
-                                    <span class="iconify" data-icon="fluent:delete-20-filled" style="color: #383338; font-size: 20px;"></span></td>
+                  <?php while($row = $req->fetch(PDO::FETCH_ASSOC)) : ?>
+                              
+                              <tr class=<?php echo($pair)?>>
+                                  <td class="table-data"><input id="checkbox_selection" type="checkbox" class="delete_checkbox"/>
+                                  <td class="table-data"><?php echo htmlspecialchars($row['id_match']); ?></td>
+                                  <td class="table-data"><?php echo htmlspecialchars($row['Club_adverse']); ?></td>
+                                  <td class="table-data"><?php echo htmlspecialchars($row['Date']); ?></td>
+                                  <td class="table-data"><?php echo htmlspecialchars($row['Domicile']); ?></td>
+                                  <td class="icones_sur_ligne"><a href ="suppression_match.php?id_match=<?php echo $row['id_match']?>"><span class="iconify" data-icon="ci:edit" style="color: #383338; font-size: 20px;"></span>
+                              <span class="iconify" data-icon="fluent:delete-20-filled" style="color: #383338; font-size: 20px;"></span></td>
 
-                                    </tr>
-                            <?php   if ($pair == 'ligne-pair') 
-                                        $pair='ligne-impair';
-                                    else 
-                                        $pair ='ligne-pair'; ?>
-                        
-                        <?php endwhile; ?>
-        
-        
-                    </tbody>
+                              </tr>
+                      <?php   if ($pair == 'ligne-pair') 
+                                  $pair='ligne-impair';
+                              else 
+                                  $pair ='ligne-pair'; ?>
+                  <?php endwhile; ?>
+                </tbody>
               </table>
             </div>
 
         </div>
 
         <?php 
-            $req2 = $pdo ->prepare ('SELECT * FROM joueuses');
+            $req2 = $pdo ->prepare ('SELECT * FROM joueuses WHERE Poste <> "Gardienne"');
             $req2->execute()
-        ?>                
+        ?>
 
+        <?php 
+            $req3 = $pdo ->prepare ('SELECT * FROM joueuses WHERE Poste = "Gardienne"');
+            $req3->execute()
+        ?>
         <div id="Bloc_droit">
             <div id="Contenu_section">
+              <img id="Fleche_jaune" src="Flèche Jaune.png"/>
                 <div id="Titre_section_formulaire_match">
                     <span class="iconify" data-icon="openmoji:man-playing-handball" style="color: black; font-size: 135px;"></span>
                     <h1 class="Titre_section">Feuille de Match</h1>
@@ -147,6 +143,7 @@
                             </div>
                             
                             <div id="Domicile_exterieur">
+                              <input type="hidden" name="Domicile" id="Domicile"/>
                                 <p class="bouton_domicile_exterieur" id="bouton_domicile">Domicile</p>
                                 <div class="onoffswitch" id="myonoffswitch">
                                   <label class="switch">
@@ -155,36 +152,22 @@
                                   </label>
                                 </div>
                                 <p class="bouton_domicile_exterieur" id="bouton_exterieur">Exterieur</p>
+                              
                             </div>
                             
                               
                                 <label class= 'info_club' for="selection_joueuses">Selection joueuses :</label>
+                                <input type="hidden" name="selection_joueuses_global" id="selection_joueuses_global"/>
                                 <select data-placeholder="" multiple class="chosen-select" name="selection_joueuses" id="selection_joueuses" >
                                   <optgroup label="Joueuses">
-                                    <!-- <option>Joueuse 1</option>
-                                    <option>Joueuse 2</option>
-                                    <option>Joueuse 3</option>
-                                    <option>Joueuse 4</option>
-                                    <option>Joueuse 5</option>
-                                    <option>Joueuse 6</option>
-                                    <option>Joueuse 7</option>
-                                    <option>Joueuse 8</option>
-                                    <option>Joueuse 9</option>
-                                    <option>Joueuse 10</option>
-                                    <option>Joueuse 11</option>
-                                    <option>Joueuse 12</option>
-                                    <option>Joueuse 13</option>
-                                    <option>Joueuse 14</option>
-                                    <option>Joueuse 15</option>
-                                    <option>Joueuse 16</option> -->
                                     <?php while($row = $req2->fetch(PDO::FETCH_ASSOC)) : ?>
                                       <option><?php echo htmlspecialchars($row['Nom']); ?></option>
                                     <?php endwhile; ?>
                                   </optgroup>
                                   <optgroup label="Gardiennes">
-                                    <option>Gardienne 1</option>
-                                    <option>Gardienne 2</option>
-                                    <option>Gardienne 3</option>
+                                  <?php while($row = $req3->fetch(PDO::FETCH_ASSOC)) : ?>
+                                      <option><?php echo htmlspecialchars($row['Nom']); ?></option>
+                                    <?php endwhile; ?>
                                 </optgroup>
                               </select>
                             

@@ -186,37 +186,49 @@ if (document.getElementById("multiple_deletion")) {
 
 
 //Boutons domicile-exterieur (Attaque Placée ou Contre-attaque)
-let domicile=true;
-let exterieur=false;
+let domicile_exterieur="Dom";
 
 let bouton_domicile = document.getElementById("bouton_domicile");
 let bouton_exterieur = document.getElementById("bouton_exterieur");
 let bouton_Switch = document.getElementById("myonoffswitch");
+let bouton_dom_ext=document.getElementById("Domicile")
 
-console.log((domicile==true)&&(exterieur==false));
+
 bouton_Switch.addEventListener('change',function(e){
     e.preventDefault();
     
    
-    if ((domicile==true)&&(exterieur==false)){
-        domicile=false;
-        exterieur=true;
+    if (domicile_exterieur=="Dom"){
+        domicile_exterieur="Ext";
         bouton_exterieur.style.backgroundColor="#f9eb3c";
         bouton_domicile.style.backgroundColor="#FBFBFB";
+		bouton_dom_ext.value=domicile_exterieur
     }   
     
-    else if ((domicile==false)&&(exterieur==true)){
-        domicile=true;
-        exterieur=false;
+    else if (domicile_exterieur=="Ext"){
+        domicile_exterieur="Dom";
         bouton_exterieur.style.backgroundColor="#FBFBFB";
         bouton_domicile.style.backgroundColor="#f9eb3c";
+		bouton_dom_ext.value=domicile_exterieur
     }
-    else {
-        alert("Hello");
-    }
+    
 }
 );
 
+// Gets the selected value(s)
+var selection_equipe
+let champ_selection_equipe=document.getElementById("selection_joueuses_global")
+$('.chosen-select').on('change', function(evt, params) {
 
-$('.datepicker').datepicker();
-
+	$(".chosen-select").chosen();
+	if ($(".chosen-select").val()!=null) {
+		selection_equipe=$(".chosen-select").val();
+		selection_equipe=selection_equipe.join(",");
+		console.log(selection_equipe);
+		champ_selection_equipe.value=selection_equipe;
+	}
+	else {
+		selection_equipe="";
+	}
+	
+});

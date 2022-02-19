@@ -6,6 +6,34 @@
         <title>Mon équipe</title>
     </head>
     
+    <?php
+            $host = 'localhost';
+            $dbname = 'Projet_Handball';
+            $user = 'amau';
+            $password = '291298';
+            $pair = 'ligne-pair';
+            
+
+            $dsn = "mysql:host=$host;dbname=$dbname"; 
+            // récupérer tous les utilisateurs
+  
+            try{
+                $pdo = new PDO($dsn, $user, $password);}
+ 
+   
+            catch (PDOException $e){
+                echo $e->getMessage();
+                }
+        ?>  
+
+
+        <?php 
+            $req = $pdo ->prepare ("SELECT * FROM joueuses");
+            $req->execute()
+
+            
+        ?>
+
     <body>
         <div id="Bloc_gauche">
             <header>
@@ -54,41 +82,23 @@
                     </thead>
         
                     <tbody>
-                        <tr class="ligne-impair">
-                            <td class="table-data"><input id="checkbox_selection" type="checkbox" class="delete_checkbox"/>
-                            </td>
-                            <td class="table-data">22</td>
-                            <td class="table-data">Plais</td>
-                            <td class="table-data">Mathilde</td>
-                            <td class="table-data">HBPC</td>
-                            <td class="table-data">Pivot</td>
-                            <td class="icones_sur_ligne"><span class="iconify" data-icon="ci:edit" style="color: #383338; font-size: 20px;"></span>
-                            <span class="iconify" data-icon="fluent:delete-20-filled" style="color: #383338; font-size: 20px;"></span></td>
-                        </tr>
-                        <tr class="ligne-pair">
-                            <td class="table-data"><input id="checkbox_selection" type="checkbox" class="delete_checkbox"/>
-                            </td>
-                            <td class="table-data">9</td>
-                            <td class="table-data">Masse</td>
-                            <td class="table-data">Elyne</td>
-                            <td class="table-data">HBPC</td>
-                            <td class="table-data">Pivot</td>
-                            <td class="icones_sur_ligne"><span class="iconify" data-icon="ci:edit" style="color: #383338; font-size: 20px;"></span>
-                                <span class="iconify" data-icon="fluent:delete-20-filled" style="color: #383338; font-size: 20px;"></span></td>
-                        </tr>
-                        <tr class="ligne-impair">
-                            <td class="table-data"><input id="checkbox_selection" type="checkbox" class="delete_checkbox"/>
-                            </td>
-                            <td class="table-data">6</td>
-                            <td class="table-data">Garcia</td>
-                            <td class="table-data">Louane</td>
-                            <td class="table-data">HBPC</td>
-                            <td class="table-data">Ailière Droit</td>
-                            <td class="icones_sur_ligne"><span class="iconify" data-icon="ci:edit" style="color: #383338; font-size: 20px;"></span>
-                            <span class="iconify" data-icon="fluent:delete-20-filled" style="color: #383338; font-size: 20px;"></span></td>
-                        </tr>
-        
-        
+                        <?php while($row = $req->fetch(PDO::FETCH_ASSOC)) : ?>
+                            <tr class=<?php echo($pair)?>>
+                                <td class="table-data"><input id="checkbox_selection" type="checkbox" class="delete_checkbox"/>
+                                <td class="table-data"><?php echo htmlspecialchars($row['Numero']); ?></td>
+                                <td class="table-data"><?php echo htmlspecialchars($row['Nom']); ?></td>
+                                <td class="table-data"><?php echo htmlspecialchars($row['Prenom']); ?></td>
+                                <td class="table-data"><?php echo htmlspecialchars($row['Equipe']); ?></td>
+                                <td class="table-data"><?php echo htmlspecialchars($row['Poste']); ?></td>
+                                <td class="icones_sur_ligne">
+                                <span class="iconify" data-icon="ci:edit" style="color: #383338; font-size: 20px;"></span>
+                                <a href ="suppression.php?Nom=<?php echo $row['Nom']?>"><span class="iconify" data-icon="fluent:delete-20-filled" style="color: #383338; font-size: 20px;"></span></a></td>
+                            </tr>
+                        <?php   if ($pair == 'ligne-pair') 
+                                $pair='ligne-impair';
+                                else 
+                                $pair ='ligne-pair'; ?>
+                        <?php endwhile; ?>
                     </tbody>
                 
                 </table>
@@ -102,7 +112,7 @@
                     <h1 class="Titre_section">Fiche Joueuse</h1>
                 </div>
                 <div id="Formulaire_ajout_match">
-                    <form action="/ma-page-de-traitement" method="post">
+                    <form action="form_act_joueuse.php" method="post">
                         <div id="Section_champs_saisies">
                             <div class="champ_saisie">
                             <label class= 'info_club' for="num_joueuse">N° Joueuse :</label>
@@ -127,12 +137,13 @@
                                 <label class= 'info_club' for="poste">Poste :</label>
                                 <select class="form-control" aria-label="Poste Joueuse" name="poste">
                                     <option selected>Poste de la joueuse</option>
-                                    <option value="1">Pivot</option>
-                                    <option value="2">Aillière Droit</option>
-                                    <option value="3">Aillière Gauche</option>
-                                    <option value="4">Arrière Gauche</option>
-                                    <option value="5">Arrière Droit</option>
-                                    <option value="6">Demi-centre</option>
+                                    <option value="Pivot">Pivot</option>
+                                    <option value="Aillière Droit">Aillière Droit</option>
+                                    <option value="Aillière Gauche">Aillière Gauche</option>
+                                    <option value="Arrière Gauche">Arrière Gauche</option>
+                                    <option value="Arrière Droit">Arrière Droit</option>
+                                    <option value="Demi-centre">Demi-centre</option>
+                                    <option value="Gardienne">Gardienne</option>
                                 </select>
                             </div>
                             

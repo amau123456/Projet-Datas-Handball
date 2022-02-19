@@ -45,9 +45,9 @@
 
     <?php
         $host = 'localhost';
-        $dbname = 'hbpc';
-        $user = 'root';
-        $password = 'remi1998';
+        $dbname = 'Projet_Handball';
+        $user = 'amau';
+        $password = '291298';
             
         $dsn = "mysql:host=$host;dbname=$dbname"; 
         // récupérer tous les utilisateurs

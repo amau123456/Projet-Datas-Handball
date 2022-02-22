@@ -7,6 +7,34 @@
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
         <script src="chosen/chosen.jquery.js"></script>
+
+        <script type="text/javascript">
+      function sendData()
+        {
+            var club_adverse = document.getElementById("club_adverse").value;
+            var date_rencontre = document.getElementById("date_rencontre").value;
+            var lieu_match = document.getElementById("lieu_match").value;
+            var Domicile = document.getElementById("Domicile").value;
+            var selection_joueuses_global = document.getElementById("selection_joueuses_global").value;
+            
+            $.ajax({
+                type: 'post',
+                url: 'form_act_match.php',
+                data: {
+                  club_adverse:club_adverse,
+                  date_rencontre:date_rencontre,
+                  lieu_match:lieu_match,
+                  Domicile:Domicile,
+                  selection_joueuses_global:selection_joueuses_global
+                },
+            success: function (response) {
+                
+                }
+            });
+          location.reload(true)
+          return false;
+        }
+        </script>
         <link rel="stylesheet" href="chosen/chosen.css"/>
         <title>Onglet Match</title>
     </head>
@@ -125,7 +153,7 @@
                     <h1 class="Titre_section">Feuille de Match</h1>
                 </div>
                 <div id="Formulaire_ajout_match">
-                    <form action="form_act_match.php" method="post">
+                    <form method="post" onsubmit="return sendData();">
                         <div id="Section_champs_saisies">
                             <div class="champ_saisie">
                             <label class= 'info_club' for="club_adverse">Club adverse</label>
@@ -143,7 +171,7 @@
                             </div>
                             
                             <div id="Domicile_exterieur">
-                              <input type="hidden" name="Domicile" id="Domicile"/>
+                              <input type="hidden" name="Domicile" id="Domicile" value="Dom"/>
                                 <p class="bouton_domicile_exterieur" id="bouton_domicile">Domicile</p>
                                 <div class="onoffswitch" id="myonoffswitch">
                                   <label class="switch">
@@ -179,7 +207,7 @@
 
                         </div>
                         
-                        <button class="bouton_valider"><span class="iconify" data-icon="el:ok-circle" style="color: #FFFFFF; font-size: 20px;"></span>Valider</button>
+                        <button type="submit" class="bouton_valider"><span class="iconify" data-icon="el:ok-circle" style="color: #FFFFFF; font-size: 20px;"></span>Valider</button>
                     
                         
                         <button class="bouton_analyse"><span class="iconify" data-icon="bi:play-btn" style="color: #383838; font-size: 24px;"></span>Analyse du match</button>

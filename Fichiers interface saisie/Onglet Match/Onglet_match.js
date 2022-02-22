@@ -186,18 +186,20 @@ if (document.getElementById("multiple_deletion")) {
 
 
 //Boutons domicile-exterieur (Attaque Placée ou Contre-attaque)
-let domicile_exterieur="Dom";
+
 
 let bouton_domicile = document.getElementById("bouton_domicile");
 let bouton_exterieur = document.getElementById("bouton_exterieur");
 let bouton_Switch = document.getElementById("myonoffswitch");
-let bouton_dom_ext=document.getElementById("Domicile")
+let bouton_dom_ext=document.getElementById("Domicile");
+
+let domicile_exterieur="Dom";
+
 
 
 bouton_Switch.addEventListener('change',function(e){
     e.preventDefault();
     
-   
     if (domicile_exterieur=="Dom"){
         domicile_exterieur="Ext";
         bouton_exterieur.style.backgroundColor="#f9eb3c";

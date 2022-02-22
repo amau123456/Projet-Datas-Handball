@@ -3,6 +3,9 @@
         <meta charset="utf-8" />
         <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
         <link rel="stylesheet" href="onglet_joueuses.css" />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+       
         <title>Mon équipe</title>
     </head>
     
@@ -18,21 +21,21 @@
             // récupérer tous les utilisateurs
   
             try{
-                $pdo = new PDO($dsn, $user, $password);}
+                $pdo = new PDO($dsn, $user, $password);
+            }
  
    
             catch (PDOException $e){
                 echo $e->getMessage();
                 }
-        ?>  
+    ?>  
 
 
-        <?php 
-            $req = $pdo ->prepare ("SELECT * FROM joueuses");
-            $req->execute()
 
-            
-        ?>
+    <?php 
+        $req = $pdo ->prepare ("SELECT * FROM joueuses");
+        $req->execute()
+    ?>
 
     <body>
         <div id="Bloc_gauche">
@@ -112,8 +115,12 @@
                     <h1 class="Titre_section">Fiche Joueuse</h1>
                 </div>
                 <div id="Formulaire_ajout_match">
-                    <form action="form_act_joueuse.php" method="post">
-                        <div id="Section_champs_saisies">
+<!--                         <form method="post" action="form_act_joueuse.php">
+ -->
+<!--                      <form method="post" onsubmit="return sendData();">
+ -->                     <form action="form_act_joueuse.php" method="POST" class="ajax">
+
+                            <div id="Section_champs_saisies">
                             <div class="champ_saisie">
                             <label class= 'info_club' for="num_joueuse">N° Joueuse :</label>
                             <input class="form-control" type="text" name="num_joueuse" id="num_joueuse"  size="30" placeholder="Saisir le N° Joueuse" />
@@ -136,10 +143,8 @@
                             <div class="champ_saisie">
                                 <label class= 'info_club' for="poste">Poste :</label>
                                 <select class="form-control" aria-label="Poste Joueuse" name="poste">
-                                    <option selected>Poste de la joueuse</option>
+                                    <option selected></option>
                                     <option value="Pivot">Pivot</option>
-                                    <option value="Aillière Droit">Aillière Droit</option>
-                                    <option value="Aillière Gauche">Aillière Gauche</option>
                                     <option value="Arrière Gauche">Arrière Gauche</option>
                                     <option value="Arrière Droit">Arrière Droit</option>
                                     <option value="Demi-centre">Demi-centre</option>
@@ -147,7 +152,7 @@
                                 </select>
                             </div>
                             
-                            <button class="bouton_valider"><span class="iconify" data-icon="el:ok-circle" style="color: #FFFFFF; font-size: 20px;"></span>Valider</button>
+                        <button type="submit" class="bouton_valider"><span class="iconify" data-icon="el:ok-circle" style="color: #FFFFFF; font-size: 20px;"></span>Valider</button>
                     
                         
                         <button class="bouton_analyse"><span class="iconify" data-icon="bi:play-btn" style="color: #383838; font-size: 24px;"></span>Analyse du match</button>
@@ -159,5 +164,33 @@
 
         </div>
         <script src="https://code.iconify.design/2/2.1.0/iconify.min.js"></script>
+        <script type="text/javascript">
+            console.log("Trigger");
+            $('form.ajax').on('submit',function(){
+                console.log("Trigger");
+                var that=$(this),
+                url=that.attr('action'),
+                method=that.attr('method'),
+                data={
+                }
+                that.find('[name]').each(function(index,value){
+                    var that= $(this),
+                    name=that.attr('name'),
+                    value=that.val();
+                    data[name]=value;
+                });
+            $.ajax({
+                type: method,
+                url: url,
+                data:data,
+                success: function (response){
+                    console.log(response);
+                }
+            });
+
+            location.reload(true)
+                return false; 
+            });
+        </script>
     </body>
 </html>           

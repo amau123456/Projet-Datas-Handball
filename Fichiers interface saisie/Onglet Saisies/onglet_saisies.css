@@ -1,7 +1,18 @@
-
+@font-face {
+    font-family: 'Roboto-Bold';
+    src: url(Roboto/Roboto-Bold.ttf);
+    font-family: 'Roboto-Italic';
+    src: url(Roboto/Roboto-Italic.ttf);
+    src: url(Roboto/Roboto-Regular.ttf);
+    font-family: 'Roboto-Medium';
+    src: url(Roboto/Roboto-Medium.ttf);
+    font-family: 'Roboto-Thin';
+    src: url(Roboto/Roboto-Thin.ttf);
+    font-family: 'Roboto-Regular';
+    src: url(Roboto/Roboto-Regular.ttf);
+}
 /* Mise en page globale------------------------------
  */
-
  #Bloc_interface {
     display: flex;
     flex-direction: row;
@@ -21,6 +32,9 @@
      flex-direction: column;
      justify-content: space-between;
  }
+
+
+
 
 /* Mise en page de la navbar------------------------------
  */
@@ -46,22 +60,63 @@
 .nav-item:nth-child(3) {
     background-color: #f7fafc;
     border-bottom: solid 5px #05602F;
+
 }
+
+#Infos_match {
+    margin-top: 15px;
+    width:auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+#Match_info_equipes{
+    width:auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+
+}
+#label_match{
+    font-family: Roboto-Regular, Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    font-style: bold;
+    color:#383338;
+}
+#equipes_rencontre {
+    font-family: Roboto-Regular, Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    font-style: bold;
+    color:#05602F;
+    margin-right: 40px;
+    margin-left: 5px;
+
+}
+#Match_info_date {
+    width:auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+
+}
+#logo_calendar {
+    margin-right: 5px;
+    margin-left: 5px;
+    color:#383838;
+}
+#Date_rencontre {
+    font-family: Roboto-Regular, Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    font-style: bold;
+    color:#05602F;
+    
+}
+
 /* Mise en page section sélection joueuses------------------------------
  */
-@font-face {
-    font-family: 'Roboto-Bold';
-    src: url(Roboto/Roboto-Bold.ttf);
-    font-family: 'Roboto-Italic';
-    src: url(Roboto/Roboto-Italic.ttf);
-    src: url(Roboto/Roboto-Regular.ttf);
-    font-family: 'Roboto-Medium';
-    src: url(Roboto/Roboto-Medium.ttf);
-    font-family: 'Roboto-Thin';
-    src: url(Roboto/Roboto-Thin.ttf);
-    font-family: 'Roboto-Regular';
-    src: url(Roboto/Roboto-Regular.ttf);
-}
+
 
 #Titre_section_joueuses{
     margin-bottom: 5px;

@@ -218,8 +218,12 @@ app.layout = html.Div([
     ]),
 
     html.Div([
-        
-    ], id = 'But')
+        html.Img(src=app.get_asset_url('cage_hand.jpg')),
+    ], id = 'but'),
+
+    html.Div([
+        html.Img(src=app.get_asset_url('terrain.png'))
+    ], id = 'terrain')
 
 
 ])

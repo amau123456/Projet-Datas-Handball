@@ -6,7 +6,7 @@ import pandas as pd
 
 app = dash.Dash()
 
-df = pd.read_csv("data.csv")
+df = pd.read_csv("/Users/amauryrichard/Desktop/Projet-Datas-Handball/Dashboard/data2.csv")
 
 # -----------Analyse des attaques (attaques placées / contre-attaques)-------------
 df_sans_but_enc = df[df['But encaissé']<1]

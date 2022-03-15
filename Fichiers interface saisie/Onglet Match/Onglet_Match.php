@@ -11,12 +11,17 @@
         <script type="text/javascript">
       function sendData()
         {
-            var club_adverse = document.getElementById("club_adverse").value;
-            var date_rencontre = document.getElementById("date_rencontre").value;
-            var lieu_match = document.getElementById("lieu_match").value;
-            var Domicile = document.getElementById("Domicile").value;
-            var selection_joueuses_global = document.getElementById("selection_joueuses_global").value;
+          // On vient définir les différentes variable qui sertont envoyer au moment de l'ajout du match 
+          // chaque variable pointe vers l'objet html au niveau du formulaire 
+
+          var club_adverse = document.getElementById("club_adverse").value;
+          var date_rencontre = document.getElementById("date_rencontre").value;
+          var lieu_match = document.getElementById("lieu_match").value;
+          var Domicile = document.getElementById("Domicile").value;
+          var selection_joueuses_global = document.getElementById("selection_joueuses_global").value;
             
+            //Requête ajax qui permet l'envoie des donnée en mode post à la page form_act_match de manière asynchrone
+            //sans rechargement systématique de la page
             $.ajax({
                 type: 'post',
                 url: 'form_act_match.php',
@@ -171,6 +176,8 @@
                             </div>
                             
                             <div id="Domicile_exterieur">
+                              <!-- Pour pouvoir récupérer la valeur du bouton switch dom/ext l'input de type hidden y est associé 
+                              sa valeur (value) change à chaque clic sur le bouton (cf le code JS) -->
                               <input type="hidden" name="Domicile" id="Domicile" value="Dom"/>
                                 <p class="bouton_domicile_exterieur" id="bouton_domicile">Domicile</p>
                                 <div class="onoffswitch" id="myonoffswitch">
@@ -183,7 +190,8 @@
                               
                             </div>
                             
-                              
+                              <!-- Pour la sélection joueuses, paraillement un input type hidden y est associé
+                              sa valeur change en sélectionnant les joueuses cf le Code JS -->
                                 <label class= 'info_club' for="selection_joueuses">Selection joueuses :</label>
                                 <input type="hidden" name="selection_joueuses_global" id="selection_joueuses_global"/>
                                 <select data-placeholder="" multiple class="chosen-select" name="selection_joueuses" id="selection_joueuses" >

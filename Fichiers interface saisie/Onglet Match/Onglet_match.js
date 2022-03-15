@@ -191,6 +191,7 @@ if (document.getElementById("multiple_deletion")) {
 let bouton_domicile = document.getElementById("bouton_domicile");
 let bouton_exterieur = document.getElementById("bouton_exterieur");
 let bouton_Switch = document.getElementById("myonoffswitch");
+//variable JS qui est associé avec l'input de type hidden - on va venir changer la valeur de sa value quand on click sur le switch
 let bouton_dom_ext=document.getElementById("Domicile");
 
 let domicile_exterieur="Dom";
@@ -219,7 +220,9 @@ bouton_Switch.addEventListener('change',function(e){
 
 // Gets the selected value(s)
 var selection_equipe
+//Variable JS correspondant à l'input de type hidden associé au champ de sélection de type chosen 
 let champ_selection_equipe=document.getElementById("selection_joueuses_global")
+
 $('.chosen-select').on('change', function(evt, params) {
 
 	$(".chosen-select").chosen();

@@ -181,6 +181,7 @@
                             </div>
                             <div id="Attaque_Defense">
                                 <button id="bouton_Attaque" class="boutton_attaque_defense"  type="button">Attaque</button>
+                                <input type=hidden id=attaque_input value=""></input>
                                 <button id="bouton_Defense" class="boutton_attaque_defense"  type="button">Défense</button>
                             </div>
                     

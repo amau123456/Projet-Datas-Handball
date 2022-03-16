@@ -5,7 +5,6 @@ let defense=false;
 let bouton_Defense = document.getElementById("bouton_Defense");
 let bouton_Attaque = document.getElementById("bouton_Attaque");
 
-
 bouton_Defense.addEventListener('click',function() {
     if ((attaque==true)&&(defense==false)) {
         attaque=false;

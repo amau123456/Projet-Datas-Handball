@@ -270,6 +270,7 @@ def maj_filtre(mi_temps_value):
     [Input("Filtre_Joueuse","value")]
 )
 def maj_filtre_joueuse(joueuse_value): 
+
     if len(joueuse_value)>0:
         df_j=df[(df["Nom joueuse"].isin(joueuse_value))]
         tab2_j=df_j[fautes].sum()
@@ -383,14 +384,9 @@ def update_graph(joueuse_slctd):
         
 
     else:
-        figure1 = go.Figure(data=[
-                    go.Bar(name='marque', x=zones_terrain, y=y_buts),
-                    go.Bar(name='rate', x=zones_terrain, y=y_rate)
-                ], layout = {'barmode' : 'stack'})
-        figure2=go.Figure(data[
-                    go.Bar(name='marque', x=zones_cage, y=c_buts),
-                    go.Bar(name='rate', x=zones_cage, y=c_rate)
-                ], layout = {'barmode' : 'stack'})
+        figure1 = go.Figure(data=[go.Bar(name='marqué', x=zones_terrain, y=y_buts),go.Bar(name='raté', x=zones_terrain, y=y_rate)],layout = {'barmode' : 'stack'})
+
+        figure2=go.Figure(data=[go.Bar(name='marqué', x=zones_cage, y=c_buts),go.Bar(name='raté', x=zones_cage, y=c_rate)],layout = {'barmode' : 'stack'})
 
     
     return (figure1,figure2)

@@ -33,11 +33,12 @@
                   selection_joueuses_global:selection_joueuses_global
                 },
             success: function (response) {
-                
+                alert("hello")
                 }
             });
-          location.reload(true)
-          return false;
+          
+          // location.reload(true)
+          // return false;
         }
         </script>
         <link rel="stylesheet" href="chosen/chosen.css"/>

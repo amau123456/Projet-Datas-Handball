@@ -1,0 +1,62 @@
+@font-face {
+    font-family: 'Roboto-Bold';
+    src: url(Roboto/Roboto-Bold.ttf);
+    font-family: 'Roboto-Italic';
+    src: url(Roboto/Roboto-Italic.ttf);
+    src: url(Roboto/Roboto-Regular.ttf);
+    font-family: 'Roboto-Medium';
+    src: url(Roboto/Roboto-Medium.ttf);
+    font-family: 'Roboto-Thin';
+    src: url(Roboto/Roboto-Thin.ttf);
+    font-family: 'Roboto-Regular';
+    src: url(Roboto/Roboto-Regular.ttf);
+}
+
+#en_tete {
+    text-align: center;
+    margin: auto;
+}
+
+#img_logo {
+    margin-top: 15px;
+}
+.msg_bvn {
+    font-family: Roboto-Regular, Arial, Helvetica, sans-serif;
+    size: 30px;
+    text-decoration: underline;
+    text-decoration-color: #F9EB3C;
+    text-underline-position: under;
+    color: #05602F;
+    width: 1200px;
+    height:40px;
+    margin: auto;
+    text-align: center;
+}
+
+#message_friendly {
+    text-align: center;
+    margin: auto;
+}
+
+.msg_cohesion {
+    font-family: Roboto-Regular, Arial, Helvetica, sans-serif;
+    size: 70px;
+    color: #383338;
+    width: 1200px;
+    height:100px;
+    margin: auto;
+    text-align: center;
+}
+
+#boutons_accueil {
+    margin-top: 15px;
+    text-align: center; 
+    margin: auto;
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    height: 130px;
+    width: 500px;
+
+}

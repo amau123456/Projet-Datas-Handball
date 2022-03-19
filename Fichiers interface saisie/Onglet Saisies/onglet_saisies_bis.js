@@ -69,7 +69,7 @@ let bouton_Attaque_Placee = document.getElementById("bouton_Attaque_Placee");
 let bouton_Contre_Attaque = document.getElementById("bouton_Contre_Attaque");
 let bouton_Switch = document.getElementById("myonoffswitch");
 
-let input_attaque_placee=document.getElementById("input_type_attaque");
+let input_attaque_placee=document.getElementById("input_attaque_Placee");
 
 
 bouton_Switch.addEventListener('change',function(e){
@@ -102,7 +102,8 @@ let deux_min=0;
 
 let input_carton_jaune=document.getElementById("input_carton_jaune");
 let input_carton_rouge=document.getElementById("input_carton_rouge");
-let input_2_min=document.getElementById("input_2_min");
+let input_2_min=document.getElementById("input_deux_min");
+
 
 let bouton_carton_jaune = document.getElementById("conteneur_carton_jaune");
 let bouton_carton_rouge = document.getElementById("conteneur_carton_rouge");
@@ -147,14 +148,13 @@ bouton_2min.addEventListener('click', function(){
     if (deux_min==0) {
         deux_min=1;
         bouton_2min.style.backgroundColor="#f9eb3c";
-        input_2min.value=deux_min;
+        input_2_min.value=deux_min;
 
     }
     else if (deux_min==1) {
         deux_min=0;
         bouton_2min.style.backgroundColor="#dcdcdc03";
-        input_2min.value=deux_min;
-
+        input_2_min.value=deux_min;
     }
 });
 
@@ -190,15 +190,16 @@ let bouton_relance=document.getElementById("relance");
 let bouton_duel_perdu_a=document.getElementById("duel_perdu_a");
 
 let input_faute_zone=document.getElementById("input_faute_zone");
-let input_marche=document.getElementById("input_marche");
-let input_reprise_de_drible=document.getElementById("input_reprise_drible");
+let input_marcher=document.getElementById("input_marche");
+
+let input_reprise_de_drible=document.getElementById("input_reprise_de_drible");
 let input_balle_perdue=document.getElementById("input_balle_perdue");
 let input_mauvaise_relance=document.getElementById("input_mauvaise_relance");
 let input_passage_en_force=document.getElementById("input_passage_en_force");
 let input_faute_subie=document.getElementById("input_faute_subie");
 let input_tir_contre=document.getElementById("input_tir_contre");
 let input_deux_min_provoque=document.getElementById("input_deux_min_provoque");
-let input_sept_m=document.getElementById("input_sept_m");
+let input_faute_sept_m=document.getElementById("input_faute_sept_m");
 let input_duel_gagne=document.getElementById("input_duel_gagne");
 let input_duel_perdu_a=document.getElementById("input_duel_perdu_a");
 let input_relance=document.getElementById("input_relance");
@@ -389,13 +390,13 @@ bouton_sept_m.addEventListener('click', function()
         sept_m=1;
         bouton_sept_m.style.backgroundColor="#f9eb3c";
         bouton_sept_m.style.color="#383338"
-        input_sept_m.value=sept_m;
+        input_faute_sept_m.value=sept_m;
     }
     else if (sept_m==1) {
         sept_m=0;
         bouton_sept_m.style.backgroundColor="#589474";
         bouton_sept_m.style.color="#FFFFFF";
-        input_sept_m.value=sept_m;
+        input_faute_sept_m.value=sept_m;
        }
 
 });
@@ -489,7 +490,7 @@ bouton_marche_d.addEventListener('click', function()
         marche=1;
         bouton_marche_d.style.backgroundColor="#f9eb3c";
         bouton_marche_d.style.color="#383338"
-        input_marche.value=marche;
+        input_marcher.value=marche;
     }
     else if (marche==1) {
         marche=0;
@@ -648,13 +649,13 @@ bouton_sept_m_d.addEventListener('click', function()
         sept_m=1;
         bouton_sept_m_d.style.backgroundColor="#f9eb3c";
         bouton_sept_m_d.style.color="#383338"
-        input_sept_m.value=sept_m;
+        input_faute_sept_m.value=sept_m;
     }
     else if (sept_m==1) {
         sept_m=0;
         bouton_sept_m_d.style.backgroundColor="#589474";
         bouton_sept_m_d.style.color="#FFFFFF";
-        input_sept_m.value=sept_m;
+        input_faute_sept_m.value=sept_m;
        }
 
 });
@@ -1945,6 +1946,11 @@ let down = 0;
 let bouton_up = document.getElementById("marque");
 let bouton_down = document.getElementById("rate");
 
+let input_tir=document.getElementById("input_tir");
+let input_but=document.getElementById("input_but");
+let input_sept_m=document.getElementById("input_sept_m")
+
+
 let but=0;
 let tir=0;
 
@@ -1962,6 +1968,8 @@ bouton_up.addEventListener('click', function() {
         bouton_up.style.color="#383338";
         but=1;
         tir=1;
+        input_tir.value=tir;
+        input_but.value=but;
     }
     else if (up==1) {
         up=0;
@@ -1969,6 +1977,8 @@ bouton_up.addEventListener('click', function() {
         bouton_up.style.color="#05602F";
         but=0;
         tir=0;
+        input_tir.value=tir;
+        input_but.value=but;
        }
 });
 
@@ -1979,6 +1989,8 @@ bouton_down.addEventListener('click', function() {
         bouton_down.style.color="#383338"
         but=0;
         tir=1;
+        input_tir.value=tir;
+        input_but.value=but;
     }
     else if (down==1) {
         down=0;
@@ -1986,6 +1998,8 @@ bouton_down.addEventListener('click', function() {
         bouton_down.style.color="#05602F"
         but=0;
         tir=0;
+        input_tir.value=tir;
+        input_but.value=but;
     }
 });
 
@@ -2016,6 +2030,15 @@ let bouton_but9 = document.getElementById("zb9");
 bouton_but1.addEventListener('click', function() {
     if (but1==false) {
         but1=true;
+        but2=false;
+        but3=false;
+        but4=false;
+        but5=false;
+        but6=false;
+        but7=false;
+        but8=false;
+        but9=false;
+
         bouton_but1.style.fillOpacity="0.7";
         bouton_but2.style.fillOpacity="0";
         bouton_but3.style.fillOpacity="0";
@@ -2041,6 +2064,14 @@ bouton_but1.addEventListener('click', function() {
 bouton_but2.addEventListener('click', function() {
     if (but2==false) {
         but2=true;
+        but1=false;
+        but3=false;
+        but4=false;
+        but5=false;
+        but6=false;
+        but7=false;
+        but8=false;
+        but9=false;
         bouton_but1.style.fillOpacity="0";
         bouton_but2.style.fillOpacity="0.7";
         bouton_but3.style.fillOpacity="0";
@@ -2068,6 +2099,15 @@ bouton_but2.addEventListener('click', function() {
 bouton_but3.addEventListener('click', function() {
     if (but3==false) {
         but3=true;
+        but2=false;
+        but1=false;
+        but4=false;
+        but5=false;
+        but6=false;
+        but7=false;
+        but8=false;
+        but9=false;
+
         bouton_but1.style.fillOpacity="0";
         bouton_but2.style.fillOpacity="0";
         bouton_but3.style.fillOpacity="0.7";
@@ -2095,6 +2135,15 @@ bouton_but3.addEventListener('click', function() {
 bouton_but4.addEventListener('click', function() {
     if (but4==false) {
         but4=true;
+        but2=false;
+        but1=false;
+        but3=false;
+        but5=false;
+        but6=false;
+        but7=false;
+        but8=false;
+        but9=false;
+
         bouton_but1.style.fillOpacity="0";
         bouton_but2.style.fillOpacity="0";
         bouton_but3.style.fillOpacity="0";
@@ -2122,6 +2171,14 @@ bouton_but4.addEventListener('click', function() {
 bouton_but5.addEventListener('click', function() {
     if (but5==false) {
         but5=true;
+        but2=false;
+        but1=false;
+        but3=false;
+        but4=false;
+        but6=false;
+        but7=false;
+        but8=false;
+        but9=false;
         bouton_but1.style.fillOpacity="0";
         bouton_but2.style.fillOpacity="0";
         bouton_but3.style.fillOpacity="0";
@@ -2149,6 +2206,15 @@ bouton_but5.addEventListener('click', function() {
 bouton_but6.addEventListener('click', function() {
     if (but6==false) {
         but6=true;
+        but2=false;
+        but1=false;
+        but3=false;
+        but4=false;
+        but5=false;
+        but7=false;
+        but8=false;
+        but9=false;
+
         bouton_but1.style.fillOpacity="0";
         bouton_but2.style.fillOpacity="0";
         bouton_but3.style.fillOpacity="0";
@@ -2176,6 +2242,15 @@ bouton_but6.addEventListener('click', function() {
 bouton_but7.addEventListener('click', function() {
     if (but7==false) {
         but7=true;
+        but2=false;
+        but1=false;
+        but3=false;
+        but4=false;
+        but5=false;
+        but6=false;
+        but8=false;
+        but9=false;
+
         bouton_but1.style.fillOpacity="0";
         bouton_but2.style.fillOpacity="0";
         bouton_but3.style.fillOpacity="0";
@@ -2203,6 +2278,15 @@ bouton_but7.addEventListener('click', function() {
 bouton_but8.addEventListener('click', function() {
     if (but8==false) {
         but8=true;
+        but2=false;
+        but1=false;
+        but3=false;
+        but4=false;
+        but5=false;
+        but6=false;
+        but7=false;
+        but9=false;
+
         bouton_but1.style.fillOpacity="0";
         bouton_but2.style.fillOpacity="0";
         bouton_but3.style.fillOpacity="0";
@@ -2229,6 +2313,15 @@ bouton_but8.addEventListener('click', function() {
 bouton_but9.addEventListener('click', function() {
     if (but9==false) {
         but9=true;
+        but2=false;
+        but1=false;
+        but3=false;
+        but4=false;
+        but5=false;
+        but6=false;
+        but7=false;
+        but8=false;
+
         bouton_but1.style.fillOpacity="0";
         bouton_but2.style.fillOpacity="0";
         bouton_but3.style.fillOpacity="0";
@@ -2289,6 +2382,7 @@ let terr7 = false;
 let terr8 = false;
 let terr9 = false;
 let terr10 = false;
+let terr7m = false;
 
 let bouton_terr10 = document.getElementById("zt10");
 let bouton_terr1 = document.getElementById("zt1");
@@ -2300,10 +2394,24 @@ let bouton_terr6 = document.getElementById("zt6");
 let bouton_terr7 = document.getElementById("zt7");
 let bouton_terr8 = document.getElementById("zt8");
 let bouton_terr9 = document.getElementById("zt9");
+let bouton_7m = document.getElementById("septM");
+let text_7m = document.getElementById("text7M");
+
 
 bouton_terr10.addEventListener('click', function() {
     if (terr10==false) {
         terr10=true;
+        terr1=false;
+        terr2=false;
+        terr3=false;
+        terr4=false;
+        terr5=false;
+        terr6=false;
+        terr7=false;
+        terr8=false;
+        terr9=false;
+        terr7m=false;
+
         bouton_terr1.style.fillOpacity="0";
         bouton_terr2.style.fillOpacity="0";
         bouton_terr3.style.fillOpacity="0";
@@ -2314,6 +2422,10 @@ bouton_terr10.addEventListener('click', function() {
         bouton_terr8.style.fillOpacity="0";
         bouton_terr9.style.fillOpacity="0";
         bouton_terr10.style.fillOpacity="0.7";
+        bouton_7m.style.fill="#589474";
+        text_7m.style.color="#FFFFFF";
+        bouton_7m.style.stroke="none";
+
         zone_terrain=10;
         input_zone_terrain.value=zone_terrain;
 
@@ -2331,6 +2443,17 @@ bouton_terr10.addEventListener('click', function() {
 bouton_terr1.addEventListener('click', function() {
     if (terr1==false) {
         terr1=true;
+        terr10=false;
+        terr2=false;
+        terr3=false;
+        terr4=false;
+        terr5=false;
+        terr6=false;
+        terr7=false;
+        terr8=false;
+        terr9=false;
+        terr7m=false;
+
         bouton_terr1.style.fillOpacity="0.7";
         bouton_terr2.style.fillOpacity="0";
         bouton_terr3.style.fillOpacity="0";
@@ -2341,6 +2464,10 @@ bouton_terr1.addEventListener('click', function() {
         bouton_terr8.style.fillOpacity="0";
         bouton_terr9.style.fillOpacity="0";
         bouton_terr10.style.fillOpacity="0";
+        bouton_7m.style.fill="#589474";
+        text_7m.style.color="#FFFFFF";
+        bouton_7m.style.stroke="none";
+
         zone_terrain=1;
         input_zone_terrain.value=zone_terrain;
 
@@ -2358,6 +2485,17 @@ bouton_terr1.addEventListener('click', function() {
 bouton_terr2.addEventListener('click', function() {
     if (terr2==false) {
         terr2=true;
+        terr10=false;
+        terr1=false;
+        terr3=false;
+        terr4=false;
+        terr5=false;
+        terr6=false;
+        terr7=false;
+        terr8=false;
+        terr9=false;
+        terr7m=false;
+
         bouton_terr1.style.fillOpacity="0";
         bouton_terr2.style.fillOpacity="0.7";
         bouton_terr3.style.fillOpacity="0";
@@ -2368,6 +2506,10 @@ bouton_terr2.addEventListener('click', function() {
         bouton_terr8.style.fillOpacity="0";
         bouton_terr9.style.fillOpacity="0";
         bouton_terr10.style.fillOpacity="0";
+        bouton_7m.style.fill="#589474";
+        text_7m.style.color="#FFFFFF";
+        bouton_7m.style.stroke="none";
+
         zone_terrain=2;
         input_zone_terrain.value=zone_terrain;
 
@@ -2385,6 +2527,17 @@ bouton_terr2.addEventListener('click', function() {
 bouton_terr3.addEventListener('click', function() {
     if (terr3==false) {
         terr3=true;
+        terr10=false;
+        terr1=false;
+        terr2=false;
+        terr4=false;
+        terr5=false;
+        terr6=false;
+        terr7=false;
+        terr8=false;
+        terr9=false;
+        terr7m=false;
+
         bouton_terr1.style.fillOpacity="0";
         bouton_terr2.style.fillOpacity="0";
         bouton_terr3.style.fillOpacity="0.7";
@@ -2395,6 +2548,10 @@ bouton_terr3.addEventListener('click', function() {
         bouton_terr8.style.fillOpacity="0";
         bouton_terr9.style.fillOpacity="0";
         bouton_terr10.style.fillOpacity="0";
+        bouton_7m.style.fill="#589474";
+        text_7m.style.color="#FFFFFF";
+        bouton_7m.style.stroke="none";
+
         zone_terrain=3;
         input_zone_terrain.value=zone_terrain;
 
@@ -2410,7 +2567,18 @@ bouton_terr3.addEventListener('click', function() {
 
 bouton_terr4.addEventListener('click', function() {
     if (terr4==false) {
-        terr4=true;
+        terr4=false;
+        terr10=true;
+        terr1=false;
+        terr2=false;
+        terr3=false;
+        terr5=false;
+        terr6=false;
+        terr7=false;
+        terr8=false;
+        terr9=false;
+        terr7m=false;
+
         bouton_terr1.style.fillOpacity="0";
         bouton_terr2.style.fillOpacity="0";
         bouton_terr3.style.fillOpacity="0";
@@ -2421,6 +2589,10 @@ bouton_terr4.addEventListener('click', function() {
         bouton_terr8.style.fillOpacity="0";
         bouton_terr9.style.fillOpacity="0";
         bouton_terr10.style.fillOpacity="0";
+        bouton_7m.style.fill="#589474";
+        text_7m.style.color="#FFFFFF";
+        bouton_7m.style.stroke="none";
+
         zone_terrain=4;
         input_zone_terrain.value=zone_terrain;
 
@@ -2438,6 +2610,18 @@ bouton_terr4.addEventListener('click', function() {
 bouton_terr5.addEventListener('click', function() {
     if (terr5==false) {
         terr5=true;
+        terr10=false;
+        terr1=false;
+        terr2=false;
+        terr3=false;
+        terr4=false;
+        terr6=false;
+        terr7=false;
+        terr8=false;
+        terr9=false;
+        terr7m=false;
+
+
         bouton_terr1.style.fillOpacity="0";
         bouton_terr2.style.fillOpacity="0";
         bouton_terr3.style.fillOpacity="0";
@@ -2448,6 +2632,10 @@ bouton_terr5.addEventListener('click', function() {
         bouton_terr8.style.fillOpacity="0";
         bouton_terr9.style.fillOpacity="0";
         bouton_terr10.style.fillOpacity="0";
+        bouton_7m.style.fill="#589474";
+        text_7m.style.color="#FFFFFF";
+        bouton_7m.style.stroke="none";
+
         zone_terrain=5;
         input_zone_terrain.value=zone_terrain;
 
@@ -2455,6 +2643,7 @@ bouton_terr5.addEventListener('click', function() {
     }
     else if (terr5==true) {
         terr5=false;
+
         bouton_terr5.style.fillOpacity="0";
         zone_terrain=null;
         input_zone_terrain.value=zone_terrain;
@@ -2465,6 +2654,17 @@ bouton_terr5.addEventListener('click', function() {
 bouton_terr6.addEventListener('click', function() {
     if (terr6==false) {
         terr6=true;
+        terr10=false;
+        terr1=false;
+        terr2=false;
+        terr3=false;
+        terr4=false;
+        terr5=false;
+        terr7=false;
+        terr8=false;
+        terr9=false;
+        terr7m=false;
+
         bouton_terr1.style.fillOpacity="0";
         bouton_terr2.style.fillOpacity="0";
         bouton_terr3.style.fillOpacity="0";
@@ -2475,6 +2675,10 @@ bouton_terr6.addEventListener('click', function() {
         bouton_terr8.style.fillOpacity="0";
         bouton_terr9.style.fillOpacity="0";
         bouton_terr10.style.fillOpacity="0";
+        bouton_7m.style.fill="#589474";
+        text_7m.style.color="#FFFFFF";
+        bouton_7m.style.stroke="none";
+
         zone_terrain=6;
         input_zone_terrain.value=zone_terrain;
 
@@ -2492,6 +2696,17 @@ bouton_terr6.addEventListener('click', function() {
 bouton_terr7.addEventListener('click', function() {
     if (terr7==false) {
         terr7=true;
+        terr10=false;
+        terr1=false;
+        terr2=false;
+        terr3=false;
+        terr4=false;
+        terr5=false;
+        terr6=false;
+        terr8=false;
+        terr9=false;
+        terr7m=false;
+
         bouton_terr1.style.fillOpacity="0";
         bouton_terr2.style.fillOpacity="0";
         bouton_terr3.style.fillOpacity="0";
@@ -2502,6 +2717,11 @@ bouton_terr7.addEventListener('click', function() {
         bouton_terr8.style.fillOpacity="0";
         bouton_terr9.style.fillOpacity="0";
         bouton_terr10.style.fillOpacity="0";
+
+        bouton_7m.style.fill="#589474";
+        text_7m.style.color="#FFFFFF";
+        bouton_7m.style.stroke="none";
+
         zone_terrain=7;
         input_zone_terrain.value=zone_terrain;
 
@@ -2519,6 +2739,17 @@ bouton_terr7.addEventListener('click', function() {
 bouton_terr8.addEventListener('click', function() {
     if (terr8==false) {
         terr8=true;
+        terr10=false;
+        terr1=false;
+        terr2=false;
+        terr3=false;
+        terr4=false;
+        terr5=false;
+        terr6=false;
+        terr7=false;
+        terr9=false;
+        terr7m=false;
+
         bouton_terr1.style.fillOpacity="0";
         bouton_terr2.style.fillOpacity="0";
         bouton_terr3.style.fillOpacity="0";
@@ -2529,6 +2760,9 @@ bouton_terr8.addEventListener('click', function() {
         bouton_terr8.style.fillOpacity="0.7";
         bouton_terr9.style.fillOpacity="0";
         bouton_terr10.style.fillOpacity="0";
+        bouton_7m.style.fill="#589474";
+        text_7m.style.color="#FFFFFF";
+        bouton_7m.style.stroke="none";
         zone_terrain=8;
         input_zone_terrain.value=zone_terrain;
 
@@ -2548,6 +2782,17 @@ bouton_terr8.addEventListener('click', function() {
 bouton_terr9.addEventListener('click', function() {
     if (terr9==false) {
         terr9=true;
+        terr10=false;
+        terr1=false;
+        terr2=false;
+        terr3=false;
+        terr4=false;
+        terr5=false;
+        terr6=false;
+        terr7=false;
+        terr8=false;
+        terr7m=false;
+        
         bouton_terr1.style.fillOpacity="0";
         bouton_terr2.style.fillOpacity="0";
         bouton_terr3.style.fillOpacity="0";
@@ -2558,6 +2803,10 @@ bouton_terr9.addEventListener('click', function() {
         bouton_terr8.style.fillOpacity="0";
         bouton_terr9.style.fillOpacity="0.7";
         bouton_terr10.style.fillOpacity="0";
+        bouton_7m.style.fill="#589474";
+        text_7m.style.color="#FFFFFF";
+        bouton_7m.style.stroke="none";
+
         zone_terrain=9;
         input_zone_terrain.value=zone_terrain;
 
@@ -2570,4 +2819,111 @@ bouton_terr9.addEventListener('click', function() {
         input_zone_terrain.value=zone_terrain;
 
        }
+
 });
+
+bouton_7m.addEventListener('click', function() {
+    if (terr7m==false) {
+        terr10=false;
+        terr1=false;
+        terr2=false;
+        terr3=false;
+        terr4=false;
+        terr5=false;
+        terr6=false;
+        terr7=false;
+        terr8=false;
+        terr9=false;
+        terr7m=true;
+        
+        bouton_terr1.style.fillOpacity="0";
+        bouton_terr2.style.fillOpacity="0";
+        bouton_terr3.style.fillOpacity="0";
+        bouton_terr4.style.fillOpacity="0";
+        bouton_terr5.style.fillOpacity="0";
+        bouton_terr6.style.fillOpacity="0";
+        bouton_terr7.style.fillOpacity="0";
+        bouton_terr8.style.fillOpacity="0";
+        bouton_terr9.style.fillOpacity="0";
+        bouton_terr10.style.fillOpacity="0";
+
+        bouton_7m.style.fill="#F9EB3C";
+        text_7m.style.color="#383338";
+        bouton_7m.style.stroke="#383338";
+
+        zone_terrain=null;
+        input_zone_terrain.value=zone_terrain;
+        input_sept_m.value=1;
+
+
+    }
+    else if (terr7m==true) {
+        terr7m=false;
+        bouton_7m.style.fill="#589474";
+        text_7m.style.color="#FFFFFF";
+        bouton_7m.style.stroke="none";
+
+        zone_terrain=null;
+        input_zone_terrain.value=zone_terrain;
+        input_sept_m.value=0;
+
+
+       }
+
+});
+
+
+text_7m.addEventListener('click', function() {
+    if (terr7m==false) {
+        terr10=false;
+        terr1=false;
+        terr2=false;
+        terr3=false;
+        terr4=false;
+        terr5=false;
+        terr6=false;
+        terr7=false;
+        terr8=false;
+        terr9=false;
+        terr7m=true;
+        
+        bouton_terr1.style.fillOpacity="0";
+        bouton_terr2.style.fillOpacity="0";
+        bouton_terr3.style.fillOpacity="0";
+        bouton_terr4.style.fillOpacity="0";
+        bouton_terr5.style.fillOpacity="0";
+        bouton_terr6.style.fillOpacity="0";
+        bouton_terr7.style.fillOpacity="0";
+        bouton_terr8.style.fillOpacity="0";
+        bouton_terr9.style.fillOpacity="0";
+        bouton_terr10.style.fillOpacity="0";
+
+        bouton_7m.style.fill="#F9EB3C";
+        text_7m.style.color="#383338";
+        bouton_7m.style.stroke="#383338";
+
+        zone_terrain=null;
+        input_zone_terrain.value=zone_terrain;
+        input_sept_m.value=1;
+
+
+
+    }
+    else if (terr7m==true) {
+        terr7m=false;
+        bouton_7m.style.fill="#589474";
+        text_7m.style.color="#FFFFFF";
+        bouton_7m.style.stroke="none";
+
+        zone_terrain=null;
+        input_zone_terrain.value=zone_terrain;
+        input_sept_m.value=1;
+
+       }
+
+});
+
+
+
+
+

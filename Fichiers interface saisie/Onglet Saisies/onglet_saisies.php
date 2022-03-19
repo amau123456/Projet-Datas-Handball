@@ -16,82 +16,60 @@
         // On vient définir les différentes variable qui sertont envoyer au moment de l'ajout de l'action 
         // chaque variable pointe vers l'objet html au niveau du formulaire 
             
-        var id_match_form = document.getElementById("input_id_match").value;
-        var id_joueuse_form = document.getElementById("input_id_joueuse").value;
-        var nom_joueuse_input = document.getElementById("input_nom_joueuse").value;
-        var tir_form = document.getElementById("input_tir").value;
-        var but_form = document.getElementById("input_but").value;
-        var zone_terrain_form = document.getElementById("input_zone_terrain").value;
-        var zone_cage_form = document.getElementById("input_zone_cage").value;
-        var periode_form = document.getElementById("input_periode").value;
-
-        var attaque_form = document.getElementById("input_attaque").value;
-        var attaque_Placee_form = document.getElementById("input_attaque_Placee").value;
-
-        var carton_jaune_form = document.getElementById("input_carton_jaune").value;
-        var carton_rouge_form = document.getElementById("input_carton_rouge").value;
-        var 2_min_form = document.getElementById("input_2_min").value;
-
-        var faute_zone_form = document.getElementById("input_2_min").value;
-        var marche_form = document.getElementById("input_2_min").value;
-        var reprise_de_drible_form = document.getElementById("input_reprise_de_drible").value;
-        var balle_perdue_form = document.getElementById("input_balle_perdue").value;
-        var mauvaise_relance_form = document.getElementById("input_mauvaise_relance").value;
-        var passage_en_force_form = document.getElementById("input_passage_en_force").value;
-        var faute_subie_form = document.getElementById("input_faute_subie").value;
-        var tir_contre_form = document.getElementById("input_tir_contre").value;
-        var deux_min_provoque_form = document.getElementById("input_deux_min_provoque").value;
-        var sept_m_form = document.getElementById("input_sept_m").value;
-        var duel_gagne_form = document.getElementById("input_duel_gagne").value;
-        var duel_perdu_form = document.getElementById("input_duel_perdu_a").value;
-        var relance_form = document.getElementById("input_relance").value;
-
-        var balle_recuperee_form = document.getElementById("input_balle_recuperee_d").value;
-        var interception_form= document.getElementById("input_interception_d").value;
-
-
-
-
         $.ajax({
                 type: 'post',
                 url: 'form_act_saisies.php',
                 data: {
-                    id_match:id_match_form,
-                    id_joueuse:id_joueuse,
-                    nom_joueuse:nom_joueuse_form,
+                    // id_match:id_match_form,
+                    // id_joueuse:id_joueuse,
+                    // nom_joueuse:nom_joueuse_form,
 
-                    tir:tir_form,
-                    but:but_form,
+
+                    periode:input_periode.value,
+
+                    tir:input_tir.value,
+                    sept_m:input_sept_m.value,
+                    but:input_but.value,
+
+                    zone_cage:input_zone_cage.value,
+                    zone_terrain:input_zone_terrain.value,
+
+                    attaque:input_attaque.value,
+                    attaque_Placee:input_attaque_placee.value,
                     
 
-                    periode:periode_form,
-                    attaque:attaque_form,
-                    attaque_Placee:attaque_Placee_form,
-                    carton_jaune:carton_jaune_form,
-                    carton_rouge:carton_rouge_form,
-                    2_min:2_min_form,
+                    faute_zone:input_faute_zone.value,
 
-                    faute_zone:faute_zone_form,
-                    marche:marche_form,
-                    reprise_de_drible:reprise_de_drible_form,
-                    balle_perdue:balle_perdue_form,
-                    mauvaise_relance:mauvaise_relance_form,
-                    passage_en_force:passage_en_force_form,
-                    faute_subie:faute_subie_form,
-                    tir_contre:tir_contre_form,
-                    deux_min_provoque:deux_min_provoque_form,
-                    sept_m:sept_m_form,
-                    duel_gagne:duel_gagne_form,
-                    duel_perdu:duel_perdu_form,
-                    relance:relance_form,
+                    marcher:input_marcher.value,
+                    reprise_de_drible:input_reprise_de_drible.value,
 
-                    balle_recuperee:balle_recuperee_form,
-                    interception:interception_form,
+                    mauvaise_relance:input_mauvaise_relance.value,
+                    passage_en_force:input_passage_en_force.value,
+                    balle_perdue:input_balle_perdue.value,
+                    balle_recuperee:input_balle_recuperee.value,
+                    faute_subie:input_faute_subie.value,
+
+                    tir_contre:input_tir_contre.value,
+                    deux_min_provoque:input_deux_min_provoque.value,
+                    faute_7m:input_faute_sept_m.value,
+                    
+                    duel_gagne:input_duel_gagne.value,
+                    duel_perdu:input_duel_perdu_a.value,
+
+                    interception:input_interception.value,
+                    relance:input_relance.value,
+
+                    carton_rouge:input_carton_rouge.value,
+                    carton_jaune:input_carton_jaune.value,
+                    deux_min:input_2_min.value,
+                    
 
                 },
-            success: function (response) {
-                
+                success: function (response) {
+                alert("Okayyyyyyyy")
+        
                 }
+            
             });
         }
           
@@ -125,22 +103,22 @@
           
         }
 
-        $(document).ready(function(){
-      // everything here will be executed once index.html has finished loading, so at the start when the user is yet to do anything.
-      $("#select_match").change(sendmatch()); //this translates to: "when the element with id='select1' changes its value execute load_new_content() function"
-});
+//         $(document).ready(function(){
+//       // everything here will be executed once index.html has finished loading, so at the start when the user is yet to do anything.
+//       $("#select_match").change(sendmatch()); //this translates to: "when the element with id='select1' changes its value execute load_new_content() function"
+// });
 
 
-    function load_new_content(){
-     var selected_option_value=$("#select_match option:selected").val(); //get the value of the current selected option.
+//     function load_new_content(){
+//      var selected_option_value=$("#select_match option:selected").val(); //get the value of the current selected option.
 
-     $.post("form_act_saisies.php", {option_value: selected_option_value},
-         function(data){ //this will be executed once the `script_that_receives_value.php` ends its execution, `data` contains everything said script echoed.
-              $("#place_where_you_want_the_new_html").html(data);
-              alert(data); //just to see what it returns
-         }
-     );
-} 
+//      $.post("form_act_saisies.php", {option_value: selected_option_value},
+//          function(data){ //this will be executed once the `script_that_receives_value.php` ends its execution, `data` contains everything said script echoed.
+//               $("#place_where_you_want_the_new_html").html(data);
+//               alert(data); //just to see what it returns
+//          }
+//      );
+// } 
         </script>
 
 
@@ -259,7 +237,8 @@
 
 
     <body>
-    <form method="post" onsubmit="return sendData();">
+    <!-- <form action="form_act_saisies.php" method="POST" > -->
+    <form method="POST" onsubmit="return sendData();">
         <div id="Bloc_interface">
             <div id="Selection_joueuses">
                 <div id="Titre_section_joueuses">
@@ -317,7 +296,7 @@
                         </div>
                         <div id="Contenu_section">
                                 <div id="Choix_periode">
-                                <input type="hidden" name="periode" id="periode" /> 
+                                <input type="hidden" name="periode" id="periode" value="0-15"/> 
                                     <div><h2 id="Titre_slider">Période: </h2></div>
                                         <div id="Liste_periodes">
                                             <input type="radio" id="0/15" name="periode" value="0'-15'" checked>
@@ -331,13 +310,13 @@
                                         </div>
                                 </div>
                                 <div id="Attaque_Defense">
-                                    <input type="hidden" name="attaque" id="input_attaque" />    
+                                    <input type="hidden" name="attaque" id="input_attaque" value=1/>    
                                     <button id="bouton_Attaque" class="boutton_attaque_defense"  type="button">Attaque</button>
                                     <button id="bouton_Defense" class="boutton_attaque_defense"  type="button">Défense</button>
                                 </div>
 
                                 <div id="Type_attaque">
-                                    <input type="hidden" name="type_attaque" id="input_type_attaque" value="Attaque Placée"/>    
+                                    <input type="hidden" name="type_attaque" id="input_attaque_Placee" value=1/>    
                                     <p class="Boutton_type_attaque" id="bouton_Attaque_Placee">Attaque Placée</p>
                                     <div class="onoffswitch" id="myonoffswitch">
                                         <label class="switch">
@@ -352,85 +331,85 @@
                                 <div id="sanctions">
                                     <h2 id="Titre_sanctions">Sanctions</h2>
                                     <div id="Boutons_sanctions">
-                                        <input type="hidden" name="carton_jaune" id="input_carton_jaune"/>
+                                        <input type="hidden" name="carton_jaune" id="input_carton_jaune" value=0 />
                                         <div id="conteneur_carton_jaune"></div>
-                                        <input type="hidden" name="carton_rouge" id="input_carton_rouge"/>
+                                        <input type="hidden" name="carton_rouge" id="input_carton_rouge"value=0 />
                                         <div id="conteneur_carton_rouge"></div>
-                                        <input type="hidden" name="2_min" id="input_2_min"/>
-                                        <button id="Deux_min"> 2'</button>
+                                        <input type="hidden" name="deux_min" id="input_deux_min" value=0 />
+                                        <button id="Deux_min" type="button"> 2'</button>
                                     </div>
                                 </div>
                                 <!-- Pack de boutons de saisies pour les actions attaque-->
                                 <div id="Boutons_saisies">
                                     <div id="boutons_ligne_1">
-                                        <input type="hidden" name="Faute_zone" id="input_Faute_zone"/>
+                                        <input type="hidden" name="Faute_zone" id="input_faute_zone" value=0/>
                                         <button id="faute_zone" class="boutton_fait_de_jeu" type="button">Fautes de zone</button>
-                                        <input type="hidden" name="marche" id="marche"/>
+                                        <input type="hidden" name="input_marche" id="input_marche" value=0/>
                                         <button id="marche" class="boutton_fait_de_jeu" type="button">Marché</button>
-                                        <input type="hidden" name="reprise_drible" id="input_reprise_drible"/>
+                                        <input type="hidden" name="reprise_drible" id="input_reprise_de_drible" value=0 />
                                         <button id="reprise_drible" class="boutton_fait_de_jeu" type="button">Reprise de drible</button>
-                                        <input type="hidden" name="balle_perdue" id="input_balle_perdue"/>
+                                        <input type="hidden" name="balle_perdue" id="input_balle_perdue" value=0/>
                                         <button id="balle_perdue" class="boutton_fait_de_jeu" type="button">Balle perdue</button>
-                                        <input type="hidden" name="mauvaise_relance" id="input_mauvaise_relance"/>
+                                        <input type="hidden" name="mauvaise_relance" id="input_mauvaise_relance" value=0/>
                                         <button id="mauvaise_relance" class="boutton_fait_de_jeu" type="button">Mauvaise relance</button>
-                                        <input type="hidden" name="duel_perdu_a" id="input_duel_perdu_a"/>
+                                        <input type="hidden" name="duel_perdu_a" id="input_duel_perdu_a" value=0/>
                                         <button id="duel_perdu_a" class="boutton_fait_de_jeu" type="button">Duel perdu</button>
                                     </div>
                                     <div id="boutons_ligne_2">
-                                        <input type="hidden" name="passage_en_force" id="input_passage_en_force"/>
+                                        <input type="hidden" name="passage_en_force" id="input_passage_en_force" value=0/>
                                         <button id="passage_en_force" class="boutton_fait_de_jeu" type="button">Passage en force</button>
-                                        <input type="hidden" name="faute_subie" id="input_faute_subie"/>
+                                        <input type="hidden" name="faute_subie" id="input_faute_subie" value=0/>
                                         <button id="faute_subie" class="boutton_fait_de_jeu" type="button">Faute subie</button>
-                                        <input type="hidden" name="tir_contre" id="input_tir_contre"/>
+                                        <input type="hidden" name="tir_contre" id="input_tir_contre" value=0/>
                                         <button id="tir_contre" class="boutton_fait_de_jeu" type="button">Tir contré</button>
                                     </div>
                                     <div id="boutons_ligne_3">
-                                        <input type="hidden" name="deux_min_provoque" id="input_deux_min_provoque"/>
+                                        <input type="hidden" name="deux_min_provoque" id="input_deux_min_provoque" value=0/>
                                         <button id="deux_min_provoque" class="boutton_fait_de_jeu" type="button">2' provoqué</button>
-                                        <input type="hidden" name="sept_m" id="input_sept_m"/>
+                                        <input type="hidden" name="input_faute_sept_m" id="input_faute_sept_m" value=0/>
                                         <button id="sept_m" class="boutton_fait_de_jeu" type="button">7m</button>
-                                        <input type="hidden" name="duel_gagne" id="input_duel_gagne"/>
+                                        <input type="hidden" name="duel_gagne" id="input_duel_gagne" value=0/>
                                         <button id="duel_gagne" class="boutton_fait_de_jeu" type="button">Duel gagné</button>
-                                        <input type="hidden" name="relance" id="input_relance"/>
+                                        <input type="hidden" name="relance" id="input_relance" value=0/>
                                         <button id="relance" class="boutton_fait_de_jeu" type="button">Relance</button>
                                     </div>
                                 </div>
                                 <!-- Pack de boutons de saisies pour les actions défense-->
                                 <div id="Boutons_saisies_defense">
                                     <div id="boutons_ligne_1">
-                                        <input type="hidden" name="input_faute_zone_d" id="input_faute_zone_d"/>
+                                        <input type="hidden" name="input_faute_zone_d" id="input_faute_zone_d" value=0/>
                                         <button id="faute_zone_d" class="boutton_fait_de_jeu" type="button">Fautes de zone</button>
-                                        <input type="hidden" name="input_marche_d" id="input_marche_d"/>
+                                        <input type="hidden" name="input_marche_d" id="input_marche_d" value=0/>
                                         <button id="marche_d" class="boutton_fait_de_jeu" type="button">Marché</button>
-                                        <input type="hidden" name="input_reprise_drible_d" id="input_reprise_drible_d"/>
+                                        <input type="hidden" name="input_reprise_drible_d" id="input_reprise_drible_d" value=0/>
                                         <button id="reprise_drible_d" class="boutton_fait_de_jeu" type="button">Reprise de drible</button>
-                                        <input type="hidden" name="input_balle_recuperee_d" id="input_balle_recuperee_d"/>
+                                        <input type="hidden" name="input_balle_recuperee_d" id="input_balle_recuperee_d" value=0/>
                                         <button id="balle_recuperee_d" class="boutton_fait_de_jeu" type="button">Balle récupérée</button>
-                                        <input type="hidden" name="input_mauvaise_relance_d" id="input_mauvaise_relance_d"/>
+                                        <input type="hidden" name="input_mauvaise_relance_d" id="input_mauvaise_relance_d" value=0/>
                                         <button id="mauvaise_relance_d" class="boutton_fait_de_jeu" type="button">Mauvaise relance</button>
-                                        <input type="hidden" name="input_duel_perdu_d" id="input_duel_perdu_d"/>
+                                        <input type="hidden" name="input_duel_perdu_d" id="input_duel_perdu_d" value=0/>
                                         <button id="duel_perdu_d" class="boutton_fait_de_jeu" type="button">Duel perdu</button>
                                     </div>
                                     <div id="boutons_ligne_2">
-                                        <input type="hidden" name="input_passage_en_force_d" id="input_passage_en_force_d"/>
+                                        <input type="hidden" name="input_passage_en_force_d" id="input_passage_en_force_d" value=0/>
                                         <button id="passage_en_force_d" class="boutton_fait_de_jeu" type="button">Passage en force</button>
-                                        <input type="hidden" name="input_faute_subie_d" id="input_faute_subie_d"/>
+                                        <input type="hidden" name="input_faute_subie_d" id="input_faute_subie_d" value=0/>
                                         <button id="faute_subie_d" class="boutton_fait_de_jeu" type="button">Faute subie</button>
-                                        <input type="hidden" name="input_tir_contre_d" id="input_tir_contre_d"/>
+                                        <input type="hidden" name="input_tir_contre_d" id="input_tir_contre_d" value=0/>
                                         <button id="tir_contre_d" class="boutton_fait_de_jeu" type="button">Tir contré</button>
-                                        <input type="hidden" name="input_interception_d" id="input_interception_d"/>
+                                        <input type="hidden" name="input_interception_d" id="input_interception_d" value=0/>
                                         <button id="interception_d" class="boutton_fait_de_jeu" type="button">Interception</button>
                                     </div>
                                     <div id="boutons_ligne_3">
-                                        <input type="hidden" name="input_deux_min_provoque_d" id="input_deux_min_provoque_d"/>
+                                        <input type="hidden" name="input_deux_min_provoque_d" id="input_deux_min_provoque_d" value=0/>
                                         <button id="deux_min_provoque_d" class="boutton_fait_de_jeu" type="button">2' provoqué</button>
-                                        <input type="hidden" name="input_sept_m_d" id="input_sept_m_d"/>
                                         <button id="sept_m_d" class="boutton_fait_de_jeu" type="button">7m</button>
-                                        <input type="hidden" name="input_duel_gagne_d" id="input_duel_gagne_d"/>
+                                        <input type="hidden" name="input_duel_gagne_d" id="input_duel_gagne_d" value=0/>
                                         <button id="duel_gagne_d" class="boutton_fait_de_jeu" type="button">Duel gagné</button>
                                         
-                                        <input type="hidden" name="input_relance_d" id="input_relance_d"/>
+                                        <input type="hidden" name="input_relance_d" id="input_relance_d" value=0/>
                                         <button id="relance_d" class="boutton_fait_de_jeu" type="button">Relance</button>
+
                                         <!-- Bouton relance avec but uniquement pour les actions gardienne-->
                                         <button id="relance_but" class="boutton_fait_de_jeu" type="button">Relance avec but</button>
                                             
@@ -452,6 +431,9 @@
                         </div>
                         <div id="Contenu_section_zones">
                             <div id = "but_marque">
+                                <input type="hidden" id="input_but" name="input_but" value="0"/>
+                                <input type="hidden" id="input_tir" name="input_tir" value="0"/>
+
                                 <button id=marque class="bouton_but" type="button">
                                     <!--<img src="up.png" alt="oui" height="19"/>-->
                                     <span class="iconify" id="up_down" data-icon="ic:round-thumb-up-off-alt"></span>
@@ -464,7 +446,7 @@
                 
                             </div>
 
-                            <input type="hidden" name="zone_cage" id="zone_cage"/>
+                            <input type="hidden" name="zone_cage" id="zone_cage" value=0/>
                             <div id ="rectangle_clic">
                                 <svg width="350" height="221">
                                     <image xlink:href="cage_hand.jpg" x="0" y="0" alt="cage" height="256px"/>
@@ -512,7 +494,7 @@
                                 
                             </div>
                             
-                            <input type="hidden" name="zone_terrain" id="zone_terrain"/>
+                            <input type="hidden" name="zone_terrain" id="zone_terrain" value=0/>
                             <div id ="poly_clic">
 
                                 <svg width="370" height="221">
@@ -554,6 +536,19 @@
                                                  M 145 112 L 127 202 
                                                  M 224 112 L 242 202
                                                  M 297 74 L 369 154 Z" fill="none"/>
+                                    </a>
+
+                                    <input type="hidden" id="input_sept_m" name="input_sept_m" value=0 />
+                                    <a href="#">
+                                        <path id="septM" d="M 152 110 L 217 110
+                                                         A 7, 7, 0, 0, 0 217, 96
+                                                         L 152 96
+                                                         A 7, 7, 0, 0, 0 152, 110 Z" fill="#589474"/>
+                                        <text>
+                                            <textPath id="text7M" href="#septM" startOffset = "20">
+                                                7M
+                                            </textPath>
+                                        </text>
                                     </a>
                                 </svg>
                             </div>
@@ -606,8 +601,8 @@
 
             </div>
             </form>
-
             <script type="text/javascript" src="onglet_saisies_bis.js"></script>
+
             <script type="text/javascript" src="https://code.iconify.design/2/2.1.0/iconify.min.js"></script>
 
         </body>

@@ -63,8 +63,5 @@ $selection = htmlspecialchars($_POST['selection_joueuses_global']);
 			':lieu' => $lieu_match,
 			':selection' => $selection));
 
-	
-	
-
 ?>
 

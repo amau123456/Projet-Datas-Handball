@@ -761,12 +761,16 @@ let bouton_joueuse_12 = document.getElementById("joueuse_12");
 let bouton_gardienne_1 = document.getElementById("gardienne_1");
 let bouton_gardienne_2 = document.getElementById("gardienne_2");
 
+let input_joueuse=document.getElementById("input_joueuse");
+
+
 
 //Boutons joueuses 
 
 bouton_joueuse_1.addEventListener('click', function() {
     if (joueuse_1==0) {
         joueuse_1=1;
+
         bouton_joueuse_1.style.backgroundColor="#f9eb3c";
         bouton_joueuse_1.style.color="#05602F";
         bouton_joueuse_1.style.border="2px solid #05602F";
@@ -836,12 +840,18 @@ bouton_joueuse_1.addEventListener('click', function() {
         bouton_gardienne_2.style.border="none";
         gardienne_2=0;
 
+        input_joueuse.value=nom_joueuse1;
+
+
     }
     else if (joueuse_1==1) {
         joueuse_1=0;
         bouton_joueuse_1.style.backgroundColor="#f9eb3c";
         bouton_joueuse_1.style.color="#383338";
         bouton_joueuse_1.style.border="none";
+
+        input_joueuse.value="";
+
         
        }
 
@@ -919,12 +929,17 @@ bouton_joueuse_2.addEventListener('click', function() {
         bouton_gardienne_2.style.border="none";
         gardienne_2=0;
 
+        input_joueuse.value=nom_joueuse2;
+
+
     }
     else if (joueuse_2==1) {
         joueuse_2=0;
         bouton_joueuse_2.style.backgroundColor="#f9eb3c";
         bouton_joueuse_2.style.color="#383338";
         bouton_joueuse_2.style.border="none";
+
+        input_joueuse.value="";
         
        }
 
@@ -1002,7 +1017,7 @@ bouton_joueuse_3.addEventListener('click', function() {
         bouton_gardienne_2.style.border="none";
         gardienne_2=0;
 
-
+        input_joueuse.value=nom_joueuse3;
 
     }
     else if (joueuse_3==1) {
@@ -1010,6 +1025,8 @@ bouton_joueuse_3.addEventListener('click', function() {
         bouton_joueuse_3.style.backgroundColor="#f9eb3c";
         bouton_joueuse_3.style.color="#383338";
         bouton_joueuse_3.style.border="none";
+
+        input_joueuse.value="";
         
        }
 
@@ -1087,6 +1104,8 @@ bouton_joueuse_4.addEventListener('click', function() {
         bouton_gardienne_2.style.border="none";
         gardienne_2=0;
 
+        input_joueuse.value=nom_joueuse4;
+
 
     }
     else if (joueuse_4==1) {
@@ -1094,6 +1113,8 @@ bouton_joueuse_4.addEventListener('click', function() {
         bouton_joueuse_4.style.backgroundColor="#f9eb3c";
         bouton_joueuse_4.style.color="#383338";
         bouton_joueuse_4.style.border="none";
+
+        input_joueuse.value="";
         
        }
 
@@ -1171,6 +1192,8 @@ bouton_joueuse_5.addEventListener('click', function() {
         bouton_gardienne_2.style.border="none";
         gardienne_2=0;
 
+        input_joueuse.value=nom_joueuse5;
+
 
     }
     else if (joueuse_5==1) {
@@ -1178,6 +1201,8 @@ bouton_joueuse_5.addEventListener('click', function() {
         bouton_joueuse_5.style.backgroundColor="#f9eb3c";
         bouton_joueuse_5.style.color="#383338";
         bouton_joueuse_5.style.border="none";
+
+        input_joueuse.value="";
         
        }
 
@@ -1255,6 +1280,9 @@ bouton_joueuse_6.addEventListener('click', function() {
         bouton_gardienne_2.style.border="none";
         gardienne_2=0;
 
+        input_joueuse.value=nom_joueuse6;
+
+
 
     }
     else if (joueuse_6==1) {
@@ -1262,6 +1290,8 @@ bouton_joueuse_6.addEventListener('click', function() {
         bouton_joueuse_6.style.backgroundColor="#f9eb3c";
         bouton_joueuse_6.style.color="#383338";
         bouton_joueuse_6.style.border="none";
+
+        input_joueuse.value="";
         
        }
 
@@ -1339,12 +1369,17 @@ bouton_joueuse_7.addEventListener('click', function() {
         bouton_gardienne_2.style.border="none";
         gardienne_2=0;
 
+        input_joueuse.value=nom_joueuse7;
+
+
     }
     else if (joueuse_7==1) {
         joueuse_7=0;
         bouton_joueuse_7.style.backgroundColor="#f9eb3c";
         bouton_joueuse_7.style.color="#383338";
         bouton_joueuse_7.style.border="none";
+
+        input_joueuse.value="";
         
        }
 
@@ -1422,6 +1457,9 @@ bouton_joueuse_8.addEventListener('click', function() {
         bouton_gardienne_2.style.border="none";
         gardienne_2=0;
 
+        input_joueuse.value=nom_joueuse8;
+
+
 
     }
     else if (joueuse_8==1) {
@@ -1429,6 +1467,8 @@ bouton_joueuse_8.addEventListener('click', function() {
         bouton_joueuse_8.style.backgroundColor="#f9eb3c";
         bouton_joueuse_8.style.color="#383338";
         bouton_joueuse_8.style.border="none";
+
+        input_joueuse.value="";
         
        }
 
@@ -1506,12 +1546,17 @@ bouton_joueuse_9.addEventListener('click', function() {
         bouton_gardienne_2.style.border="none";
         gardienne_2=0;
 
+        input_joueuse.value=nom_joueuse9;
+
+
     }
     else if (joueuse_9==1) {
         joueuse_9=0;
         bouton_joueuse_9.style.backgroundColor="#f9eb3c";
         bouton_joueuse_9.style.color="#383338";
         bouton_joueuse_9.style.border="none";
+
+        input_joueuse.value="";
         
        }
 
@@ -1589,6 +1634,9 @@ bouton_joueuse_10.addEventListener('click', function() {
         bouton_gardienne_2.style.border="none";
         gardienne_2=0;
 
+        input_joueuse.value=nom_joueuse10;
+
+
 
     }
     else if (joueuse_10==1) {
@@ -1596,6 +1644,8 @@ bouton_joueuse_10.addEventListener('click', function() {
         bouton_joueuse_10.style.backgroundColor="#f9eb3c";
         bouton_joueuse_10.style.color="#383338";
         bouton_joueuse_10.style.border="none";
+
+        input_joueuse.value="";
         
        }
 
@@ -1673,6 +1723,9 @@ bouton_joueuse_11.addEventListener('click', function() {
         bouton_gardienne_2.style.border="none";
         gardienne_2=0;
 
+        input_joueuse.value=nom_joueuse11;
+
+
 
     }
     else if (joueuse_11==1) {
@@ -1680,6 +1733,8 @@ bouton_joueuse_11.addEventListener('click', function() {
         bouton_joueuse_11.style.backgroundColor="#f9eb3c";
         bouton_joueuse_11.style.color="#383338";
         bouton_joueuse_11.style.border="none";
+
+        input_joueuse.value="";
         
        }
 
@@ -1757,6 +1812,9 @@ bouton_joueuse_12.addEventListener('click', function() {
         bouton_gardienne_2.style.border="none";
         gardienne_2=0;
 
+        input_joueuse.value=nom_joueuse12;
+
+
 
     }
     else if (joueuse_12==1) {
@@ -1764,12 +1822,19 @@ bouton_joueuse_12.addEventListener('click', function() {
         bouton_joueuse_12.style.backgroundColor="#f9eb3c";
         bouton_joueuse_12.style.color="#383338";
         bouton_joueuse_12.style.border="none";
+
+        input_joueuse.value="";
         
        }
 
 });  
 
 //Boutons gardiennes 
+
+let input_gardienne_1=document.getElementById("input_gardienne_1");
+let input_gardienne_2=document.getElementById("input_gardienne_2");
+
+
 
 bouton_gardienne_1.addEventListener('click', function() {
     if (gardienne_1==0) {
@@ -1843,12 +1908,17 @@ bouton_gardienne_1.addEventListener('click', function() {
         bouton_joueuse_12.style.border="none";
         joueuse_12=0;
 
+        input_joueuse.value=nom_gardienne1;
+
+
     }
     else if (gardienne_1==1) {
         gardienne_1=0;
         bouton_gardienne_1.style.backgroundColor="#383338";
         bouton_gardienne_1.style.color="#FFFFFF";
         bouton_gardienne_1.style.border="none";
+
+        input_joueuse.value="";
         
        }
 
@@ -1927,12 +1997,18 @@ bouton_gardienne_2.addEventListener('click', function() {
         bouton_joueuse_12.style.border="none";
         joueuse_12=0;
 
+        input_joueuse.value=nom_gardienne2;
+
+
     }
     else if (gardienne_2==1) {
         gardienne_2=0;
         bouton_gardienne_2.style.backgroundColor="#383338";
         bouton_gardienne_2.style.color="#FFFFFF";
         bouton_gardienne_2.style.border="none";
+
+        input_joueuse.value="";
+
         
        }
 

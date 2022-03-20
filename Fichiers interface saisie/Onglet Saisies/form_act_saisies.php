@@ -15,7 +15,7 @@ catch(Exception $e)
 
 $id_match=null;
 $id_joueuse=null;
-$nom_joueuse=null;
+$nom_joueuse=htmlspecialchars($_POST['nom_joueuse']);
 $periode=htmlspecialchars($_POST['periode']);
 
 $tir=htmlspecialchars(intval($_POST['tir']));
@@ -58,13 +58,13 @@ $interception=htmlspecialchars(intval($_POST['interception']));
 
 // $passe_decisive=null;
 
-$req = $bdd->prepare('INSERT INTO actions (temps,tir,7m,but,zone_cage,zone_terrain,attaque,attaque_placee,faute_zone,marcher,reprise_dribble,mauvaise_relance,passage_en_force,ballon_perdu,ballon_recupere,faute_9m,tir_contre,2min_provoque,faute_7m,duel_gagne,duel_perdu,interception,carton_rouge,carton_jaune,2min_concede,relance) VALUES(:temps,:tir,:7m,:but,:zone_cage,:zone_terrain,:ataque,:attaque_Placee,:faute_zone,:marcher,:reprise_drible,:mauvaise_relance,:passage_en_force,:balle_perdue,:balle_recuperee,:faute_subie,:tir_contre,:deux_min_provoque,:faute_sept_m,:duel_gagne,:duel_perdu,:interception,:carton_rouge,:carton_jaune,:deux_min,:relance)');	
+$req = $bdd->prepare('INSERT INTO actions (nom_joueuse,temps,tir,7m,but,zone_cage,zone_terrain,attaque,attaque_placee,faute_zone,marcher,reprise_dribble,mauvaise_relance,passage_en_force,ballon_perdu,ballon_recupere,faute_9m,tir_contre,2min_provoque,faute_7m,duel_gagne,duel_perdu,interception,carton_rouge,carton_jaune,2min_concede,relance) VALUES(:nom_joueuse,:temps,:tir,:7m,:but,:zone_cage,:zone_terrain,:ataque,:attaque_Placee,:faute_zone,:marcher,:reprise_drible,:mauvaise_relance,:passage_en_force,:balle_perdue,:balle_recuperee,:faute_subie,:tir_contre,:deux_min_provoque,:faute_sept_m,:duel_gagne,:duel_perdu,:interception,:carton_rouge,:carton_jaune,:deux_min,:relance)');	
 	$req->execute(array(
 
 
 
             // ':id_match' =>$id_match,
-            // ':nom_joueuse' =>$nom_joueuse,
+            ':nom_joueuse' =>$nom_joueuse,
             ':temps' => $periode,
             ':tir' => $tir,
             ':7m' => $sept_m,

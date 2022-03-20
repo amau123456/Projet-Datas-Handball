@@ -22,7 +22,9 @@
                 data: {
                     // id_match:id_match_form,
                     // id_joueuse:id_joueuse,
-                    // nom_joueuse:nom_joueuse_form,
+
+
+                    nom_joueuse:input_joueuse.value,
 
 
                     periode:input_periode.value,
@@ -131,6 +133,7 @@
         $password = '291298';
         $pair = 0;
         $count=1;
+        $countm=1;
         
         $temp_club = "";
         $temp_dom="";
@@ -162,7 +165,6 @@
 
         $reqm = $pdo ->prepare ("SELECT * FROM matchs ORDER BY id_match ");
         $reqm->execute();
-            
     ?>
 
 
@@ -203,10 +205,14 @@
                     <p id="equipes_rencontre">
                     <select name="select_match" id="select_match" onchange='load_new_content()'>
                         <?php  while($row = $reqm->fetch(PDO::FETCH_ASSOC)) : ?>
+
                             <?php $temp_club=htmlspecialchars($row['Club_adverse']);
                                    $temp_dom=htmlspecialchars($row['Domicile']);
                                    $temp_idmatch=htmlspecialchars($row['id_match']);
                             ?>
+                            <script type="text/javascript">
+                                var match_id_<?php echo htmlspecialchars($countm);?>="<?php echo htmlspecialchars($row['id_match']); ?>"
+                            </script>
 
                             <?php   if ($temp_dom == "Dom"){
                                 echo ('<option>HBPC - ');
@@ -219,8 +225,8 @@
                                         echo(' - HBPC</option>'); 
                                     }     
                                     
-                                    ?>
-                            
+                            ?>                            
+                            <?php $countm=($countm+1) ?>
                         <?php endwhile ?>
                         </select>
                     </p>
@@ -246,17 +252,20 @@
                 </div>
                 <div id="Contenu_section_joueuses">                
                     <div id="Boutons_joueuses">
-                        
+
+                        <input type="hidden" id=input_joueuse value=""/>
                         <?php  while($row = $reqj->fetch(PDO::FETCH_ASSOC)) : ?>
                             <?php   if ($pair == 0)
                                 echo ('<div id="boutons_ligne_x_jou">');
                             ?>
-
                             <button id=joueuse_<?php echo htmlspecialchars($count); ?> class="bouton_jou" type="button">
                             <p class=nom_joueuse><?php echo htmlspecialchars($row['Nom']); ?></p>
                             <p class=numero_joueuse><?php echo htmlspecialchars($row['Numero']); ?>
-                            </p>
+                            </p> 
                             </button>
+                            <script type="text/javascript">
+                                var nom_joueuse<?php echo htmlspecialchars($count);?>="<?php echo htmlspecialchars($row['Nom']); ?>"
+                            </script>
                             <?php   if ($pair == 1){
                                 echo ('</div>');
                             }?>
@@ -276,6 +285,9 @@
                                 <p class=nom_gardienne><?php echo htmlspecialchars($row['Nom']); ?></p>
                                 <p class=numero_gardienne><?php echo htmlspecialchars($row['Numero']); ?></p>
                             </button>
+                            <script type="text/javascript">
+                                var nom_gardienne<?php echo htmlspecialchars($count);?>="<?php echo htmlspecialchars($row['Nom']); ?>"
+                            </script>
                             <?php $count=$count+1 ?>
 
                         <?php endwhile?>
@@ -538,7 +550,7 @@
                                                  M 297 74 L 369 154 Z" fill="none"/>
                                     </a>
 
-                                    <input type="hidden" id="input_sept_m" name="input_sept_m" value=0 />
+                                    <input type="hidden" id="input_sept_m" name=" " value=0 />
                                     <a href="#">
                                         <path id="septM" d="M 152 110 L 217 110
                                                          A 7, 7, 0, 0, 0 217, 96

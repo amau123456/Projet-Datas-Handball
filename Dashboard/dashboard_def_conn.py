@@ -1,5 +1,6 @@
 from enum import auto
 import base64
+from gc import callbacks
 from inspect import trace
 from multiprocessing.dummy import JoinableQueue
 from operator import contains
@@ -25,6 +26,8 @@ connection = pymysql.connect(host='localhost', user='root', passwd='1234', datab
 
 SQL_Query = pd.read_sql_query('''select * from actions''', connection)
 df_db = pd.DataFrame(SQL_Query)
+SQL_Query2 = pd.read_sql_query('''select * from matchs''', connection)
+df_db_match = pd.DataFrame(SQL_Query2)
 
 connection.close() 
 
@@ -39,6 +42,7 @@ joueuses=df["nom_joueuse"].unique()
 fautes = ['faute_7m','faute_9m', 'faute_zone']
 zones_terrain = df['zone_terrain'].unique()
 zones_cage = df['zone_cage'].unique()
+periodes = ['0-15', '15-30', '30-45', '45-60']
 
 # -----------Analyse des attaques (attaques placées / contre-attaques)-------------
 
@@ -50,6 +54,11 @@ nb_contre_att = df[df['attaque_placee']==0].count()['attaque_placee']
 df_type_attaques = pd.DataFrame({'Attaque placée':[nb_att_placee],'Contre-attaque':[nb_contre_att]})
 
 tab1 = df_type_attaques.copy()
+
+# ----------------Sélection des joueuses ayant fait des fautes--------------------
+
+df_fautes = df[(df['tir']==0) & (df['7m']==0)]
+joueuses_fautes = df_fautes['nom_joueuse'].unique()
 
 # -----------Analyse des fautes-------------
 tab2 = df[fautes].sum().tolist()
@@ -63,10 +72,6 @@ for x in zones_terrain:
     tab = tab3.copy()
     tab = tab[tab['zone_terrain']==x]        
     y_fautes.append(sum(tab[fautes].sum().tolist()))
-
-
-
-
 
 # -----------Analyse des buts------------------
 nb_buts = df['but'].sum()
@@ -168,8 +173,26 @@ couleurs = {
     'vert' : '#05602F'
 }
 
+#-------------Récupération de la liste des matchs et ID matchs---------------------
+
+liste_matchs = []
+
+for i in range (len(df_db_match['id_match'])):
+
+    id = df_db_match['id_match'].loc[i]
+
+    if df_db_match['Domicile'].loc[i] == "Dom":
+        intitule_match = "HBPC - "+str(df_db_match['Club_adverse'].loc[i])    
+        liste_matchs.append([id, intitule_match])
+    else:
+        intitule_match = str(df_db_match['Club_adverse'].loc[i])+" - HBPC"
+        liste_matchs.append([id, intitule_match])
+
 
 # -----------Structure du dashboard (Composants HTML + Graphiques)-----------------
+
+# ---------------------------------------------------------------------------------
+
 app.layout = html.Div(id="Dashboard_global",children=[
         dbc.Row(
             [
@@ -180,8 +203,8 @@ app.layout = html.Div(id="Dashboard_global",children=[
                             html.H1(children="Dashboard - Analyse Défense",style={'textAlign': 'center',"margin-bottom":"25px", "color":couleurs['jaune']}),
                             dbc.Row([
                                 dbc.Col(html.Div(children="Filtres",style={"text-align":"center","vertical-align":"middle"}),width=True),
-                                dbc.Col(html.Div(id="filtre_match",children=[dcc.Dropdown(id ='match',options=[{'label':i, 'value': i} for i in matchs],value = 1)]),width=True),
-                                dbc.Col(html.Div(id="filtre_mi_temps",children=[dcc.Dropdown(id ='temps',options=["Totalité","0'-15'", "15'-30'","30'-45'","45'-60'"],value = '',clearable=False)]),width=True)
+                                dbc.Col(html.Div(id="filtre_match",children=[dcc.Dropdown(id ='match',options=[{'label':liste_matchs[i][1], 'value': liste_matchs[i][0]} for i in range(len(liste_matchs))],value = '', multi=True, placeholder="Match")]),width=True),
+                                dbc.Col(html.Div(id="filtre_temps",children=[dcc.Dropdown(id ='temps',options=periodes , multi=True, placeholder="Période", value="")]),width=True)
                             ])
                         ]),width=True)
                     ]),
@@ -206,8 +229,8 @@ app.layout = html.Div(id="Dashboard_global",children=[
                                     dbc.Col(html.Div(id="nb_contre_attaque_label",children="Contre-attaques subies",style={'textAlign': 'center', 'fontWeight':'bold'}),width=True)       
                             ]),
                             dbc.Row([
-                                dbc.Col(html.Div(children=[html.P(id="nb_attaques",children = str(int(tab1.values[0, 0])),style = {'color' : couleurs['jaune'], "textAlign":"center", 'fontWeight':'bold'})]),width=True),
-                                dbc.Col(html.Div(id="nb_contre_attaque",children=[html.P(children = str(int(tab1.values[0, 1])),style = {'color' : couleurs['jaune'], "textAlign":"center", 'fontWeight':'bold'})]),width=True)
+                                dbc.Col(html.Div(children=[html.P(id="nb_attaques", children = str(int(tab1.values[0, 0])),style = {'color' : couleurs['jaune'], "textAlign":"center", 'fontWeight':'bold'})]),width=True),
+                                dbc.Col(html.Div(children=[html.P(id="nb_contre_attaques", children = str(int(tab1.values[0, 1])),style = {'color' : couleurs['jaune'], "textAlign":"center", 'fontWeight':'bold'})]),width=True)
                             ]),
 
                             dbc.Row([
@@ -216,9 +239,9 @@ app.layout = html.Div(id="Dashboard_global",children=[
                                 dbc.Col(html.Div(id="Efficacite_label",children="Efficacité adverse",style={'textAlign': 'center',"margin-top":"15px", 'fontWeight':'bold'}),width=True)
                             ]),
                             dbc.Row([
-                                dbc.Col(html.Div(id="Buts_marque",children=[html.P(children = str(int(nb_buts)),style = {'textAlign' : 'center','color' : couleurs['jaune']})],style={'textAlign': 'center', 'fontWeight':'bold'}),width=True),
-                                dbc.Col(html.Div(id="tir",children=[html.P(children = str(int(nb_tirs)),style = {'textAlign' : 'center','color' : couleurs['jaune']})],style={'textAlign': 'center', 'fontWeight':'bold'}),width=True),
-                                dbc.Col(html.Div(id="Efficacite",children=[html.P(children = str(int(efficacite))+"%",style = {'textAlign' : 'center','color' : couleurs['jaune']})],style={'textAlign': 'center', 'fontWeight':'bold'}),width=True)
+                                dbc.Col(html.Div(children=[html.P(id="Buts_marque",children = str(int(nb_buts)),style = {'textAlign' : 'center','color' : couleurs['jaune']})],style={'textAlign': 'center', 'fontWeight':'bold'}),width=True),
+                                dbc.Col(html.Div(children=[html.P(id="tir",children = str(int(nb_tirs)),style = {'textAlign' : 'center','color' : couleurs['jaune']})],style={'textAlign': 'center', 'fontWeight':'bold'}),width=True),
+                                dbc.Col(html.Div(children=[html.P(id="Efficacite",children = str(int(efficacite))+"%",style = {'textAlign' : 'center','color' : couleurs['jaune']})],style={'textAlign': 'center', 'fontWeight':'bold'}),width=True)
                             ])
                         ]),width=True)
                     ],align="center", style = {'height':'370px'}),
@@ -232,13 +255,14 @@ app.layout = html.Div(id="Dashboard_global",children=[
                                             dbc.Col(html.Div([dcc.Dropdown(id="filtre_prop_eff",options=["Proportion","Efficacité"],value="Efficacité")]))
                                         ]),
                                         dbc.Row([  #Graph Stack Zones terrain + Schéma légende
-                                            dbc.Col(dcc.Graph(id='bar2',figure = go.Figure(data=[ go.Bar(name='marqué', x=zones_terrain, y=y_buts),go.Bar(name='raté', x=zones_terrain, y=y_rate) ],layout = {'barmode' : 'stack', 'xaxis' : dict(ticklabelstep = 10)}))), 
+                                            #dbc.Col(dcc.Graph(id='bar2',figure = go.Figure(data=[ go.Bar(name='marqué', x=zones_terrain, y=y_buts),go.Bar(name='raté', x=zones_terrain, y=y_rate) ],layout = {'barmode' : 'stack', 'xaxis' : dict(ticklabelstep = 10)}))),
+                                            dbc.Col(dcc.Graph(id='bar2',figure = go.Figure(data=[ go.Bar(name='marqué', x=zones_terrain, y=y_buts),go.Bar(name='raté', x=zones_terrain, y=y_rate) ],layout = go.Layout(title = 'Statistiques par zones terrain', colorway = [couleurs['jaune'], couleurs['noir']], barmode = 'stack', xaxis = dict(ticklabelstep = 10))))),
                                             dbc.Col(html.Img(src='data:image/png;base64,{}'.format(encoded_schema_terrain),style={"height":"40%","width":"100%"}),width=4)
 
                                         ],align="center"),
 
                                         dbc.Row([ #Graph Stack Zones cage + Schéma légende
-                                            dbc.Col(dcc.Graph(id='bar3',figure = go.Figure(data=[ go.Bar(name='marqué', x=zones_cage, y=c_buts),go.Bar(name='raté', x=zones_cage, y=c_rate) ],layout = {'barmode' : 'stack'})),width=8),
+                                            dbc.Col(dcc.Graph(id='bar3',figure = go.Figure(data=[ go.Bar(name='marqué', x=zones_cage, y=c_buts),go.Bar(name='raté', x=zones_cage, y=c_rate) ],layout = go.Layout(title = 'Statistiques par zones de but', colorway = [couleurs['jaune'], couleurs['noir']], barmode = 'stack', xaxis = dict(ticklabelstep = 10)))),width=8),
                                             dbc.Col(html.Img(src='data:image/png;base64,{}'.format(encoded_schema_cage),style={"height":"40%","width":"100%"}),width=4)
                                         
                                             ],align="center")
@@ -251,7 +275,8 @@ app.layout = html.Div(id="Dashboard_global",children=[
                     ], style={"margin-top":"50px"}),
                     dbc.Row([
                         dbc.Col(
-                            dcc.Graph(id='efficacite_gardienne_barplot', figure=go.Figure(data=[go.Bar(name='Jeu', x=gardiennes, y=efficacite_jeu), go.Bar(name='7m', x=gardiennes, y=efficacite_7m) ])),
+                            dcc.Graph(id='efficacite_gardienne_barplot', figure=go.Figure(data=[go.Bar(name='Jeu', x=gardiennes, y=efficacite_jeu), go.Bar(name='7m', x=gardiennes, y=efficacite_7m)],
+                                                                         layout = go.Layout(colorway = [couleurs['jaune'], couleurs['noir']]))),
                         width = 6)
 
                     ])
@@ -268,6 +293,10 @@ app.layout = html.Div(id="Dashboard_global",children=[
                                     })
                         ], style = {'height' : '350px'}),
                     dbc.Row(html.P(children="Fautes défensives"),style={"text-align":"center", 'fontSize':'30px'}),
+                    dbc.Row([
+                            dbc.Col(html.Div(dcc.Dropdown(id="Filtre_Joueuse",options=joueuses_fautes,multi=True,placeholder="Filtre joueuses",value=""))),
+                            dbc.Col(html.Div(dcc.Dropdown(id="filtre_fautes",options=fautes,value="",multi=True,placeholder="Filtre fautes")))
+                        ]),
                     dbc.Row(html.Div(id="contenu_bloc_fautes",children=[
                         dbc.Row([
                             dcc.Graph(
@@ -280,16 +309,15 @@ app.layout = html.Div(id="Dashboard_global",children=[
                         ], style = {'height' : '350px'}),
 
                         
-                        html.H2(children="Fautes défensives par zone terrain",style={"text-align":"center", "margin-top":"10px"}),
-                        dcc.Dropdown(id="Filtre_Joueuse",options=joueuses,multi=True,placeholder="Filtre joueuses",value=""),
-                        dcc.Dropdown(id="filtre_fautes",options=fautes,value="",multi=True,placeholder="Filtre fautes"),
-                        dcc.Graph(id="Fautes_def_by_zone", figure = {"data":[go.Bar(x=zones_terrain, y=y_fautes)]})
+                        
+                        dcc.Graph(id="Fautes_def_by_zone", figure = {"data":[go.Bar(x=zones_terrain, y=y_fautes)],
+                                                                     "layout": go.Layout(title = 'Fautes défensives par zones terrain')})
                         
                     ])
                          
                         
     
-                    )]))
+                    )]), style = {"border": "2px"})
                     
                     
             ])
@@ -298,149 +326,330 @@ app.layout = html.Div(id="Dashboard_global",children=[
 
 
 # -----------Callbacks ------------------
-
 @app.callback(
-    Output('pie1','figure'),Output('nb_attaques','children'),
-    Input('temps','value'))
+    Output('Buts_marque', 'children'),
+    Output('tir', 'children'),
+    Output('Efficacite', 'children'),
+    Input('temps','value'),
+    Input('match', 'value'))
 
-def maj_filtre(temps_value):
-    if temps_value=="Totalité":
+def maj_stat(periode, match_slctd):
+    if (match_slctd != '') and (len(match_slctd)>0):
+        df_ma = df[(df["id_match"].isin(match_slctd))]
+        if len(periode)>0:
+            df_per_ma=df_ma[(df_ma["temps"].isin(periode))]
 
-        nb_att_placee = df[df['attaque_placee']==1].count()['attaque_placee']
-        nb_contre_att = df[df['attaque_placee']==0].count()['attaque_placee']
+            nb_buts_per_ma = df_per_ma['but'].sum()
+            nb_tirs_per_ma = df_per_ma['tir'].sum()+df_per_ma['7m'].sum()
+            if nb_tirs_per_ma == 0:
+                efficacite_per_ma = 0
+            else:
+                efficacite_per_ma = nb_buts_per_ma/nb_tirs_per_ma*100
+            
+            children1 = nb_buts_per_ma
+            children2 = nb_tirs_per_ma
+            children3 = efficacite_per_ma
 
-        df_type_attaques = pd.DataFrame({'Attaque placée':[nb_att_placee],'Contre-attaque':[nb_contre_att]})
+        else:
+            nb_buts_ma = df_ma['but'].sum()
+            nb_tirs_ma = df_ma['tir'].sum()+df_ma['7m'].sum()
 
-        tab1 = df_type_attaques.copy()
+            if nb_tirs_ma == 0:
+                efficacite_ma = 0
+            else:
+                efficacite_ma = nb_buts_ma/nb_tirs_ma*100
+
+            children1 = nb_buts_ma
+            children2 = nb_tirs_ma
+            children3 = efficacite_ma
 
     else:
-        df_temps=df[df["temps"] == temps_value]
-        df_attaque_tp = df_temps[df_temps['attaque']==0]
+        if len(periode)>0:
+            df_per=df[(df["temps"].isin(periode))]
 
-        nb_att_placee_tp = df_attaque_tp[df_attaque_tp['attaque_placee']==1].count()['attaque_placee']
-        nb_contre_att_tp = df_attaque_tp[df_attaque_tp['attaque_placee']==0].count()['attaque_placee']
 
-        tab1 = pd.DataFrame({'Attaque placée':[nb_att_placee_tp],'Contre-attaque':[nb_contre_att_tp]})
+            nb_buts_per = df_per['but'].sum()
+            nb_tirs_per = df_per['tir'].sum()+df_per['7m'].sum()
 
-    
+            if nb_tirs_per == 0:
+                efficacite_per = 0
+            else:
+                efficacite_per = nb_buts_per/nb_tirs_per*100
+            
+            children1 = nb_buts_per
+            children2 = nb_tirs_per
+            children3 = efficacite_per
+
+        else:
+            children1 = nb_buts
+            children2 = nb_tirs
+            children3 = efficacite
+
+    return(str(int(children1)), str(int(children2)), str(int(children3))+"%")
+
+@app.callback(
+    Output('pie1','figure'),
+    Output('nb_attaques','children'),
+    Output('nb_contre_attaques', 'children'),
+    Input('temps','value'),
+    Input('match', 'value'))
+
+def maj_filtre(temps_value, match_value):
+    if (match_value != '') and (len(match_value)>0):
+        df_ma = df[(df["id_match"].isin(match_value))]
+
+        if len(temps_value)>0:
+            df_ma_temps=df_ma[(df_ma["temps"].isin(temps_value))]   
+            df_attaque_tp_ma = df_ma_temps[df_ma_temps['attaque']==0]
+            nb_att_placee_tp_ma = df_attaque_tp_ma[df_attaque_tp_ma['attaque_placee']==1].count()['attaque_placee']
+            nb_contre_att_tp_ma = df_attaque_tp_ma[df_attaque_tp_ma['attaque_placee']==0].count()['attaque_placee']
+            tab1 = pd.DataFrame({'Attaque placée':[nb_att_placee_tp_ma],'Contre-attaque':[nb_contre_att_tp_ma]})
+
+        else:
+            nb_att_placee_ma = df_ma[df_ma['attaque_placee']==1].count()['attaque_placee']
+            nb_contre_att_ma = df_ma[df_ma['attaque_placee']==0].count()['attaque_placee']
+            df_type_attaques_ma = pd.DataFrame({'Attaque placée':[nb_att_placee_ma],'Contre-attaque':[nb_contre_att_ma]})
+            tab1 = df_type_attaques_ma.copy()
+    else:
+        if len(temps_value)>0:
+            df_temps=df[(df["temps"].isin(temps_value))]   
+            df_attaque_tp = df_temps[df_temps['attaque']==0]
+            nb_att_placee_tp = df_attaque_tp[df_attaque_tp['attaque_placee']==1].count()['attaque_placee']
+            nb_contre_att_tp = df_attaque_tp[df_attaque_tp['attaque_placee']==0].count()['attaque_placee']
+            tab1 = pd.DataFrame({'Attaque placée':[nb_att_placee_tp],'Contre-attaque':[nb_contre_att_tp]})
+
+        else:
+            nb_att_placee = df[df['attaque_placee']==1].count()['attaque_placee']
+            nb_contre_att = df[df['attaque_placee']==0].count()['attaque_placee']
+            df_type_attaques = pd.DataFrame({'Attaque placée':[nb_att_placee],'Contre-attaque':[nb_contre_att]})
+            tab1 = df_type_attaques.copy()
+
+        
     fig={
         'data': [go.Pie(name = 'Attaques',labels = ['Attaque placée', 'Contre-attaque'],values = tab1.values[0])],
-        'layout': go.Layout(title = 'Ratio attaques placées / contre-attaques',font=dict(size=9.5))
+        'layout': go.Layout(title = 'Ratio attaques placées / contre-attaques',font=dict(size=9.5), colorway = [couleurs['jaune'], couleurs['noir']])
         }
+        
+    children1=str(int(tab1.values[0, 0]))
+    children2=str(int(tab1.values[0, 1]))
     
-    children=str(int(tab1.values[0]))
 
-    return (fig, children)
+    return (fig, children1, children2)
 
 
 @app.callback(
     Output("Fautes_defensives_barplot","figure"), 
-    [Input("Filtre_Joueuse","value")]
+    [Input("Filtre_Joueuse","value"),
+     Input('temps','value'),
+     Input('match', 'value')]
 )
-def maj_filtre_joueuse(joueuse_value): 
+def maj_filtre_joueuse(joueuse_value, periode, match_slctd): 
+
+    if (match_slctd != '') and (len(match_slctd)>0):
+        dfa = df[df['id_match'].isin(match_slctd)]
+        if len(periode)>0:
+            dfb = dfa[dfa['temps'].isin(periode)]
+        else:
+            dfb = dfa.copy()
+    else:
+        if len(periode)>0:
+            dfb = df[df['temps'].isin(periode)]
+        else:
+            dfb = df.copy()
 
     if len(joueuse_value)>0:
-        df_j=df[(df["nom_joueuse"].isin(joueuse_value))]
+        df_j=dfb[(dfb["nom_joueuse"].isin(joueuse_value))]
         tab2_j=df_j[fautes].sum()
 
         fig={"data":[go.Bar(x=fautes,y=tab2_j)]} 
     else:
-        fig={"data":[go.Bar(x=fautes,y=tab2)]} 
+        tab2_j=dfb[fautes].sum()
+        fig={"data":[go.Bar(x=fautes,y=tab2_j)]} 
 
     return fig 
 
 @app.callback(
     Output('bar2','figure'),
     Output('bar3','figure'),
-    Input('Filtre_Gardienne','value')
+    Input('Filtre_Gardienne','value'),
+    Input('temps','value'),
+    Input('match', 'value')
 )
-def update_graph(gardienne_slctd):
+def update_graph(gardienne_slctd, periode, match_slctd):
+
+    if (match_slctd != '') and (len(match_slctd)>0):
+        dfa = df[df['id_match'].isin(match_slctd)]
+        if len(periode)>0:
+            dfb = dfa[dfa['temps'].isin(periode)]
+        else:
+            dfb = dfa.copy()
+    else:
+        if len(periode)>0:
+            dfb = df[df['temps'].isin(periode)]
+        else:
+            dfb = df.copy()
 
     if len(gardienne_slctd)>0:
-
-        dff_2 = df.copy()
-        dff_2 = dff_2[(dff_2['nom_joueuse'].isin(gardienne_slctd))]
+        dff_2 = dfb[(dfb['nom_joueuse'].isin(gardienne_slctd))]
         dff_2 = dff_2[dff_2['tir']==1]
-
-        zones = dff_2['zone_terrain'].unique()
-        cages=dff_2['zone_cage'].unique()
-
-        y_buts_f = []
-        y_buts_rate_f = []
-        c_buts_f=[]
-        c_buts_rate_f =[]
-
-
-        for x in zones :
-            dffb = dff_2.copy()
-            dffb = dff_2[dff_2['zone_terrain']==x]
-            y_buts_f.append(dffb[dffb['but']==1].count()['but'])
-            y_buts_rate_f.append(dffb[dffb['but']==0].count()['but'])
-        
-        for x in cages:
-            dffb = dff_2.copy()
-            dffb = dff_2[dff_2['zone_cage']==x]
-            c_buts_f.append(dffb[dffb['but']==1].count()['but'])
-            c_buts_rate_f.append(dffb[dffb['but']==0].count()['but'])
-        
-
-
     
-        trace1 = go.Bar(x=zones, y=y_buts_f, name = 'but encaissé')
-        trace2 = go.Bar(x=zones, y=y_buts_rate_f, name = 'but arrêté')
-
-        trace3=go.Bar(x=cages,y=c_buts_f,name="but encaissé")
-        trace4=go.Bar(x=cages,y=c_buts_rate_f,name="but arrêté")
-
-
-        data = [trace1, trace2]
-        data2= [trace3,trace4]
-
-        layout = {'barmode' : 'stack'} #zones)
-
-        figure1 = go.Figure(data=data, layout=layout)
-        figure2= go.Figure(data=data2,layout=layout)
-        
-
     else:
-        figure1 = go.Figure(data=[go.Bar(name='but encaissé', x=zones_terrain, y=y_buts),go.Bar(name='but arrêté', x=zones_terrain, y=y_rate)],layout = {'barmode' : 'stack'})
+        dff_2 = dfb[dfb['tir']==1]
 
-        figure2=go.Figure(data=[go.Bar(name='but encaissé', x=zones_cage, y=c_buts),go.Bar(name='but arrêté', x=zones_cage, y=c_rate)],layout = {'barmode' : 'stack'})
+    zones = dff_2['zone_terrain'].unique()
+    cages=dff_2['zone_cage'].unique()
 
+    y_buts_f = []
+    y_buts_rate_f = []
+    c_buts_f=[]
+    c_buts_rate_f =[]
+
+    for x in zones :
+        dffb = dff_2.copy()
+        dffb = dff_2[dff_2['zone_terrain']==x]
+        y_buts_f.append(dffb[dffb['but']==1].count()['but'])
+        y_buts_rate_f.append(dffb[dffb['but']==0].count()['but'])
+        
+    for x in cages:
+        dffb = dff_2.copy()
+        dffb = dff_2[dff_2['zone_cage']==x]
+        c_buts_f.append(dffb[dffb['but']==1].count()['but'])
+        c_buts_rate_f.append(dffb[dffb['but']==0].count()['but'])
+    
+    trace1 = go.Bar(x=zones, y=y_buts_f, name = 'but encaissé')
+    trace2 = go.Bar(x=zones, y=y_buts_rate_f, name = 'but arrêté')
+
+    trace3=go.Bar(x=cages,y=c_buts_f,name="but encaissé")
+    trace4=go.Bar(x=cages,y=c_buts_rate_f,name="but arrêté")
+
+    data = [trace1, trace2]
+    data2= [trace3,trace4]
+
+    layout1 = go.Layout(title = 'Statistiques par zones terrain', colorway = [couleurs['jaune'], couleurs['noir']], barmode = 'stack', xaxis = dict(range = [0, 10], dtick = 1))
+    layout2 = go.Layout(title = 'Statistiques par zones de but', colorway = [couleurs['jaune'], couleurs['noir']], barmode = 'stack', xaxis = dict(range=[0, 9], dtick = 1))
+
+    figure1 = go.Figure(data=data, layout=layout1)
+    figure2= go.Figure(data=data2,layout=layout2)
     
     return (figure1,figure2)
 
 @app.callback(
     Output('Fautes_def_by_zone','figure'),
-    Input('filtre_fautes','value')
+    Input('filtre_fautes','value'),
+    Input('temps','value'),
+    Input('match', 'value')
 )
-def update_graph(faute_slctd):
+
+def update_graph(faute_slctd, periode, match_slctd):
+
+    if (match_slctd != '') and (len(match_slctd)>0):
+        dfa = df[df['id_match'].isin(match_slctd)]
+        if len(periode)>0:
+            dfb = dfa[dfa['temps'].isin(periode)]
+        else:
+            dfb = dfa.copy()
+    else:
+        if len(periode)>0:
+            dfb = df[df['temps'].isin(periode)]
+        else:
+            dfb = df.copy()
+
+    y_fautes_cb = []
+    fautes_cb = []
 
     if len(faute_slctd)>0:
-
-        y_fautes_cb = []
-        fautes_cb = []
 
         for k in fautes:
             if k in faute_slctd:
                 fautes_cb.append(k)
 
         fautes_bis_cb = fautes_cb.copy()
-        fautes_bis_cb.append('zone_terrain')
+    else:
+        fautes_cb = fautes.copy()
+        fautes_bis_cb = fautes_cb.copy()
 
-        tab3_cb = df[fautes_bis_cb]
-        for x in zones_terrain:
-            tab = tab3_cb.copy()
-            tab = tab[tab['zone_terrain']==x]        
-            y_fautes_cb.append(sum(tab[fautes_cb].sum().tolist()))
+    fautes_bis_cb.append('zone_terrain')
 
-        figure = {"data":[go.Bar(x=zones_terrain, y=y_fautes_cb)]}
+    tab3_cb = dfb[fautes_bis_cb]
 
-    else: 
-        figure = {"data":[go.Bar(x=zones_terrain, y=y_fautes)]}
-    
+    for x in zones_terrain:
+        tab = tab3_cb.copy()
+        tab = tab[tab['zone_terrain']==x]        
+        y_fautes_cb.append(sum(tab[fautes_cb].sum().tolist()))
+
+    figure = {"data":[go.Bar(x=zones_terrain, y=y_fautes_cb)],"layout": go.Layout(title='Fautes défensives par zones terrain', xaxis=dict(range=[0, 10], dtick = 1))}
+
     return figure
 
+@app.callback(
+    Output('efficacite_gardienne_barplot', 'figure'),
+    Output('sanctions', 'figure'),
+    Input('temps', 'value'),
+    Input('match', 'value')
+)
+
+def maj_graph_fixes(periode, match_slctd):
+    if (match_slctd != '') and (len(match_slctd)>0):
+        dfa = df[df['id_match'].isin(match_slctd)]
+        if len(periode)>0:
+            dfb = dfa[dfa['temps'].isin(periode)]
+        else:
+            dfb = dfa.copy()
+    else:
+        if len(periode)>0:
+            dfb = df[df['temps'].isin(periode)]
+        else:
+            dfb = df.copy()
+    
+    # Calcul des efficacité de la figure 1 pour le callback
+    df_tir = dfb[(dfb['tir']==1) | (dfb['7m']==1)]
+
+    gardiennes_cb = df_tir["nom_joueuse"].unique()
+
+    efficacite_7m_cb = []
+    efficacite_jeu_cb = []
+
+    for x in gardiennes_cb:
+        df_gar_cb = dfb[dfb['nom_joueuse']==x]
+
+        df_7m_cb = df_gar_cb[df_gar_cb['7m']==1]
+        df_jeu_cb = df_gar_cb[df_gar_cb['tir']==1]
+
+        nb_buts_jeu_cb = df_jeu_cb['but'].sum()
+        nb_tirs_jeu_cb = df_jeu_cb['tir'].sum()
+        if nb_tirs_jeu_cb == 0:
+            eff_jeu_cb = 0
+        else:
+            eff_jeu_cb = (1-(nb_buts_jeu_cb/nb_tirs_jeu_cb))*100
+
+        efficacite_jeu_cb.append(eff_jeu_cb)
+
+        nb_buts_7m_cb = df_7m_cb['but'].sum()
+        nb_tirs_7m_cb = df_7m_cb['7m'].sum()
+        if nb_tirs_7m_cb == 0:
+            eff_7m_cb = 0
+        else:
+            eff_7m_cb = (1-(nb_buts_7m_cb/nb_tirs_7m_cb))*100
+
+        efficacite_7m_cb.append(eff_7m_cb)
+
+    figure1=go.Figure(data=[go.Bar(name='Jeu', x=gardiennes_cb, y=efficacite_jeu_cb), 
+                            go.Bar(name='7m', x=gardiennes_cb, y=efficacite_7m_cb)],
+                      layout = go.Layout(colorway = [couleurs['jaune'], couleurs['noir']]))
+
+    # Calcul des sanctions pour la figure 2 
+    df_sanc_cb = dfb[sanctions]
+
+    figure2={"data":[go.Bar(x=sanctions, y=df_sanc_cb[sanctions].sum().tolist())],
+             "layout":{'title':'Sanctions'}}
+    
+
+    
+    
+
+
+
+    return(figure1, figure2)
 
 
 

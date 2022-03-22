@@ -64,10 +64,6 @@ for x in zones_terrain:
     tab = tab[tab['zone_terrain']==x]        
     y_fautes.append(sum(tab[fautes].sum().tolist()))
 
-
-
-
-
 # -----------Analyse des buts------------------
 nb_buts = df['but'].sum()
 nb_tirs = df['tir'].sum()+df['7m'].sum()
@@ -110,14 +106,12 @@ for x in zones_cage :
     else:
         c_prop=(c_buts/nb_buts)*100
 
-
 # -----------Analyse des opportunités offensives------------------
 #print(df.columns)
 
 nb_7m_provoque=df["faute_7m"].sum()
 nb_2min_provoque=df['2min_provoque'].sum()
 nb_duel_gagne=df["duel_gagne"].sum()
-
 
 logo_file="Dashboard/logo.png"
 encoded_logo = base64.b64encode(open(logo_file, 'rb').read()).decode('ascii')

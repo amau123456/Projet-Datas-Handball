@@ -72,12 +72,11 @@
     align-items: center;
 }
 #Match_info_equipes{
-    width:auto;
+    width:600px;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    align-items: center;
-
+    align-items: baseline;
 }
 #label_match{
     font-family: Roboto-Regular, Arial, Helvetica, sans-serif;

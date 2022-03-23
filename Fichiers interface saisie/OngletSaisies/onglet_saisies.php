@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+  
     <head>
         <meta charset="utf-8" />
         <link rel="stylesheet" href="onglet_saisies.css" />
@@ -10,12 +11,11 @@
         <title>Analyse Vidéo Match H.B.P.C</title>
 
         <script type="text/javascript">
-      
         function sendData()
         {
         // On vient définir les différentes variable qui sertont envoyer au moment de l'ajout de l'action 
         // chaque variable pointe vers l'objet html au niveau du formulaire 
-            
+
         $.ajax({
                 type: 'post',
                 url: 'form_act_saisies.php',
@@ -64,64 +64,19 @@
                     carton_rouge:input_carton_rouge.value,
                     carton_jaune:input_carton_jaune.value,
                     deux_min:input_2_min.value,
-                    
 
                 },
+                async: false,
+
                 success: function (response) {
-                alert("Okayyyyyyyy")
+                // alert("Okayyyyyyyy")
         
                 }
             
             });
         }
-          
-        function sendmatch()
-        {
-          // On vient définir les différentes variable qui sertont envoyer au moment de l'ajout du match 
-          // chaque variable pointe vers l'objet html au niveau du formulaire 
-
-        //   var club_adverse = document.getElementById("club_adverse").value;
-        //   var date_rencontre = document.getElementById("date_rencontre").value;
-        //   var lieu_match = document.getElementById("lieu_match").value;
-        //   var Domicile = document.getElementById("Domicile").value;
-        //   var selection_joueuses_global = document.getElementById("selection_joueuses_global").value;
-            
-            //Requête ajax qui permet l'envoie des donnée en mode post à la page form_act_match de manière asynchrone
-            //sans rechargement systématique de la page
-            // $.ajax({
-            //     type: 'post',
-            //     url: 'form_act_saisies.php',
-            //     data: {
-            //       club_adverse:club_adverse,
-            //       date_rencontre:date_rencontre,
-            //       lieu_match:lieu_match,
-            //       Domicile:Domicile,
-            //       selection_joueuses_global:selection_joueuses_global
-            //     },
-            // success: function (response) {
-                
-            //     }
-            // });
-          
-        }
-
-//         $(document).ready(function(){
-//       // everything here will be executed once index.html has finished loading, so at the start when the user is yet to do anything.
-//       $("#select_match").change(sendmatch()); //this translates to: "when the element with id='select1' changes its value execute load_new_content() function"
-// });
-
-
-//     function load_new_content(){
-//      var selected_option_value=$("#select_match option:selected").val(); //get the value of the current selected option.
-
-//      $.post("form_act_saisies.php", {option_value: selected_option_value},
-//          function(data){ //this will be executed once the `script_that_receives_value.php` ends its execution, `data` contains everything said script echoed.
-//               $("#place_where_you_want_the_new_html").html(data);
-//               alert(data); //just to see what it returns
-//          }
-//      );
-// } 
-        </script>
+    
+    </script>
 
 
     <!--HISTORIQUE action , requete SQL --> 
@@ -157,54 +112,46 @@
         $req = $pdo ->prepare ("SELECT * FROM actions ORDER BY Action_ID DESC LIMIT 3");
         $req->execute();
         //récupérer les 3 dernières actions
-        $reqj =$pdo ->prepare ('SELECT * from joueuses WHERE Poste <> "Gardienne" ORDER BY Numero');
-        $reqj->execute();
 
-        $reqg =$pdo ->prepare ('SELECT * from joueuses WHERE Poste = "Gardienne" ORDER BY Numero');
-        $reqg->execute();
-
-        $reqm = $pdo ->prepare ("SELECT * FROM matchs ORDER BY id_match ");
+        $reqm = $pdo ->prepare ("SELECT * FROM matchs ORDER BY id_match DESC");
         $reqm->execute();
     ?>
-
-
     </head>
     <header>
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand" href="#">
+            <a class="navbar-brand" href="../OngletAccueil/onglet_accueil.html">
                 <img src="logo.png" alt="x_x" style="height: 74px;">
             </a>
                 
             <!-- Bouton affiché uniquement sur mobile pour dérouler -->
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
+                
             </button>
                 
             <!-- Les éléments de la navbar -->
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item ">
-                        <a class="nav-link" href="../OngletMatch/Onglet_Match.php">Accueil <span class="sr-only">(actuel)</span></a>
+                        <a class="nav-link" href="../OngletMatch/Onglet_Match.php">Mes Matchs<span class="sr-only">(actuel)</span></a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="../OngletJoueuses/onglet_joueuses.php">Mon équipe</a>
                     </li>
                     <li class="nav-item active">
-                        <a class="nav-link" href="../OngletSaisies/onglet_saisies.php">Saisie Vidéo</a>
+                        <a class="nav-link" href="../OngletSaisies/onglet_Page_Selection_Match.php">Saisie Vidéo</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="">Résultats</a>
+                        <a class="nav-link" href="http://127.0.0.1:8050/">Résultats</a>
                     </li>
                 </ul>
              </div>
              
-             <div id="Infos_match">
-                        
+             <div id="header_droit">
+             <div id="Infos_match">     
                 <div id ="Match_info_equipes">
                     <p id="label_match">Match:</p>
-                    <p id="equipes_rencontre">
-                    <input type="hidden" id="input_id_match" value="">
-                    
+                    <input type="hidden" id="input_id_match" value="97"/>
                     <select name="select_match" id="select_match">
                         <?php  while($row = $reqm->fetch(PDO::FETCH_ASSOC)) : ?>
 
@@ -232,13 +179,39 @@
                             <?php $countm=($countm+1) ?>
                         <?php endwhile ?>
                         </select>
-                    </p>
-                </div>
-                <div id="blanc">  </div>
+                        <p id="Choix_match"><a href="Page_Selection_Match.php">Sélection Match</a></p>
+
+                        
                 <div id ="Match_info_date">
                     <span id="logo_calendar" class="iconify" data-icon="bx:calendar" style="color: #383838; font-size: 25px;"></span>
-                    <p id="Date_rencontre"><script type="text/javascript">document.write(match_date_1)</script></p>
+                    <p id="Date_rencontre"><script type="text/javascript">document.write(match_date_1)</script></p> <br/>
                 </div>
+                
+            </div>
+            </div>
+            <?php
+
+                // $match_id_selectionnee=$_POST["input_id_match"];
+                // $date_rencontre=$_POST["input_date_rencontre"];
+                // $match_equipes=$_POST["select_match"];
+
+
+            ?>
+                <?php
+
+                // $stringreq3= 'SELECT * FROM matchs WHERE id_match ="'.$match_id_selectionnee. '"' ;
+                $stringreq3= 'SELECT * FROM matchs WHERE id_match =99';
+                    $req3 = $pdo ->prepare ($stringreq3);
+                    $req3->execute();
+                    $string=""; 
+                    while($row = $req3->fetch(PDO::FETCH_ASSOC)) :
+                        $string = htmlspecialchars($row['Selection']);
+                    endwhile;
+
+                    $selection_joueuse = explode (",", $string); 
+                     ?>
+                <!-- <div id="blanc">  </div> -->
+                
             </div>
         </nav>        
     </header>     
@@ -246,7 +219,7 @@
 
 
     <body>
-    <!-- <form action="form_act_saisies.php" method="POST" > -->
+    <!-- <form action="form_act_saisies.php" method="POST" > -->    
     <form method="POST" onsubmit="return sendData();">
         <div id="Bloc_interface">
             <div id="Selection_joueuses">
@@ -258,50 +231,102 @@
 
                         <input type="hidden" id=input_joueuse value=""/>
                         <input type="hidden" id=input_id_joueuse value=""/>
-                        <?php  while($row = $reqj->fetch(PDO::FETCH_ASSOC)) : ?>
-                            <?php   if ($pair == 0)
-                                echo ('<div id="boutons_ligne_x_jou">');
-                            ?>
-                            <button id=joueuse_<?php echo htmlspecialchars($count); ?> class="bouton_jou" type="button">
-                            <p class=nom_joueuse><?php echo htmlspecialchars($row['Nom']); ?></p>
-                            <p class=numero_joueuse><?php echo htmlspecialchars($row['Numero']); ?>
-                            </p> 
-                            </button>
+
+                        <?php  
+                        $longueur_selection=count($selection_joueuse);
+                        $compt_selec=0;
+                        while($compt_selec<$longueur_selection) : ?>
+                            <?php 
+                            $nom_temp = $selection_joueuse[$count-1];
+                            $string_req= 'SELECT Numero,id_joueuse,Poste FROM joueuses WHERE Nom ="'.$nom_temp. '"';
+                            $nom_temp = $selection_joueuse[$count-1];
+                            $req_temp_num = $pdo ->prepare ($string_req);
+                            $req_temp_num->execute();
+                            $temp_num=0;
+                                    while($row = $req_temp_num->fetch(PDO::FETCH_ASSOC)) :
+                                    if ($pair == 0 && $row["Poste"]!="Gardienne")
+                                        echo ('<div id="boutons_ligne_x_jou">');
+                                    ?>
+                                    <?php if ($row["Poste"]!="Gardienne"):
+                                        $pair=$pair+1;
+                                    ?>
+                                    <button id=joueuse_<?php echo htmlspecialchars($count);?> class="bouton_jou" type="button">
+                                    
+                                    <p class=nom_joueuse><?php echo htmlspecialchars($nom_temp); ?></p>
+                                    <?php endif ; ?>
+                                    
+                                    <?php
+                                        $temp_num= htmlspecialchars($row['Numero']);
+                                        $temp_id=htmlspecialchars($row['id_joueuse']);?>
+                                        <?php if ($row["Poste"]!="Gardienne"):?>
+
+                                        <p class=numero_joueuse><?php echo ($temp_num); ?></p>
+                                        <script type="text/javascript">
+                                            var nom_joueuse<?php echo htmlspecialchars($count);?>="<?php echo htmlspecialchars($nom_temp); ?>"
+                                            var id_joueuse<?php echo htmlspecialchars($count);?>="<?php echo htmlspecialchars($row['id_joueuse']); ?>"
+                                        </script>
+                                        <?php endif;?>
+
+                                    <?php endwhile;?>
                             <script type="text/javascript">
-                                var nom_joueuse<?php echo htmlspecialchars($count);?>="<?php echo htmlspecialchars($row['Nom']); ?>";
-                                var id_joueuse<?php echo htmlspecialchars($count);?>="<?php echo htmlspecialchars($row['id_joueuse']); ?>";
+                                var temp_num = '<?php echo htmlspecialchars($temp_num)?>';
                             </script>
-                            <?php   if ($pair == 1){
+
+
+                            </button>
+
+                            <?php   if ($pair == 2){
                                 echo ('</div>');
+                                $pair=0;
                             }?>
                             
-                            <?php   if ($pair == 0) 
-                                  $pair=1;
-                              else 
-                                  $pair =0; ?>
+    
                             <?php $count=($count+1) ?>
-                        <?php endwhile ?>
+                        <?php 
+
+                        $compt_selec=$compt_selec+1;
+                        endwhile ?>
+                      
                         <?php $count=1?>
+
+
+                    
+                        <?php if ($pair !=0)
+                            echo ('</div>');
+                            $pair=0;
+                        ?>
 
                     
                         <div id="boutons_ligne_x_jou">
-                        <?php while($row = $reqg->fetch(PDO::FETCH_ASSOC)) : ?>
-                            <button id=gardienne_<?php echo htmlspecialchars($count); ?> class="bouton_gar" type="button">
-                                <p class=nom_gardienne><?php echo htmlspecialchars($row['Nom']); ?></p>
-                                <p class=numero_gardienne><?php echo htmlspecialchars($row['Numero']); ?></p>
-                            </button>
-                            <script type="text/javascript">
-                                var nom_gardienne<?php echo htmlspecialchars($count);?>="<?php echo htmlspecialchars($row['Nom']); ?>"
-                                var id_gardienne<?php echo htmlspecialchars($count);?>="<?php echo htmlspecialchars($row['id_joueuse']); ?>"
-                            </script>
-                            <?php $count=$count+1 ?>
+                            <?php $compt_gar=0;?>
+                            <?php 
+                            while(($compt_gar<2)&&($count<=$longueur_selection)) :
+                                $nom_temp = $selection_joueuse[$count-1];
+                                $string_req_gar= 'SELECT Numero,id_joueuse,Poste FROM joueuses WHERE Nom ="'.$nom_temp. '"' ;
+                                $req_temp_num = $pdo ->prepare ($string_req_gar);
+                                $req_temp_num->execute();
+                                while($row = $req_temp_num->fetch(PDO::FETCH_ASSOC)) :?>
+                                    <?php if ($row["Poste"]=="Gardienne"):
+                                        $temp_num=htmlspecialchars($row["Numero"]);
+                                        ?>
+                                        <button id=gardienne_<?php echo htmlspecialchars($compt_gar+1); ?> class="bouton_gar" type="button">
+                                        <p class=nom_gardienne><?php echo htmlspecialchars($nom_temp); ?></p>
+                                        <p class=numero_gardienne><?php echo htmlspecialchars($temp_num); ?></p>
+                                        <script type="text/javascript">
+                                            var nom_gardienne<?php echo htmlspecialchars($compt_gar+1);?>="<?php echo htmlspecialchars($nom_temp); ?>"
+                                            var id_gardienne<?php echo htmlspecialchars($compt_gar+1);?>="<?php echo htmlspecialchars($row['id_joueuse']); ?>"
+                                        </script>
+                                        <?php $compt_gar=$compt_gar+1;?>
+                                    <?php endif;?>
+                            <?php endwhile;?>
+                            <?php $count=$count+1;
+                            endwhile;?>
 
-                        <?php endwhile?>
-                        <?php $count=1 ?>
-                           <!-- <button id=gardienne_2 class="bouton_gar" type="button">
-                                <p class=nom_gardienne>Joueuse_14</p>
-                                <p class=numero_gardienne>14</p>
-                            </button>!-->
+
+
+                        
+                            <?php $count=1 ?>
+
                         </div>
                     </div>
                 </div>
@@ -591,7 +616,7 @@
                                     <th>7m</th>
                                     <th>Zone Terrain</th>
                                     <th>Zone Cage</th>
-                                    <th>Action</th>
+                                    <th>Attaque Placée/Contre-Attaque</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -607,7 +632,7 @@
                                             <td class="table-data"><?php echo htmlspecialchars($row['zone_terrain']); ?></td>
                                             <td class="table-data"><?php echo htmlspecialchars($row['zone_cage']); ?></td>
                                             <td class="table-data"><?php echo htmlspecialchars($row['attaque_placee']); ?></td>
-                                            <td class="icones_sur_ligne"><a href ="suppression_saise.php?Action_ID=<?php echo $row['Action_ID']?>">
+                                            <td class="icones_sur_ligne"><a href ="suppression_saisie.php?Action_ID=<?php echo $row['Action_ID']?>">
                                             <span class="iconify" data-icon="fluent:delete-20-filled" style="color: #383338; font-size: 20px;"></span></td>
                                         </tr>
                                     <?php endwhile; ?>

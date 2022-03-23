@@ -76,7 +76,7 @@
         <div id="Bloc_gauche">
             <header>
               <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                <a class="navbar-brand" href="#">
+                <a class="navbar-brand" href="../OngletAccueil/onglet_accueil.html">
                     <img src="logo.png" alt="x_x" style="height: 74px;">
                 </a>
                
@@ -89,7 +89,7 @@
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav">
                       <li class="nav-item active">
-                        <a class="nav-link" href=""">Accueil<span class="sr-only">(actuel)</span></a>
+                        <a class="nav-link" href=""">Mes Matchs<span class="sr-only">(actuel)</span></a>
                       </li>
                       <li class="nav-item">
                         <a class="nav-link" href="../OngletJoueuses/onglet_joueuses.php">Mon équipe</a>
@@ -98,7 +98,7 @@
                         <a class="nav-link" href="../OngletSaisies/onglet_saisies.php">Saisie Vidéo</a>
                       </li>
                       <li class="nav-item">
-                        <a class="nav-link" href="">Résultats</a>
+                        <a class="nav-link" href="http://127.0.0.1:8050/">Résultats</a>
                       </li>
                     </ul>
                   </div>
@@ -114,7 +114,6 @@
                         <th class="table-head">Opposant</th>
                         <th class="table-head">Date</th>
                         <th class="table-head">Ext/Dom</th>
-                        <th class="table-head"><span id="poubelle"class="iconify" data-icon="fluent:delete-20-filled" style="color: #383338; font-size: 20px;"></span></th>
                     </tr>
                 </thead>
     
@@ -122,13 +121,13 @@
                   <?php while($row = $req->fetch(PDO::FETCH_ASSOC)) : ?>
                               
                               <tr class=<?php echo($pair)?>>
-                                  <td class="table-data"><input id="checkbox_selection" type="checkbox" class="delete_checkbox"/>
+                                  <td class="table-data"><a href ="suppression_match.php?id_match=<?php echo $row['id_match']?>"><span class="iconify" data-icon="fluent:delete-20-filled" style="color: #383338; font-size: 20px;"></span></a></td>
                                   <td class="table-data"><?php echo htmlspecialchars($row['id_match']); ?></td>
                                   <td class="table-data"><?php echo htmlspecialchars($row['Club_adverse']); ?></td>
                                   <td class="table-data"><?php echo htmlspecialchars($row['Date']); ?></td>
                                   <td class="table-data"><?php echo htmlspecialchars($row['Domicile']); ?></td>
-                                  <td class="icones_sur_ligne"><a href ="suppression_match.php?id_match=<?php echo $row['id_match']?>"><span class="iconify" data-icon="ci:edit" style="color: #383338; font-size: 20px;"></span>
-                              <span class="iconify" data-icon="fluent:delete-20-filled" style="color: #383338; font-size: 20px;"></span></td>
+                                  <td class="icones_sur_ligne">
+                              </td>
 
                               </tr>
                       <?php   if ($pair == 'ligne-pair') 
@@ -207,6 +206,7 @@
                                     <?php endwhile; ?>
                                 </optgroup>
                               </select>
+                              <a href="../OngletJoueuses/onglet_joueuses.php">Ajouter une joueuse</a>
                             
                              
                             <div class="champ_saisie" id="selection_competition">
@@ -217,9 +217,7 @@
                         </div>
                         
                         <button type="submit" class="bouton_valider"><span class="iconify" data-icon="el:ok-circle" style="color: #FFFFFF; font-size: 20px;"></span>Valider</button>
-                    
                         
-                        <button class="bouton_analyse"><span class="iconify" data-icon="bi:play-btn" style="color: #383838; font-size: 24px;"></span>Analyse du match</button>
                         
                         
                     </form>

@@ -21,7 +21,7 @@ app = dash.Dash(external_stylesheets=[dbc.themes.BOOTSTRAP])
 
 # ------------Récupération de la base de données------------
 
-connection = pymysql.connect(host='localhost', user='root', passwd='1234', database='projet-hand')
+connection = pymysql.connect(host='localhost', user='amau', passwd='291298', database='Projet-Handball',unix_socket="/Applications/MAMP/tmp/mysql/mysql.sock")
 
 SQL_Query = pd.read_sql_query('''select * from actions''', connection)
 df_db = pd.DataFrame(SQL_Query)

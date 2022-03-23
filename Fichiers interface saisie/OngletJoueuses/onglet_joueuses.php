@@ -41,7 +41,7 @@
         <div id="Bloc_gauche">
             <header>
                 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                    <a class="navbar-brand" href="#">
+                    <a class="navbar-brand" href="../OngletAccueil/onglet_accueil.html">
                         <img src="logo.png" alt="x_x" style="height: 74px;">
                     </a>
                    
@@ -54,7 +54,7 @@
                     <div class="collapse navbar-collapse" id="navbarNav">
                         <ul class="navbar-nav">
                           <li class="nav-item active">
-                            <a class="nav-link" href="../OngletMatch/Onglet_Match.php"">Accueil <span class="sr-only">(actuel)</span></a>
+                            <a class="nav-link" href="../OngletMatch/Onglet_Match.php"">Mes Matchs<span class="sr-only">(actuel)</span></a>
                           </li>
                           <li class="nav-item">
                             <a class="nav-link" href="../OngletJoueuses/onglet_joueuses.php">Mon équipe</a>
@@ -63,7 +63,7 @@
                             <a class="nav-link" href="../OngletSaisies/onglet_saisies.php">Saisie Vidéo</a>
                           </li>
                           <li class="nav-item">
-                            <a class="nav-link" href="">Résultats</a>
+                            <a class="nav-link" href="http://127.0.0.1:8050/">Résultats</a>
                           </li>
                         </ul>
                       </div>
@@ -80,22 +80,21 @@
                             <th class="table-head">Prénom</th>
                             <th class="table-head">Équipe</th>
                             <th class="table-head">Poste</th>
-                            <th class="table-head"><span id="poubelle" class="iconify" data-icon="fluent:delete-20-filled" style="color: #383338; font-size: 20px;"></span></th>
+                            <!-- <th class="table-head"><span id="poubelle" class="iconify" data-icon="fluent:delete-20-filled" style="color: #383338; font-size: 20px;"></span></th> -->
                         </tr>
                     </thead>
         
                     <tbody>
                         <?php while($row = $req->fetch(PDO::FETCH_ASSOC)) : ?>
                             <tr class=<?php echo($pair)?>>
-                                <td class="table-data"><input id="checkbox_selection" type="checkbox" class="delete_checkbox"/>
+                                <td class="table-data"><a href ="suppression.php?Nom=<?php echo $row['Nom']?>">
+                                <span class="iconify" data-icon="fluent:delete-20-filled" style="color: #383338; font-size: 20px;"></span></a></td>
                                 <td class="table-data"><?php echo htmlspecialchars($row['Numero']); ?></td>
                                 <td class="table-data"><?php echo htmlspecialchars($row['Nom']); ?></td>
                                 <td class="table-data"><?php echo htmlspecialchars($row['Prenom']); ?></td>
                                 <td class="table-data"><?php echo htmlspecialchars($row['Equipe']); ?></td>
                                 <td class="table-data"><?php echo htmlspecialchars($row['Poste']); ?></td>
-                                <td class="icones_sur_ligne">
-                                <span class="iconify" data-icon="ci:edit" style="color: #383338; font-size: 20px;"></span>
-                                <a href ="suppression.php?Nom=<?php echo $row['Nom']?>"><span class="iconify" data-icon="fluent:delete-20-filled" style="color: #383338; font-size: 20px;"></span></a></td>
+                               
                             </tr>
                         <?php   if ($pair == 'ligne-pair') 
                                 $pair='ligne-impair';
@@ -115,10 +114,7 @@
                     <h1 class="Titre_section">Fiche Joueuse</h1>
                 </div>
                 <div id="Formulaire_ajout_match">
-<!--                         <form method="post" action="form_act_joueuse.php">
- -->
-<!--                      <form method="post" onsubmit="return sendData();">
- -->                     <form action="form_act_joueuse.php" method="POST" class="ajax">
+                      <form action="form_act_joueuse.php" method="POST" class="ajax">
 
                             <div id="Section_champs_saisies">
                             <div class="champ_saisie">
@@ -153,9 +149,6 @@
                             </div>
                             
                         <button type="submit" class="bouton_valider"><span class="iconify" data-icon="el:ok-circle" style="color: #FFFFFF; font-size: 20px;"></span>Valider</button>
-                    
-                        
-                        <button class="bouton_analyse"><span class="iconify" data-icon="bi:play-btn" style="color: #383838; font-size: 24px;"></span>Analyse du match</button>
                         </div>
                     </form>
                 </div>

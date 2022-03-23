@@ -15,13 +15,15 @@ import dash_bootstrap_components as dbc
 from dash.dependencies import Input, Output
 import pymysql
 
+import datetime
+
 
 
 app = dash.Dash(external_stylesheets=[dbc.themes.BOOTSTRAP])
 
 # ------------Récupération de la base de données------------
 
-connection = pymysql.connect(host='localhost', user='root', passwd='1234', database='projet-hand')
+connection = pymysql.connect(host='localhost', user='amau', passwd='291298', database='Projet_Handball',unix_socket="/Applications/MAMP/tmp/mysql/mysql.sock")
 
 SQL_Query = pd.read_sql_query('''select * from actions''', connection)
 df_db = pd.DataFrame(SQL_Query)
@@ -76,6 +78,7 @@ if nb_tirs == 0:
     efficacite = 0
 else:
     efficacite = nb_buts/nb_tirs*100
+print(efficacite)
 
 
 # -----------Analyse des buts proportion et efficacite par zone terrain------------------
@@ -93,6 +96,8 @@ for x in zones_terrain :
         y_prop = 0
     else:
         y_prop=(y_buts/nb_buts)*100
+
+print(y_buts)
 
 # -----------Analyse des buts proportion et efficacite par zone cage------------------
 c_buts = []
@@ -119,13 +124,13 @@ nb_2min_provoque=df['2min_provoque'].sum()
 nb_duel_gagne=df["duel_gagne"].sum()
 
 
-logo_file="Dashboard/logo.png"
+logo_file="/Users/amauryrichard/Desktop/Projet-Datas-Handball/Dashboard/logo.png"
 encoded_logo = base64.b64encode(open(logo_file, 'rb').read()).decode('ascii')
 
-Schema_cage="Dashboard/Schema_cage.png"
+Schema_cage="/Users/amauryrichard/Desktop/Projet-Datas-Handball/Dashboard/Schema_cage.png"
 encoded_schema_cage = base64.b64encode(open(Schema_cage, 'rb').read()).decode('ascii')
 
-Schema_terrian="Dashboard/Schema_Terrain.png"
+Schema_terrian="/Users/amauryrichard/Desktop/Projet-Datas-Handball/Dashboard/Schema_Terrain.png"
 encoded_schema_terrain =base64.b64encode(open(Schema_terrian, 'rb').read()).decode('ascii')
 
 

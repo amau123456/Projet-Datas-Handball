@@ -60,3 +60,28 @@
     width: 500px;
 
 }
+
+.bouton_acc {
+    font-family: Roboto, Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    width:120px;
+    height:50px;
+    text-align: center;
+    vertical-align: middle;
+    border-radius: 10px;
+    color:#383338;
+    background-color: #F9EB3C;
+    border: solid #383338 2px;
+    text-decoration: none;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+a {
+    text-decoration: none;
+    color: #383338;
+}

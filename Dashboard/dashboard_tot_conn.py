@@ -21,7 +21,7 @@ app = dash.Dash(external_stylesheets=[dbc.themes.BOOTSTRAP])
 
 # ------------Récupération de la base de données------------
 
-connection = pymysql.connect(host='localhost', user='root', passwd='1234', database='projet-hand')
+connection = pymysql.connect(host='localhost', user='amau', passwd='291298', database='Projet_Handball',unix_socket='/Applications/MAMP/tmp/mysql/mysql.sock')
 
 SQL_Query = pd.read_sql_query('''select * from actions''', connection)
 df_db = pd.DataFrame(SQL_Query)
@@ -242,18 +242,18 @@ for x in gardiennes:
 
 sanctions = ['carton_rouge', 'carton_jaune', '2min_concede']
 
-df_sanc = df_d[sanctions]
+df_sanc = df_db[sanctions]
 
 #----------------------------------Variables communes--------------------------------------
 #------------------------------------------------------------------------------------------
 
-logo_file="Dashboard/logo.png"
+logo_file="logo.png"
 encoded_logo = base64.b64encode(open(logo_file, 'rb').read()).decode('ascii')
 
-Schema_cage="Dashboard/Schema_cage.png"
+Schema_cage="Schema_cage.png"
 encoded_schema_cage = base64.b64encode(open(Schema_cage, 'rb').read()).decode('ascii')
 
-Schema_terrain="Dashboard/Schema_Terrain.png"
+Schema_terrain="Schema_Terrain.png"
 encoded_schema_terrain =base64.b64encode(open(Schema_terrain, 'rb').read()).decode('ascii')
 
 
@@ -349,7 +349,7 @@ app.layout = html.Div([
                                 dbc.Row([
                                     dbc.Col(html.Div(id="Cage_et_terrain",children=[
                                         html.H2(children="Stats zones terrain & cage",style={"text-align":"center"}),
-                                        dbc.Row(dbc.Col(dcc.Dropdown(id="filtre_prop_eff",options=["Proportion","Efficacité"],value="Efficacité"),width = {'size': 3, 'offset' : 1})),
+                                        # dbc.Row(dbc.Col(dcc.Dropdown(id="filtre_prop_eff",options=["Proportion","Efficacité"],value="Efficacité"),width = {'size': 3, 'offset' : 1})),
 
                                         dbc.Row([  #Graph Stack Zones terrain + Schéma légende
                                             dbc.Col(dcc.Graph(id='bar2',figure = go.Figure(data=[ go.Bar(name='marqué', x=zones_terrain, y=y_buts),go.Bar(name='raté', x=zones_terrain, y=y_rate) ],layout = go.Layout(title = 'Statistiques par zones terrain', colorway = [couleurs['jaune'], couleurs['noir']], barmode = 'stack', xaxis = dict(range = [0, 10.5], dtick = 1))))), 
@@ -473,7 +473,7 @@ dbc.Tab(label = 'Défense', children = [
                                         html.H2(children="Statistiques gardiennes",style={"text-align":"center"}),
                                         dbc.Row([
                                             dbc.Col(html.Div([dcc.Dropdown(id="Filtre_Gardienne",options=gardiennes,multi=True,placeholder="Filtre gardiennes",value="")])),
-                                            dbc.Col(html.Div([dcc.Dropdown(id="filtre_prop_eff_d",options=["Proportion","Efficacité"],value="Efficacité")]))
+                                            # dbc.Col(html.Div([dcc.Dropdown(id="filtre_prop_eff_d",options=["Proportion","Efficacité"],value="Efficacité")]))
                                         ]),
                                         dbc.Row([  #Graph Stack Zones terrain + Schéma légende
                                             #dbc.Col(dcc.Graph(id='bar2_d',figure = go.Figure(data=[ go.Bar(name='marqué', x=zones_terrain, y=y_buts),go.Bar(name='raté', x=zones_terrain, y=y_rate) ],layout = {'barmode' : 'stack', 'xaxis' : dict(ticklabelstep = 10)}))),

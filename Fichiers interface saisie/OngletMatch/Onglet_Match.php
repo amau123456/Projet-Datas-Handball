@@ -95,7 +95,7 @@
                         <a class="nav-link" href="../OngletJoueuses/onglet_joueuses.php">Mon équipe</a>
                       </li>
                       <li class="nav-item">
-                        <a class="nav-link" href="../OngletSaisies/onglet_saisies.php">Saisie Vidéo</a>
+                        <a class="nav-link" href="../OngletSaisies/onglet_saisies_base.php">Saisie Vidéo</a>
                       </li>
                       <li class="nav-item">
                         <a class="nav-link" href="http://127.0.0.1:8050/">Résultats</a>

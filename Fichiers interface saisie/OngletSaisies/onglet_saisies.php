@@ -108,14 +108,7 @@
             }
     ?>  
 
-    <?php 
-        $req = $pdo ->prepare ("SELECT * FROM actions ORDER BY Action_ID DESC LIMIT 3");
-        $req->execute();
-        //récupérer les 3 dernières actions
-
-        $reqm = $pdo ->prepare ("SELECT * FROM matchs ORDER BY id_match DESC");
-        $reqm->execute();
-    ?>
+    
     </head>
     <header>
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -146,13 +139,29 @@
                     </li>
                 </ul>
              </div>
-             
+             <?php 
+                $match_id_selectionnee=$_GET["input_id_match"];
+
+                $string_req_action='SELECT * FROM actions WHERE id_match="'.$match_id_selectionnee. '" ORDER BY Action_ID DESC LIMIT 3' ;
+                $req = $pdo ->prepare ($string_req_action);
+                $req->execute();
+                //récupérer les 3 dernières actions
+
+                $reqm = $pdo ->prepare ("SELECT * FROM matchs ORDER BY id_match DESC");
+                $reqm->execute();
+                ?>
+             <?php
+                $date_rencontre=$_GET["input_date_rencontre"];
+                $match_equipes=$_GET["select_match"];
+            ?>
              <div id="header_droit">
              <div id="Infos_match">     
                 <div id ="Match_info_equipes">
                     <p id="label_match">Match:</p>
                     <input type="hidden" id="input_id_match" value="97"/>
-                    <select name="select_match" id="select_match">
+                    <p><?php echo($match_equipes)?></p>
+                    <p><a href="Page_Selection_Match.php">Selection Match</a></p>
+                    <!-- <select name="select_match" id="select_match"> -->
                         <?php  while($row = $reqm->fetch(PDO::FETCH_ASSOC)) : ?>
 
                             <?php $temp_club=htmlspecialchars($row['Club_adverse']);
@@ -164,7 +173,7 @@
                                 var match_date_<?php echo htmlspecialchars($countm);?>="<?php echo htmlspecialchars($row['Date']); ?>"
                             </script>
 
-                            <?php   if ($temp_dom == "Dom"){
+                            <!-- <?php   if ($temp_dom == "Dom"){
                                 echo ('<option>HBPC - ');
                                 echo($temp_club);
                                 echo('</option>');
@@ -175,32 +184,24 @@
                                         echo(' - HBPC</option>'); 
                                     }     
                                     
-                            ?>                            
+                            ?>                             -->
                             <?php $countm=($countm+1) ?>
                         <?php endwhile ?>
-                        </select>
-                        <p id="Choix_match"><a href="Page_Selection_Match.php">Sélection Match</a></p>
+                        <!-- </select> -->
 
                         
                 <div id ="Match_info_date">
                     <span id="logo_calendar" class="iconify" data-icon="bx:calendar" style="color: #383838; font-size: 25px;"></span>
-                    <p id="Date_rencontre"><script type="text/javascript">document.write(match_date_1)</script></p> <br/>
+                    <p id="Date_rencontre"><?php echo($date_rencontre) ?></p> <br/>
                 </div>
                 
             </div>
             </div>
-            <?php
-
-                // $match_id_selectionnee=$_POST["input_id_match"];
-                // $date_rencontre=$_POST["input_date_rencontre"];
-                // $match_equipes=$_POST["select_match"];
-
-
-            ?>
+           
                 <?php
 
-                // $stringreq3= 'SELECT * FROM matchs WHERE id_match ="'.$match_id_selectionnee. '"' ;
-                $stringreq3= 'SELECT * FROM matchs WHERE id_match =99';
+                $stringreq3= 'SELECT * FROM matchs WHERE id_match ="'.$match_id_selectionnee. '"' ;
+                // $stringreq3= 'SELECT * FROM matchs WHERE id_match =99';
                     $req3 = $pdo ->prepare ($stringreq3);
                     $req3->execute();
                     $string=""; 
@@ -437,7 +438,7 @@
                                         <input type="hidden" name="input_passage_en_force_d" id="input_passage_en_force_d" value=0/>
                                         <button id="passage_en_force_d" class="boutton_fait_de_jeu" type="button">Passage en force</button>
                                         <input type="hidden" name="input_faute_subie_d" id="input_faute_subie_d" value=0/>
-                                        <button id="faute_subie_d" class="boutton_fait_de_jeu" type="button">Faute subie</button>
+                                        <button id="faute_subie_d" class="boutton_fait_de_jeu" type="button">Faute 9m</button>
                                         <input type="hidden" name="input_tir_contre_d" id="input_tir_contre_d" value=0/>
                                         <button id="tir_contre_d" class="boutton_fait_de_jeu" type="button">Tir contré</button>
                                         <input type="hidden" name="input_interception_d" id="input_interception_d" value=0/>
@@ -632,7 +633,7 @@
                                             <td class="table-data"><?php echo htmlspecialchars($row['zone_terrain']); ?></td>
                                             <td class="table-data"><?php echo htmlspecialchars($row['zone_cage']); ?></td>
                                             <td class="table-data"><?php echo htmlspecialchars($row['attaque_placee']); ?></td>
-                                            <td class="icones_sur_ligne"><a href ="suppression_saisie.php?Action_ID=<?php echo $row['Action_ID']?>">
+                                            <td class="icones_sur_ligne">
                                             <span class="iconify" data-icon="fluent:delete-20-filled" style="color: #383338; font-size: 20px;"></span></td>
                                         </tr>
                                     <?php endwhile; ?>

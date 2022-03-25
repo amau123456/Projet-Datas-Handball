@@ -3,11 +3,6 @@
 let liste_matchs=document.getElementById("select_match");
 let input_id_match=document.getElementById("input_id_match");
 
-// Cas par défaut 
-
-input_id_match.value=eval(match_id_1);
-
-
 // Boutons temps action
 let periode="0-15";
 
@@ -2563,6 +2558,8 @@ bouton_terr10.addEventListener('click', function() {
 
         zone_terrain=10;
         input_zone_terrain.value=zone_terrain;
+        input_sept_m.value=0;
+
 
     }
     else if (terr10==true) {
@@ -2605,6 +2602,8 @@ bouton_terr1.addEventListener('click', function() {
 
         zone_terrain=1;
         input_zone_terrain.value=zone_terrain;
+        input_sept_m.value=0;
+
 
 
     }
@@ -2647,6 +2646,8 @@ bouton_terr2.addEventListener('click', function() {
 
         zone_terrain=2;
         input_zone_terrain.value=zone_terrain;
+        input_sept_m.value=0;
+
 
 
     }
@@ -2689,6 +2690,8 @@ bouton_terr3.addEventListener('click', function() {
 
         zone_terrain=3;
         input_zone_terrain.value=zone_terrain;
+        input_sept_m.value=0;
+
 
     }
     else if (terr3==true) {
@@ -2730,6 +2733,8 @@ bouton_terr4.addEventListener('click', function() {
 
         zone_terrain=4;
         input_zone_terrain.value=zone_terrain;
+        input_sept_m.value=0;
+
 
 
     }
@@ -2773,6 +2778,8 @@ bouton_terr5.addEventListener('click', function() {
 
         zone_terrain=5;
         input_zone_terrain.value=zone_terrain;
+        input_sept_m.value=0;
+
 
 
     }
@@ -2816,6 +2823,8 @@ bouton_terr6.addEventListener('click', function() {
 
         zone_terrain=6;
         input_zone_terrain.value=zone_terrain;
+        input_sept_m.value=0;
+
 
 
     }
@@ -2859,6 +2868,8 @@ bouton_terr7.addEventListener('click', function() {
 
         zone_terrain=7;
         input_zone_terrain.value=zone_terrain;
+        input_sept_m.value=0;
+
 
 
     }
@@ -2900,6 +2911,8 @@ bouton_terr8.addEventListener('click', function() {
         bouton_7m.style.stroke="none";
         zone_terrain=8;
         input_zone_terrain.value=zone_terrain;
+        input_sept_m.value=0;
+
 
 
 
@@ -2944,6 +2957,8 @@ bouton_terr9.addEventListener('click', function() {
 
         zone_terrain=9;
         input_zone_terrain.value=zone_terrain;
+        input_sept_m.value=0;
+
 
 
     }
@@ -3057,44 +3072,3 @@ text_7m.addEventListener('click', function() {
        }
 
 });
-
-
-// $.ajax({
-//     type: 'post',
-//     url: 'onglet_saisies.php',
-//     data: {
-//         id_match_selectionne:input_id_match.value,
-
-//          },
-//     success: function (response) {
-//     alert("Okayyyyyyyy")
-
-//     }
-// })
-// //Quand on change de match dans la liste déroulante
-// liste_matchs.addEventListener('change', function() {
-//     var index_match_selectionne = liste_matchs.selectedIndex+1;
-
-//     var indice_match_selectionne="match_id_"+ String(index_match_selectionne);
-//     var date_match_selectionne= "match_date_" + String(index_match_selectionne);
-
-//     input_id_match.value=eval(indice_match_selectionne);
-//     Date_rencontre.innerHTML=eval(date_match_selectionne);
-//     console.log(input_id_match);
-
-//     $(document).ready(function(){
-//     $.ajax({
-//         type: 'post',
-//         url: 'onglet_saisies.php',
-//         data: {
-//             id_match_selectionne:input_id_match.value
-//         },
-//         success: function (response) {
-//             alert("Okayyyyyyyy")
-            
-    
-//             }
-//     })
-// });
-    
-// });

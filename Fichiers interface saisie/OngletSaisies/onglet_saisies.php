@@ -158,7 +158,7 @@
              <div id="Infos_match">     
                 <div id ="Match_info_equipes">
                     <p id="label_match">Match:</p>
-                    <input type="hidden" id="input_id_match" value="97"/>
+                    <input type="hidden" id="input_id_match" value=<?php echo($match_id_selectionnee)?>/>
                     <p><?php echo($match_equipes)?></p>
                     <p><a href="Page_Selection_Match.php">Selection Match</a></p>
                     <!-- <select name="select_match" id="select_match"> -->
